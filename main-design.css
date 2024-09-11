@@ -75,7 +75,7 @@ a{
 }
 
 .main-top-container{
-  height: auto; 
+  height: 100%; 
   background-color: whitesmoke; 
   justify-content: center; 
   display: flex;
