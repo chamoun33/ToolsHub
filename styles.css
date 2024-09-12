@@ -243,6 +243,33 @@ i {
   .parallelogram{
     width: 90%;
   }
+
+  .pre-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 5px;
+  }
+
+  .space-between-hr{
+    height: 10px !important;
+  }
+
+  .post-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .text-parallelogram p{
+    font-size: 180% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .text-parallelogram p{
+    font-size: 140% !important;
+  }
 }
 
 .text-parallelogram{
@@ -267,6 +294,7 @@ i {
   height: 130px;
   width: 25%;
 }
+
 
 .space-between-hr{
   height: 40%; 
@@ -401,6 +429,12 @@ i {
   display: flex;
 }
 
+@media screen and (max-width: 950px) {
+  .new-arrivals-border{
+    width: 90% !important;
+  }
+}
+
 .new-arrivals-border{
   height: 500px;
   width: 75%;
@@ -416,10 +450,10 @@ i {
 
 .new-arrivals-txt{
   height: 100%;
-  width: 25%;
+  width: 200px;
   font-size: 200%;
   font-weight: 650; 
-  justify-content: left;
+  justify-content: flex-start;
   display: flex;
   align-items: center;
 }
@@ -464,11 +498,25 @@ i {
 }
 
 .new-arrivals-items-border{
-  height: 90%;
-  width: 22%;
+  height: 378px; 
+  width: 315px;
   border: 1px solid black;
   border-radius: 2%;
   margin-right: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .new-arrivals-items-border{
+    width: 290px !important;
+    height: 358px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .new-arrivals-items-border{
+    width: 275px !important;
+    height: 343px !important;
+  }
 }
 
 .new-arrivals-items-image{
@@ -490,7 +538,7 @@ i {
 
 .new-arrivals-items-free-delivery{
   height: 25%;
-  width: 50%;
+  width: 53%;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -594,15 +642,16 @@ i {
 
 
 .free-same-day-div{
-  height: 110px;
+  height: auto;
   width: 100%;
   background-color: #1A1A1A;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.adj-width{
-  height: 100%;
+.adj--width{
+  height: auto;
   width: 75%;
   justify-content: space-between;
   display: flex;
@@ -611,8 +660,8 @@ i {
 
 
 .second-parallelogram{
-  height: 100%;
-  width: 45%;
+  height: 110px;
+  width: 620px;
   background-color: #b8121a;
   transform: skew(30deg);
   display: flex;
@@ -620,10 +669,66 @@ i {
   align-items: center;
 }
 
+
+@media (max-width: 1500px){
+  .adj--width{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px){
+  .second-parallelogram{
+    width: 500px;
+  }
+  .second-parallelogram-txt{
+    width: 500px;
+  }
+}
+
+@media (max-width: 870px){
+  .adj--width{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  } 
+  
+  .second-parallelogram{
+    width: 80%;
+  }
+
+  .second-pre-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 5px;
+  }
+
+  .second-space-between-hr{
+    height: 10px !important;
+  }
+
+  .second-post-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .second-parallelogram-txt{
+    font-size: 180% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .second-parallelogram-txt{
+    font-size: 140% !important;
+  }
+}
+
+
 .second-parallelogram-txt{
   transform: skew(-30deg);
-  height: 90%;
-  width: 85%;
+  height: 100%;
+  width: 100%;
   color: white;
   font-size: 220%;
   font-weight: 600;
@@ -634,13 +739,18 @@ i {
 }
 
 .second-pre-parallelogram{
-  height: 100%;
+  height: 110px;
   width: 25%;
 }
 
 .second-post-parallelogram{
-  height: 100%;
+  height: 110px;
   width: 25%;
+}
+
+.second-space-between-hr{
+  height: 40%;
+  width: 100%;
 }
 
 
