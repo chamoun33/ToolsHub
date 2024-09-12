@@ -163,11 +163,19 @@ function adjustTopButtons() {
   const myCart = document.getElementById("myCartButtonTop");
   const createAccount = document.getElementById("createAccountButton");
   if (window.innerWidth <= 700) {
-    myCart.innerHTML = '<i class="fa-solid fa-cart-shopping fa-2x"></i>';
-    createAccount.innerHTML = '<i class="fa-solid fa-user fa-2x"></i>';
+    myCart.innerHTML = '<i class="fa-solid fa-cart-shopping fa-custom-size"></i>';
+    createAccount.innerHTML = '<i class="fa-solid fa-user fa-custom-size"></i>';
   } else {
     myCart.innerHTML = 'My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i>';
     createAccount.innerHTML = 'My Profile &nbsp &nbsp <i class="fa-solid fa-user"></i>';
+  }
+
+  if (window.innerWidth <= 700) {
+    myCart.classList.add("fa-custom-size");
+    createAccount.classList.add("fa-custom-size");
+  } else {
+    myCart.classList.remove("fa-custom-size");
+    createAccount.classList.remove("fa-custom-size");
   }
 }
 
