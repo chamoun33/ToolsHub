@@ -189,7 +189,7 @@ function checkScreenWidth() {
 }
 
 // Run the checkScreenWidth function when the window loads
-window.onload = checkScreenWidth;
+window.onload = checkScreenWidth();
 
 
 
