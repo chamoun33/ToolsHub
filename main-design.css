@@ -264,6 +264,10 @@ a{
   background-color: #b8121a
 }
 
+.fa-custom-size{
+  font-size: 1.1em;
+}
+
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
