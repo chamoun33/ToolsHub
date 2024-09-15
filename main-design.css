@@ -17,14 +17,37 @@ a{
   color: white; /* Example text color */
   line-height: 30px; /* Vertical centering of text */
   position: fixed;
-  margin: 0;
-  padding: 0;
   top: 0;
   left: 0;
   z-index: 10; /* Ensure it's on top of other content */
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.right{
+  align-items: center; 
+  width: 270px; 
+  justify-content: space-between; 
+  display: flex;
+  padding-right: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.right span{
+  font-weight: 550;
+}
+
+@media screen and (max-width: 705px) {
+  .right{
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.left{
+  font-weight: 550; 
 }
 /*
 #instagram:hover {
@@ -105,7 +128,6 @@ a{
 }
 
 .logo-header{
-  padding-right: 30px;
   display: flex;
   justify-content: space-around;
   width: 100px;
@@ -194,6 +216,11 @@ a{
 
   .create-account{
     width: 90px !important;
+  }
+
+  .myProfile-myCart-container{
+    width: 240px;
+    direction: rtl !important;
   }
 }
 
@@ -328,6 +355,27 @@ a{
   background-color: #e2e8f0;
 }
 
+.search-input-MQ {
+  /*width: 450px;  Set the desired width */
+  width: 450px;
+  height: 30px; 
+  padding: 5px; 
+  border: 1px solid #333; 
+  border-radius: 5px 0px 0px 5px; 
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+@media screen and (max-width: 900px) {
+  .search-input-MQ{
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .search-input-MQ{
+    width: 80% !important;
+  }
+}
+
 .subscribe-for-news-div{
   height: auto;
   width: 100%;
@@ -340,11 +388,11 @@ a{
 
 .subscribe-adj-width{
   height: auto;
-  width: 50%;
+  width: 90%;
 }
 
 .subscribe-title{
-  height: 60px;
+  height: 50px;
   width: 100%;
   font-size: 180%;
   font-weight: 600;
@@ -353,14 +401,24 @@ a{
   align-items: center;
 }
 
+.subscribe-title p{
+  padding: 0;
+  margin: 0;
+}
+
 .subscribe-title-info{
-  height: 60px;
+  height: 50px;
   width: 100%;
   font-size: 145%;
   font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.subscribe-title-info p{
+  padding: 0;
+  margin: 0;
 }
 
 .subscribe-input-button-div{
@@ -377,10 +435,43 @@ a{
   width: 500px; /* Set the desired width */
   height: 40px; /* Set the desired height */
   border: 1px solid #333; /* Add a border */
-  border-radius: 5px 5px 5px 5px; /* Rounded corners */
+  border-radius:5px; /* Rounded corners */
   transition: border-color 0.2s ease, transform 0.2s ease; /* Add transition for smooth effect */
   margin: 7px 2px;
 }
+
+@media screen and (max-width: 645px) {
+  .subscribe-email-input{
+    width: 100% !important;
+  }
+  .subscribe-form{
+    width: 100% !important;
+  }
+  .subscribe-button{
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 770px) {
+  .subscribe-title{
+    font-size: 20px;
+  }
+  .subscribe-title-info{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 755px) {
+  .subscribe-email-input{
+    width: 400px;
+  }
+}
+
+.subscribe-form{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap;
+}
+
 
 .subscribe-email-input:focus {
   border: 1px solid #b8121a; /* Change border color on focus */
@@ -427,7 +518,7 @@ a{
 
 .footer-item-div{
   height: 250px;
-  width: auto;
+  width: (auto + 20px);
   color: white;
   margin: 0 10px;
   /* border: 1px solid white; */
