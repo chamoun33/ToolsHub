@@ -241,7 +241,7 @@ i {
   } 
   
   .parallelogram{
-    width: 90%;
+    width: 86%;
   }
 
   .pre-parallelogram{
@@ -426,7 +426,7 @@ i {
   width: 100%;
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
 }
 
 @media screen and (max-width: 950px) {
@@ -460,7 +460,7 @@ i {
 
 .new-arrivals-chevron{
   height: 60%;
-  width: 7%;
+  width: 80px;
   display: flex;
   justify-content: center;
 }
@@ -763,9 +763,9 @@ i {
   margin: 60px 0;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 500px){
   .brand-spotlights-adj-width{
-    width: 100%;
+    width: 100% !important;
   }
 }
 
