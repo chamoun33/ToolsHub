@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tools-Hub</title>
   <link rel="icon" href="images/title-icon.png" type="image/png">
-  
-  
+  <style>
+    /* Reset default margin and padding */
+    html, body {
+        /*font-family: "Berlin Sans FB", sans-serif;*/
+        width:100%;
+        font-family: "Outfit", sans-serif;
+        background-color: whitesmoke;
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+
+  </style>
   <script>
     function createAccount(){
       window.location.href = 'create_account.html';
@@ -31,8 +43,8 @@
     <header>
   <div class="top-fixed-div">
 
-    <div class = "left" style="font-weight: 550; ">&nbsp &nbsp &nbsp M-F 8:00 A.M. - 6:00 P.M. | Haret-Sakher | <a href ="" class="customer-service">Customer Service</a></div>
-    <div class = "right" style="align-items: center; width: 350px; justify-content: flex-end; display: flex;"> 
+    <div class = "left">&nbsp &nbsp &nbsp M-F 8:00 A.M. - 6:00 P.M. | Haret-Sakher | <a href ="" class="customer-service">Customer Service</a></div>
+    <div class = "right"> 
         <div class="logo-header">
             <a href="https://www.instagram.com/" target="_blank" id="instagram"><i class="fa-brands fa-instagram fa-1.5x" ></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-1.5x"></i></a>
@@ -40,7 +52,8 @@
         </div>
 
 
-        <b style="padding-right: 20px ; font-weight: 580;">Tel: +961 81 222 444</b></div>
+        <span>Tel: +961 81 222 444</span>
+      </div>
         <!--        <b style="padding-right: 20px ; font-weight: 580;"><i class="fa-solid fa-phone"></i> &nbsp: +961 81 222 444</b></div> -->
   </div>
   </header>
@@ -82,7 +95,7 @@
 
     <form action="/search" method="get" class="mediaQuery-searchBar">
       <label for="search" class="search-bar"></label>
-      <input type="text" id="search" name="search" class="search-input" placeholder="Search entire store here..." style="width: 450px;">
+      <input type="text" id="search" name="search" class="search-input-MQ" placeholder="Search entire store here...">
       <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
     </form>
   
@@ -724,7 +737,7 @@
           <p>Subscribe for our best offers.</p>
         </div>
         <div class="subscribe-input-button-div">
-          <form style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+          <form class="subscribe-form">
             <label for="textbox"></label>
             <input type="email" id="textbox" name="textbox" placeholder="Enter your email address" class="subscribe-email-input">
             <button class="subscribe-button">Subscribe</button>
@@ -805,7 +818,7 @@
 
     <footer class="footer-div">
       <div class="footer-adj-width" id="no-underline">
-        <div class="footer-item-div">
+        <div class="footer-item-div" id="footerItem">
           <div class="footer-title">
             <p>ABOUT US</p>
           </div>
@@ -815,7 +828,7 @@
             <p><a href="">Returns/Exanges & Warranties</a></p>
             <p><a href="">Terms & Conditions</a></p>
         </div>
-        <div class="footer-item-div">
+        <div class="footer-item-div" id="footerItem2">
           <div class="footer-title">
             <p>CUSTOMER CENTER</p>
           </div>
@@ -871,16 +884,5 @@
     });
 }
     </script>
-  <style>
-      /* Reset default margin and padding */
-    html, body {
-        /*font-family: "Berlin Sans FB", sans-serif;*/
-        font-family: "Outfit", sans-serif;
-        background-color: whitesmoke;
-        margin: 0;
-        width: 100%;
-        overflow-x: hidden;
-    }
-  </style>
 </body>
 </html>
