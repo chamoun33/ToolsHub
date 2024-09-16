@@ -12,17 +12,29 @@ a{
  /* Style for the top div */
  .top-fixed-div {
   width: 100%;
-  height: 60px; /* Adjust height as needed */
+  height: 60px; /* Adjust height as needed default 60px*/
   background-color: #1A1A1A; /* Example background color */
   color: white; /* Example text color */
   line-height: 30px; /* Vertical centering of text */
   position: fixed;
   top: 0;
   left: 0;
+  padding: 0 15px;
+  box-sizing: border-box;
   z-index: 10; /* Ensure it's on top of other content */
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.time{
+  width: auto;
+  height: auto;
+}
+
+.city{
+  width: auto;
+  height: auto;
 }
 
 .right{
@@ -30,7 +42,6 @@ a{
   width: 270px; 
   justify-content: space-between; 
   display: flex;
-  padding-right: 20px;
   box-sizing: border-box;
   flex-wrap: wrap;
 }
@@ -39,15 +50,30 @@ a{
   font-weight: 550;
 }
 
-@media screen and (max-width: 705px) {
+
+@media screen and (max-width: 750px) {
+  .customer-service{
+    display: none !important;
+  }
+  .tel{
+    display: none;
+  }
+  .logo-header{
+    width: 135px !important;
+  }
+  .phone{
+    display: block !important;
+  }
   .right{
-    justify-content: center;
-    padding: 0;
+    justify-content: flex-end !important;
+    width: 155px !important;
   }
 }
 
 .left{
   font-weight: 550; 
+  display: flex;
+  flex-wrap: wrap;
 }
 /*
 #instagram:hover {
@@ -131,6 +157,10 @@ a{
   display: flex;
   justify-content: space-around;
   width: 100px;
+}
+
+.phone{
+  display: none;
 }
 
 /* .logo_sidenav-holder{
