@@ -37,56 +37,57 @@
 </head>
 <body>
     <header>
-      <div class="top-fixed-div">
+      <div class="top-fixed-div" id="topFixedHeader">
 
-        <div class = "left">&nbsp &nbsp &nbsp M-F 8:00 A.M. - 6:00 P.M. | Haret-Sakher | <a href ="" class="customer-service">Customer Service</a></div>
-        <div class = "right"> 
-            <div class="logo-header">
-                <a href="https://www.instagram.com/" target="_blank" id="instagram"><i class="fa-brands fa-instagram fa-1.5x" ></i></a>
-                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-1.5x"></i></a>
-                <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter fa-1.5x"></i></a>
-            </div>
-    
-    
-            <span>Tel: +961 81 222 444</span>
-          </div>
-            <!--        <b style="padding-right: 20px ; font-weight: 580;"><i class="fa-solid fa-phone"></i> &nbsp: +961 81 222 444</b></div> -->
-      </div>
-      </header>
-    
-      <div class="main-top-container">
-        <div class="main-header">
-            <div class="side-dropdown-menu">
-              <button class="bar-button" onclick="openSideNav()"><i class="fa-solid fa-bars fa-2x"></i></button>
-            </div>
-    
-            <div class="logo-container" >
-              <a href="index.html"> <img src="images/GMK-Logo.png" width="90" height="80" alt="GMK_logo"> </a>
-            </div>
-            <form action="/search" method="get" class="main-search-container">
-              <label for="search" class="search-bar"></label>
-              <input type="text" id="search" name="search" class="search-input" placeholder="Search entire store here...">
-              <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
-            </form>
-          <div class="myProfile-myCart-container">
-            <button class="create-account" onclick="createAccount()" id="createAccountButton">My Profile  &nbsp &nbsp<i class="fa-solid fa-user"></i></button>
-    
-            <div id="mySidenav" class="sidenav">
-              <header class="top-my-cart">
-                <p>My Cart</p>
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              </header>
-            </div>
-          
-            <button class="my-cart" onclick="openNav()" id="myCartButtonTop"> My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i></button>
-            <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-            <div id="main">
-            </div>
-            
-              
-          </div>
+    <div class = "left"><span class="time">M-F 8:00 A.M. - 6:00 P.M.</span> <span class="city">| Haret-Sakher |</span><a href ="" class="customer-service">Customer Service</a></div>
+    <div class = "right"> 
+        <div class="logo-header">
+            <a href="https://www.instagram.com/" target="_blank" id="instagram"><i class="fa-brands fa-instagram fa-1.5x" ></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-1.5x"></i></a>
+            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter fa-1.5x"></i></a>
+            <a href="tel:+96176132529" target="_blank" class="phone"><i class="fa-solid fa-phone fa-1.5x"></i></a>
         </div>
+
+
+        <span class="tel">Tel: +961 81 222 444</span>
       </div>
+        <!--        <b style="padding-right: 20px ; font-weight: 580;"><i class="fa-solid fa-phone"></i> &nbsp: +961 81 222 444</b></div> -->
+  </div>
+  </header>
+
+  <div class="main-top-container">
+    <div class="main-header" id="mainHeader">
+        <div class="side-dropdown-menu">
+          <button class="bar-button" onclick="openSideNav()"><i class="fa-solid fa-bars fa-2x"></i></button>
+        </div>
+
+        <div class="logo-container" >
+          <a href="main.html"> <img src="images/GMK-Logo.png" width="90" height="80" alt="GMK_logo"> </a>
+        </div>
+        <form action="/search" method="get" class="main-search-container">
+          <label for="search" class="search-bar"></label>
+          <input type="text" id="search" name="search" class="search-input" placeholder="Search entire store here...">
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+        </form>
+      <div class="myProfile-myCart-container">
+        <button class="create-account" onclick="createAccount()" id="createAccountButton">My Profile  &nbsp &nbsp<i class="fa-solid fa-user"></i></button>
+
+        <div id="mySidenav" class="sidenav">
+          <header class="top-my-cart">
+            <p>My Cart</p>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          </header>
+        </div>
+      
+        <button class="my-cart" onclick="openNav()" id="myCartButtonTop"> My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i></button>
+        <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+        <div id="main">
+        </div>
+        
+          
+      </div>
+    </div>
+  </div>
     
     
       <form action="/search" method="get" class="mediaQuery-searchBar">
