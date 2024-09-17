@@ -206,7 +206,24 @@ function adjustLogo() {
         logo.src = "images/GMK-Logo.png";
     }
 }
-window.adjustLogo();
+
+function checkWidth() {
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+  
+    // Initial check when the page loads
+    adjustLogo();
+  
+    // Add a listener to check for screen resize
+    mediaQuery.addListener((e) => {
+      if (e.matches) {
+        adjustLogo(); // Call the function when width is 700px or less
+      } else {
+        adjustLogo(); // Reset the button when width is more than 700px
+      }
+    });
+  }
+
+window.checkWidth();
 
 
 
