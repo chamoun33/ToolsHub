@@ -38,33 +38,34 @@
     top: 0;
     left: 0;
     font-size: 36px;
-    margin-right: 50px;
   }
   
-  .top-my-cart{
+  .top-side-drop-down{
     width: 100%;
     height: 28px;
-    padding: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
   
-  .top-my-cart p{
+  .top-side-drop-down p{
     padding: 0px;
     margin: 0px;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 600;
     color: #111827;
   }
   
-  .top-my-cart a{
+  .top-side-drop-down a{
     color: #d1d5db;
     text-decoration: none;
     transition: 250ms;
   }
   
-  .top-my-cart a:hover{
+  .top-side-drop-down a:hover{
     color: #111827;
   }
   
