@@ -381,14 +381,15 @@ a{
 }
 
 .top-my-cart{
-  width: 450px;
+  width: 100%;
   height: 28px;
-  /* padding: 4px; */
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   direction: ltr;
+  margin-top: 10px;
 }
 
 .top-my-cart p{
