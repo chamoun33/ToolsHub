@@ -18,7 +18,18 @@ function scrollRight() {
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "450px";
+    let Width = 0;
+    const mediaQuery = document.documentElement.clientWidth;
+    if(mediaQuery <= 700){
+        Width = 100;
+        document.getElementById("mySidenav").style.width = Width + "%";
+        Width = 0;
+    }
+    else{
+        Width = 450;
+        document.getElementById("mySidenav").style.width = Width + "px";
+        Width = 0;
+    }
 }
 
 /* Set the width of the side navigation to 0 */
@@ -106,6 +117,7 @@ window.onload = function defaultOpenBlockFilter() {
 //side dropdown
 
 function openSideNav() {
+    closeNav();
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.add("open"); // Add the 'open' class to apply transitions
 }
@@ -170,6 +182,10 @@ function adjustTopButtons() {
     createAccount.innerHTML = 'My Profile &nbsp &nbsp <i class="fa-solid fa-user"></i>';
   }
 
+//   if(document.documentElement.clientWidth <= 500){
+//     createAccount.innerHTML = '<i class="fa-solid fa-circle-user fa-user fa-custom-size"></i>';
+//   }
+
   if (window.innerWidth <= 700) {
     myCart.classList.add("fa-custom-size");
     createAccount.classList.add("fa-custom-size");
@@ -178,6 +194,21 @@ function adjustTopButtons() {
     createAccount.classList.remove("fa-custom-size");
   }
 }
+
+//adjust top logo
+function adjustLogo() {
+    const logo = document.getElementById("logo");
+
+    if(window.innerWidth <= 500){
+        logo.src = "images/GMK-Logo - 2.png";
+    }
+    else{
+        logo.src = "images/GMK-Logo.png";
+    }
+}
+window.adjustLogo();
+
+
 
 // Detect when the screen width is 700px or less
 function checkScreenWidth() {
@@ -236,3 +267,39 @@ function toggleButtonDropDown_Footer(dropDownList, chevron){
     }
 }
 window.onload = toggleButtonDropDown_Footer('aboutUs', 'aboutUsChevron');
+
+
+
+
+function adjustDivWidth() {
+    const myDiv = document.getElementById('footerItem');
+    const currentWidth = myDiv.offsetWidth; // Get the current width of the div
+    myDiv.style.width = (currentWidth + 10) + 'px'; // Add 10px to the width
+  }
+
+window.onload = adjustDivWidth();
+
+
+// function adjustHeaderHeight(){
+//     const topFixed = document.getElementById('topFixedHeader');
+//     const topFixedHeight = topFixed.offsetHeight;
+//     const header = document.getElementById('mainHeader');
+//     header.style.marginTop = topFixedHeight + "px";
+// }
+
+// // function checkScreenHeight(){
+// //     const mediaQuery = window.matchMedia("(max-height: 738px)");
+
+// //     // Initial check when the page loads
+// //     adjustTopButtons();
+  
+// //     // Add a listener to check for screen resize
+// //     mediaQuery.addListener((e) => {
+// //       if (e.matches) {
+// //         adjustHeaderHeight(); // Call the function when width is 700px or less
+// //       } else {
+// //         adjustHeaderHeight(); // Reset the button when width is more than 700px
+// //       }
+// //     });
+// // }
+// window.onload = adjustHeaderHeight();
