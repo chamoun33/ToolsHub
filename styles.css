@@ -496,6 +496,11 @@ i {
   width: 100%;
   align-content: normal;
 }
+@media screen and (max-width: 900px) {
+  .new-arrivals-items-wrapper{
+    overflow-x: auto;
+  }
+}
 
 .new-arrivals-items-border{
   height: 378px; 
@@ -503,7 +508,7 @@ i {
   border: 1px solid black;
   border-radius: 2%;
   margin-right: 20px;
-}
+} 
 
 @media screen and (max-width: 700px) {
   .new-arrivals-items-border{
@@ -1076,6 +1081,12 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 560px) {
+  .about-GMK-adj-width{
+    width: 95% !important;
+  }
 }
 
 .about-GMK-adj-width{
