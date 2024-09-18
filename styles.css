@@ -772,6 +772,15 @@ i {
   .brand-spotlights-adj-width{
     width: 100% !important;
   }
+  .brand-spotlights-txt{
+    text-align: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .brand-spotlights-txt p{
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
 }
 
 .brand-spotlights-adj-width{
@@ -1086,6 +1095,15 @@ i {
 @media screen and (max-width: 560px) {
   .about-GMK-adj-width{
     width: 95% !important;
+  }
+  .about_GMK-txt p{
+    line-height: 10px;
+    font-size: 15px;
+  }
+
+  .about-GMK-title p{
+    margin: 0;
+    margin-top: 30px;
   }
 }
 
