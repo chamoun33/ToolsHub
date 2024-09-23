@@ -124,7 +124,6 @@ window.onload = function defaultOpenBlockFilter() {
 //side dropdown
 
 function openSideNav() {
-    closeNav();
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.add("open"); // Add the 'open' class to apply transitions
 }
