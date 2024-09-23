@@ -796,3 +796,9 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
     }
 }
 
+
+//scrollButton
+
+function scrollButton(sectionID){
+    document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth' });
+}
