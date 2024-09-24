@@ -13,22 +13,47 @@
   box-sizing: border-box;
 }
 
-/* When the sideNav is opened */
-.sideNav.open {
-  width: 100%; /* Expanded state */
+
+
+@media screen and (min-width: 501px) {
+  /* When the sideNav is opened */
+  .sideNav.open {
+    width: 100%; /* Expanded state */
+  }
+
+  /* Main container with transition */
+  .main-container {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease;
+  }
+
+  /* When the sideNav is opened */
+  .sideNav.open .main-container {
+    opacity: 1; /* Visible with smooth fade-in */
+    transition-delay: 0.15s;
+  }
 }
 
-/* Main container with transition */
-.main-container {
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.2s ease;
+
+@media screen and (max-width: 501px) {
+  /* When the sideNav is opened */
+  .sideNav.open {
+    width: 100%; /* Expanded state */
+  }
+
+  /* Main container with transition */
+  .main-container {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.15s ease;
+  }
+
+  /* When the sideNav is opened */
+  .sideNav.open .main-container {
+    opacity: 1; /* Visible with smooth fade-in */
+    transition-delay: 0.2s;
+  }
 }
 
-/* When the sideNav is opened */
-.sideNav.open .main-container {
-  opacity: 1; /* Visible with smooth fade-in */
-  transition-delay: 0.15s;
-}
 
   
   
@@ -62,11 +87,25 @@
   .top-side-drop-down a{
     color: #d1d5db;
     text-decoration: none;
-    transition: 250ms;
   }
   
-  .top-side-drop-down a:hover{
-    color: #111827;
+  
+
+  @media screen and (max-width: 800px) {
+    .top-side-drop-down a:active{
+      color: #111827;
+    }
+    .top-side-drop-down a{
+      transition: 150ms;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .top-side-drop-down a:hover{
+      color: #111827;
+    }
+    .top-side-drop-down a{
+      transition: 250ms;
+    }
   }
   
   .option-container{
@@ -114,11 +153,25 @@
   .name-container a{
     color: rgb(58, 57, 57);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
   }
 
-  .name-container a:hover{
-    color: #b8121a;
+  @media screen and (max-width: 800px) {
+    .name-container a{
+      transition: color 0.04s ease-in-out;
+    }
+  
+    .name-container a:active{
+      color: #b8121a;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .name-container a{
+      transition: color 0.3s ease-in-out;
+    }
+  
+    .name-container a:hover{
+      color: #b8121a;
+    }
   }
   
   .chevron-container{
@@ -167,11 +220,24 @@
   .option-content-container  a{
     color: rgb(34, 34, 34);
     cursor: pointer;
-    transition: color 0.15s ease-in-out;
   }
-  
-  .option-content-container  a:hover {
-    color: #b8121a;
+
+
+  @media screen and (min-width: 800px) {
+    .option-content-container  a{
+      transition: color 0.15s ease-in-out;
+    }
+    .option-content-container  a:hover {
+      color: #b8121a;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .option-content-container  a{
+      transition: color 0.04s ease-in-out;
+    }
+    .option-content-container  a:active {
+      color: #b8121a;
+    }
   }
   
   .option-content-container > li{
