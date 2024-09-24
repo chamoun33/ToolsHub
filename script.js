@@ -801,7 +801,7 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
 
 function scrollButton(sectionID){
     const target = document.getElementById(sectionID);
-    const offset = 70;
+    const offset = 100;
     window.scrollTo({
                 top: target.offsetTop - offset,
                 behavior: 'smooth'
