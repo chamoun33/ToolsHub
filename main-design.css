@@ -201,12 +201,26 @@ body::-webkit-scrollbar {
 .bar-button{
   background-color: transparent;
   border: none;
-  transition: color 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.bar-button:hover{
-  color: #b2121a;
+
+
+@media screen and (max-width: 800px) {
+  .bar-button:active{
+    color: #b2121a;
+  }
+  .bar-button{
+    transition: color 0.1s ease-in-out;
+  }
+}
+@media screen and (min-width: 800px) {
+  .bar-button:hover{
+    color: #b2121a;
+  }
+  .bar-button{
+    transition: color 0.2s ease-in-out;
+  }
 }
 
 
@@ -393,6 +407,8 @@ body::-webkit-scrollbar {
   font-size: 36px;
   /* margin-right: 50px; */
 }
+
+
 
 /* Overlay when side nav is open */
 .overlay {
