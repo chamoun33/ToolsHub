@@ -800,5 +800,11 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
 //scrollButton
 
 function scrollButton(sectionID){
-    document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById(sectionID);
+    const offset = 50;
+    window.scrollTo({
+                top: target.offsetTop - offset,
+                behavior: 'smooth'
+            });
+    //document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth' });
 }
