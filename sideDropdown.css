@@ -50,7 +50,7 @@
   /* When the sideNav is opened */
   .sideNav.open .main-container {
     opacity: 1; /* Visible with smooth fade-in */
-    transition-delay: 0.3s;
+    transition-delay: 0.25s;
   }
 }
 
