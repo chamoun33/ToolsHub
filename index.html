@@ -63,12 +63,7 @@
       <div class="myProfile-myCart-container">
         <button class="create-account" onclick="createAccount()" id="createAccountButton">My Profile  &nbsp &nbsp<i class="fa-solid fa-user"></i></button>
 
-        <div id="mySidenav" class="sidenav">
-          <header class="top-my-cart">
-            <p>My Cart</p>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          </header>
-        </div>
+        
       
         <button class="my-cart" onclick="openNav()" id="myCartButtonTop"> My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i></button>
         <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
@@ -81,6 +76,22 @@
   </div>
 
 
+  
+  <div id="mySidenav" class="sidenav">
+    <header class="top-my-cart">
+      <p>My Cart</p>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </header>
+    
+    <div class="main-items-container" id="cart-items">
+      <div class="empty-cart-container" id="emptyCart">
+        <span>Cart is empty</span>
+      </div>
+    </div>
+  </div>
+
+
+
     <form action="/search" method="get" class="mediaQuery-searchBar">
       <label for="search" class="search-bar"></label>
       <input type="text" id="search" name="search" class="search-input-MQ" placeholder="Search entire store here...">
@@ -88,7 +99,7 @@
     </form>
 
 
-  <div id="overlay" class="overlay" onclick="closeNav()"></div>
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
   
   <!--sidenav-->
 
@@ -865,21 +876,21 @@
       </div>
     </footer>
 
-  <style>
-    /* Reset default margin and padding */
-    html, body {
-        /*font-family: "Berlin Sans FB", sans-serif;*/
-        font-family: "Outfit", sans-serif;
-        background-color: whitesmoke;
-        width: 100%;
-        overflow-x: hidden;
-        margin: 0;
-    }
-
-
-  </style>
-
+    <style>
+      /* Reset default margin and padding */
+      html, body {
+          /*font-family: "Berlin Sans FB", sans-serif;*/
+          width:100%;
+          font-family: "Outfit", sans-serif;
+          background-color: whitesmoke;
+          width: 100%;
+          overflow-x: hidden;
+          margin: 0;
+      }
   
+  
+    </style>
+    
     <script src="script.js"></script>
     <script>
       function scrollLeft() {
