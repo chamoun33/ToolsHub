@@ -78,7 +78,7 @@
           <p>My Cart</p>
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         </header>
-        <div class="main-items-container" id="cart">
+        <div class="main-items-container" id="cart-items">
 
 
           <!-- <div class="item-in-cart-border">
@@ -105,8 +105,38 @@
             </div>
           </div> -->
 
+          <div class="empty-cart-container" id="emptyCart">
+            <span>Cart is empty</span>
+          </div>
+
 
         </div>
+
+        <div class="main-cart-button-container" id="cartBottomInfo">
+          <div class="cart-button-container">
+
+            <div class="subtotal-container">
+              <p id="cart-subtotal">Subtotal: $1,999</p>
+            </div>
+
+            <div class="button-container-offer">
+              <div class="button-container">
+                <button class="checkout-cart-button">Checkout</button>
+                <span class="or-span">or</span>
+                <a class="link-cart">View and edit cart</a>
+              </div>
+
+              <div class="offer-cart-container">
+                <div class="offer-cart">
+                  <p>Order over $150 and get free delivery.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
 
 
@@ -319,7 +349,18 @@
         <p><a href="index.html">Home</a> &nbsp;/&nbsp; Shop By Tool Type</p>
       </div>
     </div>
+
+
+    <div class="main-notification-container">
+      <div class="notification-container">
+
+      </div>
+    </div>
     
+    
+    
+
+
 
     <main class="main-div">
       <div class="shop-by-tools-type-container-main">
@@ -484,6 +525,61 @@
         </a>
 
       </div>
+
+
+
+
+
+      <div id="myModal" class="modal">
+        <div id="modalContent" class="modal-content">
+
+          <div class="top-container">
+            <span class="top-title">The product was added to your cart.</span>
+            <span class="close">&times;</span>
+          </div>
+
+          <div class="item-container-popup">
+            <div class="image-holder">
+              <img src="images/ShopByToolsType/product-list/OIP.jpeg">
+            </div>
+
+            <div class="item-description">
+              <div class="item-name-popup">
+                <div class="name-popup">
+                  <span>Festool Limited-Edition DOMINO XL DF 700, Accessories, and Tenon Kit 578508</span>
+                </div>
+                <div class="SKU-container-popup">
+                  <span class="SKU-popup">SKU</span>
+                  <span class="SKU--">FT578508</span>
+                </div>
+              </div>
+              <div class="item-price-popup">
+                <span>$1,289.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-info-container-popup">
+            <div class="cart-item-number">
+              <span>Cart subtotal(1 item)</span>
+            </div>
+            <div class="cart-price-total">
+              <span>$1,289.00</span>
+            </div>
+          </div>
+
+          <div class="button-container-popup">
+            <button class="continue-shopping-button">Continue Shopping</button>
+            <button class="checkout-button">Checkout</button>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
 
       <div class="shop-items-main-container">
         <div class="filter-container">
@@ -1380,7 +1476,7 @@
 
             <div class="grid-product-container" id="item-1">
               <div class="product-image-holder" id="image-item-1">
-                <img src="images/ShopByToolsType/product-list/table_saw.PNG">
+                <img src="images/ShopByToolsType/product-list/table_saw.PNG" id="image-1">
               </div>
               <div id="description-item-1">
                 <div class="product-title-container" id="name-item-1">
@@ -1430,7 +1526,7 @@
 
             <div class="grid-product-container" id="item-3">
               <div class="product-image-holder" id="image-item-3">
-                <img src="images/ShopByToolsType/product-list/powermatic machine.jpeg">
+                <img src="images/ShopByToolsType/product-list/powermatic machine.jpeg" id="image-3">
               </div>
               <div id="description-item-3">
                 <div class="product-title-container" id="name-item-3">
@@ -1455,7 +1551,7 @@
 
             <div class="grid-product-container" id="item-4">
               <div class="product-image-holder" id="image-item-4">
-                <img src="images/ShopByToolsType/product-list/xcort.jpeg">
+                <img src="images/ShopByToolsType/product-list/xcort.jpeg" id="image-4">
               </div>
               <div id="description-item-4">
                 <div class="product-title-container" id="name-item-4">
@@ -1480,7 +1576,7 @@
 
             <div class="grid-product-container" id="item-5">
               <div class="product-image-holder" id="image-item-5">
-                <img src="images/ShopByToolsType/product-list/mirka.jpeg">
+                <img src="images/ShopByToolsType/product-list/mirka.jpeg" id="image-5">
               </div>
               <div id="description-item-5">
                 <div class="product-title-container" id="name-item-5">
@@ -1505,7 +1601,7 @@
 
             <div class="grid-product-container" id="item-6">
               <div class="product-image-holder" id="image-item-6">
-                <img src="images/ShopByToolsType/product-list/festool.jpeg">
+                <img src="images/ShopByToolsType/product-list/festool.jpeg" id="image-6">
               </div>
               <div id="description-item-6">
                 <div class="product-title-container" id="name-item-6">
@@ -1530,7 +1626,7 @@
 
             <div class="grid-product-container" id="item-7">
               <div class="product-image-holder" id="image-item-7">
-                <img src="images/ShopByToolsType/product-list/festool motor.jpeg">
+                <img src="images/ShopByToolsType/product-list/festool motor.jpeg" id="image-7">
               </div>
               <div id="description-item-7">
                 <div class="product-title-container" id="name-item-7">
@@ -1555,7 +1651,7 @@
 
             <div class="grid-product-container" id="item-8">
               <div class="product-image-holder" id="image-item-8">
-                <img src="images/ShopByToolsType/product-list/metabo.jpeg">
+                <img src="images/ShopByToolsType/product-list/metabo.jpeg" id="image-8">
               </div>
               <div id="description-item-8">
                 <div class="product-title-container" id="name-item-8">
@@ -1580,7 +1676,7 @@
 
             <div class="grid-product-container" id="item-9">
               <div class="product-image-holder" id="image-item-9">
-                <img src="images/ShopByToolsType/product-list/total.PNG">
+                <img src="images/ShopByToolsType/product-list/total.PNG" id="image-9">
               </div>
               <div id="description-item-9">
                 <div class="product-title-container" id="name-item-9">
@@ -1605,7 +1701,7 @@
 
             <div class="grid-product-container" id="item-10">
               <div class="product-image-holder" id="image-item-10">
-                <img src="images/ShopByToolsType/product-list/JET-707400.jpeg">
+                <img src="images/ShopByToolsType/product-list/JET-707400.jpeg" id="image-10">
               </div>
               <div id="description-item-10">
                 <div class="product-title-container" id="name-item-10">
@@ -1630,7 +1726,7 @@
 
             <div class="grid-product-container" id="item-11">
               <div class="product-image-holder" id="image-item-11">
-                <img src="images/ShopByToolsType/product-list/table_saw.PNG">
+                <img src="images/ShopByToolsType/product-list/table_saw.PNG" id="image-11">
               </div>
               <div id="description-item-11">
                 <div class="product-title-container" id="name-item-11">
@@ -1655,7 +1751,7 @@
 
             <div class="grid-product-container" id="item-12">
               <div class="product-image-holder" id="image-item-12">
-                <img src="images/ShopByToolsType/product-list/powermatic machine.jpeg">
+                <img src="images/ShopByToolsType/product-list/powermatic machine.jpeg" id="image-12">
               </div>
               <div id="description-item-12">
                 <div class="product-title-container" id="name-item-12">
@@ -1844,19 +1940,19 @@
       </div>
     </footer>
 
-  <style>
-    /* Reset default margin and padding */
-    html, body {
-        /*font-family: "Berlin Sans FB", sans-serif;*/
-        font-family: "Outfit", sans-serif;
-        background-color: whitesmoke;
-        width: 100%;
-        overflow-x: hidden;
-        margin: 0;
-    }
-
-
-  </style>
+    <style>
+      /* Reset default margin and padding */
+      html, body {
+          /*font-family: "Berlin Sans FB", sans-serif;*/
+          font-family: "Outfit", sans-serif;
+          background-color: white;
+          margin: 0;
+          width: 100%;
+          overflow-x: hidden;
+      }
+  
+  
+    </style>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
