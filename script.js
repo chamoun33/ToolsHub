@@ -46,40 +46,6 @@ function closeNav() {
 
 
 
-// function toggleBlockFilter(ID, blockName, downChevron) {
-//     // Retrieve the current state from the element itself
-//     let filterSBTT_downChevronIsOpen = document.getElementById(ID).getAttribute("data-isopen") === "true";
-    
-//     // Call the appropriate function based on the current state
-//     if (filterSBTT_downChevronIsOpen) {
-//         closeBlockFilter(ID, blockName, downChevron);
-//     } else {
-//         openBlockFilter(ID, blockName, downChevron);
-//     }
-
-//     // Function to open the block
-//     function openBlockFilter(id, blockName, downChevron) {
-//         document.getElementById(downChevron).style.transform = "rotate(180deg)";
-//         document.getElementById(id).style.height = "auto";
-//         document.getElementById(id).style.visibility = "visible";
-//         document.getElementById(id).style.padding = "10px 0";
-//         document.getElementById(blockName).style.borderBottom = "1px solid lightgray";
-//         // Set the state to open
-//         document.getElementById(id).setAttribute("data-isopen", "true");
-//     }
-
-//     // Function to close the block
-//     function closeBlockFilter(id, blockName, downChevron) {
-//         document.getElementById(downChevron).style.transform = "rotate(0deg)";
-//         document.getElementById(id).style.height = "0";
-//         document.getElementById(id).style.visibility = "hidden";
-//         document.getElementById(id).style.padding = "0";
-//         document.getElementById(blockName).style.borderBottom = "0";
-//         // Set the state to closed
-//         document.getElementById(id).setAttribute("data-isopen", "false");
-//     }
-// }
-
 
 function toggleBlockFilter(ID, blockName, downChevron) {
     let filterSBTT_downChevronIsOpen = document.getElementById(ID).getAttribute("data-isopen") === "true";
@@ -124,6 +90,7 @@ window.onload = function defaultOpenBlockFilter() {
 //side dropdown
 
 function openSideNav() {
+    closeNav();
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.add("open"); // Add the 'open' class to apply transitions
 }
@@ -303,372 +270,6 @@ function adjustDivWidth() {
 window.onload = adjustDivWidth();
 
 
-// function adjustHeaderHeight(){
-//     const topFixed = document.getElementById('topFixedHeader');
-//     const topFixedHeight = topFixed.offsetHeight;
-//     const header = document.getElementById('mainHeader');
-//     header.style.marginTop = topFixedHeight + "px";
-// }
-
-// // function checkScreenHeight(){
-// //     const mediaQuery = window.matchMedia("(max-height: 738px)");
-
-// //     // Initial check when the page loads
-// //     adjustTopButtons();
-  
-// //     // Add a listener to check for screen resize
-// //     mediaQuery.addListener((e) => {
-// //       if (e.matches) {
-// //         adjustHeaderHeight(); // Call the function when width is 700px or less
-// //       } else {
-// //         adjustHeaderHeight(); // Reset the button when width is more than 700px
-// //       }
-// //     });
-// // }
-// window.onload = adjustHeaderHeight();
-
-
-
-
-
-
-// function addToCart(item, item_img, img, item_name, name, SKU_item, SKU, price_item, price, button_item){
-//     var originalItem = document.getElementById(item);
-//     var imageItem = document.getElementById(item_img);
-//     var nameItem = document.getElementById(item_name);
-//     var SKU_ITEM = document.getElementById(SKU_item);
-//     var priceItem = document.getElementById(price_item);
-//     var buttonItem = document.getElementById(button_item);
-
-//     //Clone the item
-//     var clonedItem = originalItem.cloneNode(true);
-//     var clonedImageItem = imageItem.cloneNode(true);
-//     var clonedNameItem = nameItem.cloneNode(true);
-//     var clonedSKU_ITEM = SKU_ITEM.cloneNode(true);
-//     var clonedPriceItem = priceItem.cloneNode(true);
-//     var clonedButtonItem = buttonItem.cloneNode(true);
-
-//     //Apply the new style to the cloned item
-//     clonedItem.classList.remove('grid-product-container');
-//     clonedItem.classList.add('item-in-cart-border');
-//     clonedImageItem.classList.remove('product-image-holder');
-//     clonedImageItem.classList.add('img-item-in-cart-border');
-//     clonedNameItem.classList.remove('product-title-container');
-//     clonedNameItem.classList.add('item-name-cart-container');
-//     clonedSKU_ITEM.classList.remove('sku-title-container');
-//     clonedSKU_ITEM.classList.add('SKU-cart');
-//     clonedPriceItem.classList.remove('price-title-container');
-//     clonedPriceItem.classList.add('price-item-cart');
-//     clonedButtonItem.classList.remove('addToCart-button-container');
-//     clonedButtonItem.classList.add('button-cart-container');
-
-
-
-//     // Append the cloned item to the cart
-//     var cart = document.getElementById('cart');
-//     cart.appendChild(clonedItem);
-// }
-
-
-
-// function isValidIndex(n) {
-//     return Number.isInteger(n) && n >= 0 && n < 1000;
-// }
-// let itemsCheck = new Array(1000);
-// let itemsQty = new Array(1000).fill(0);
-// let isTrue = new Array(1000).fill(true);
-
-
-/*function itemCounter(item){
-
-    let counter=0;
-    let arrayOfAddedItems=document.getElementsByClassName("item-in-cart-border");
-    if(arrayOfAddedItems.length<=0){
-        return 0;
-    }
-    const imgSrc = item.querySelector('img') ? item.querySelector('img').getAttribute('src') : '';
-
-    const originalProduct = imgSrc ? document.querySelector(`.item-in-cart-border img[src="${imgSrc}"]`).closest('.item-in-cart-border') : null;
-  for(let i=0;i<arrayOfAddedItems.length;i++){
-if(imgSrc==arrayOfAddedItems[i].getAttribute('src')){
-counter++;
-}
-  }
-  return counter;//???
-  //lek ymkn ma tmshe l2n msh ktr fehem l ossa 7ota gpt w s2alo eza btzbt hekeayre b gpt 3el2an ma3o ba2ash e7ki hl2 ana bradikn
-}
-*/
-//hmmmmmmm
-
-// function itemCounter(item) {
-//     let counter = 0;
-//     const arrayOfAddedItems = document.getElementsByClassName("img-item-in-cart-border");
-
-// // If no items in cart, return 0
-//     if (arrayOfAddedItems.length <= 0) {
-//         return 0;
-//     }
-
-//     // Get the image source of the item being counted
-//     const imgSrc = item.querySelector('img') ? item.querySelector('img').getAttribute('src') : '';
-
-//     // Loop through the items in the cart and count matches
-//     for (let i = 0; i < arrayOfAddedItems.length; i++) {
-//         const imgElement = arrayOfAddedItems[i].querySelector('img');
-//         if (imgElement && imgElement.getAttribute('src') === imgSrc) {
-//             counter++;
-//         }
-//     }
-// console.log("counter: "+counter);
-//     return counter;  // Return the total count
-// }
-
-// function addToCart(item, item_img, image, item_description, item_name, name, SKU_item, SKU, price_item, price, button_item, addToCart_button) {
-
-//     document.getElementById('addToCartButton').addEventListener('click', function() {
-//         console.log("acti");
-//         itemCounter(clonedImageItem);
-//     });
-
-//             // Select the original item by its id
-//             var originalItem = document.getElementById(item);
-//             // Clone the original item
-//             var clonedItem = originalItem.cloneNode(true);
-
-//             // Select the cloned child elements within the cloned item
-//             var clonedImageItem = clonedItem.querySelector(`#${item_img}`);
-//             var clonedDescriptionItem = clonedItem.querySelector(`#${item_description}`);
-//             var clonedNameItem = clonedItem.querySelector(`#${item_name}`);
-//             var clonedSKU_ITEM = clonedItem.querySelector(`#${SKU_item}`);
-//             var clonedPriceItem = clonedItem.querySelector(`#${price_item}`);
-//             var clonedButtonItem = clonedItem.querySelector(`#${button_item}`);
-//             var clonedName = clonedItem.querySelector(`#${name}`);
-
-//             // Apply the new style to the cloned item and its children
-//             // console.log(clonedItem.classList);
-//             clonedItem.classList.remove('grid-product-container');
-//             clonedItem.classList.add('item-in-cart-border');
-//             // console.log(clonedItem.classList);
-
-//             // console.log(clonedImageItem.classList);
-//             clonedImageItem.classList.remove('product-image-holder');
-//             clonedImageItem.classList.add('img-item-in-cart-border');
-//             // console.log(clonedImageItem.classList);
-
-//             // console.log(clonedDescriptionItem.classList);
-//             clonedDescriptionItem.classList.add('description-item-in-cart-border');
-//             // console.log(clonedDescriptionItem.classList);
-
-//             // console.log(clonedNameItem.classList);
-//             clonedNameItem.classList.remove('product-title-container');
-//             clonedNameItem.classList.add('item-name-cart-container');
-//             // console.log(clonedNameItem.classList);
-
-//             // console.log(clonedSKU_ITEM.classList);
-//             clonedSKU_ITEM.classList.remove('sku-title-container');
-//             clonedSKU_ITEM.classList.add('SKU-cart');
-//             // console.log(clonedSKU_ITEM.classList);
-
-//             // console.log(clonedPriceItem.classList);
-//             clonedPriceItem.classList.remove('price-title-container');
-//             clonedPriceItem.classList.add('price-item-cart');
-//             // console.log(clonedPriceItem.classList);
-
-//             // console.log(clonedButtonItem.classList);
-//             clonedButtonItem.classList.remove('addToCart-button-container');
-//             clonedButtonItem.classList.add('button-cart-container');
-//             // console.log(clonedButtonItem.classList);
-
-//             var button = clonedItem.querySelector(`#${addToCart_button}`);
-//             if (button) {
-//                 button.remove();
-//             }
-
-//             // Create a new button element
-//             var removeButton = document.createElement('button');
-//             removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';  // Set the button text
-//             removeButton.classList.add('remove-button-item-cart');  // Add a class for styling
-//             removeButton.onclick = function() {
-//                 // Add functionality to remove the item from the cart
-//                 clonedItem.remove();
-//             };
-
-//             var editButton = document.createElement('button');
-//             editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';  // Set the button text
-//             editButton.classList.add('edit-button-item-cart');  // Add a class for styling
-//             editButton.onclick = function() {
-//                 // Add functionality to edit the item from the cart
-//             };
-            
-//             var targetDiv = clonedItem.querySelector('.button-cart-container');  // Selects the div with the desired class
-
-//             if (targetDiv) {
-//                 console.log("Target div found:", targetDiv);
-//                 targetDiv.appendChild(editButton);   // Only append if the div exists
-//                 console.log("Delete Button");
-//                 targetDiv.appendChild(removeButton);  // Only append if the div exists
-//             } else {
-//                 console.log("Target div with class 'button-cart-container' not found");
-//             }
-// console.log("here");
-//             // Append the cloned item to the cart
-//             var cart = document.getElementById('cart');
-//             cart.appendChild(clonedItem);
-// // 
-//             clonedNameItem.innerHTML ='<span> × </span>' + clonedName.innerHTML;
-//         // }
-//         // else{
-//             // clonedNameItem.innerHTML = counter + '<span> × </span>' + name;
-//         // }
-            
-// //leh aa awal ta2se msh aam tbayen mb3rf basita btn7al maa tzbitett 7lwru2 khalik la ncuf
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function itemCounter(item) {
-//     let counter = 0;
-//     const arrayOfAddedItems = document.getElementsByClassName("img-item-in-cart-border");
-
-//     // If no items in cart, return 0
-//     if (arrayOfAddedItems.length <= 0) {
-//         return 0;
-//     }
-
-//     // Get the image source of the item being counted
-//     const imgSrc = item.querySelector('img') ? item.querySelector('img').getAttribute('src') : '';
-
-//     // Loop through the items in the cart and count matches
-//     for (let i = 0; i < arrayOfAddedItems.length; i++) {
-//         const imgElement = arrayOfAddedItems[i].querySelector('img');
-//         if (imgElement && imgElement.getAttribute('src') === imgSrc) {
-//             counter++;
-//         }
-//     }
-
-//     console.log("counter: " + counter);
-//     return counter;  // Return the total count
-// }
-
-// function addToCart(item, item_img, image, item_description, item_name, name, SKU_item, SKU, price_item, price, button_item, addToCart_button) {
-//     // Select the original item by its ID
-//     var originalItem = document.getElementById(item);
-
-//     // Clone the original item
-//     var clonedItem = originalItem.cloneNode(true);
-
-//     // Select the cloned child elements within the cloned item
-//     var clonedImageItem = clonedItem.querySelector(`#${item_img}`);
-//     var clonedDescriptionItem = clonedItem.querySelector(`#${item_description}`);
-//     var clonedNameItem = clonedItem.querySelector(`#${item_name}`);
-//     var clonedSKU_ITEM = clonedItem.querySelector(`#${SKU_item}`);
-//     var clonedPriceItem = clonedItem.querySelector(`#${price_item}`);
-//     var clonedButtonItem = clonedItem.querySelector(`#${button_item}`);
-//     var clonedName = clonedItem.querySelector(`#${name}`);
-
-//     // Calculate the counter outside the event listener to ensure accurate counting
-//     let counter = itemCounter(clonedImageItem);
-
-//     // Update the counter and append the number of items added to the cart next to the item's name
-//     clonedNameItem.innerHTML = counter + '<span> × </span>' + clonedName.innerHTML;
-
-//     // Apply the new style to the cloned item and its children
-//     clonedItem.classList.remove('grid-product-container');
-//     clonedItem.classList.add('item-in-cart-border');
-
-//     clonedImageItem.classList.remove('product-image-holder');
-//     clonedImageItem.classList.add('img-item-in-cart-border');
-
-//     clonedDescriptionItem.classList.add('description-item-in-cart-border');
-
-//     clonedNameItem.classList.remove('product-title-container');
-//     clonedNameItem.classList.add('item-name-cart-container');
-
-//     clonedSKU_ITEM.classList.remove('sku-title-container');
-//     clonedSKU_ITEM.classList.add('SKU-cart');
-
-//     clonedPriceItem.classList.remove('price-title-container');
-//     clonedPriceItem.classList.add('price-item-cart');
-
-//     clonedButtonItem.classList.remove('addToCart-button-container');
-//     clonedButtonItem.classList.add('button-cart-container');
-
-//     // Remove the original "Add to Cart" button from the cloned item
-//     var button = clonedItem.querySelector(`#${addToCart_button}`);
-//     if (button) {
-//         button.remove();
-//     }
-
-//     // Create a "Remove" button
-//     var removeButton = document.createElement('button');
-//     removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-//     removeButton.classList.add('remove-button-item-cart');
-//     removeButton.onclick = function () {
-//         // Remove the cloned item from the cart
-//         clonedItem.remove();
-//     };
-
-//     // Create an "Edit" button
-//     var editButton = document.createElement('button');
-//     editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
-//     editButton.classList.add('edit-button-item-cart');
-//     editButton.onclick = function () {
-//         // Placeholder for future editing functionality
-//         alert("Edit functionality coming soon!");  // Temporary functionality
-//     };
-
-//     // Find the button container in the cloned item and append the buttons
-//     var targetDiv = clonedItem.querySelector('.button-cart-container');
-//     if (targetDiv) {
-//         targetDiv.appendChild(editButton);
-//         targetDiv.appendChild(removeButton);
-//     } else {
-//         console.log("Target div with class 'button-cart-container' not found");
-//     }
-
-//     // Append the cloned item to the cart
-//     var cart = document.getElementById('cart');
-//     cart.appendChild(clonedItem);
-
-//     // Update the name with the quantity count (counter)
-//     clonedNameItem.innerHTML = counter + '<span> × </span>' + clonedName.innerHTML;
-
-//     // Keeping the unused parameters for potential future use
-//     // image, SKU, price are placeholders for now
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -678,6 +279,19 @@ counter++;
 
 
 function addToCart(item, item_img, image, item_description, item_name, name, SKU_item, SKU, price_item, price, button_item, addToCart_button) {
+    let totalPrice;
+    
+    let totalQty;
+
+    let isEmpty = document.getElementById("emptyCart");
+    isEmpty.style.display = "none";
+
+    let itemsCart = document.getElementById("cart-items");
+    itemsCart.style.borderBottom = "1px solid grey";
+
+    let cartBottom = document.getElementById("cartBottomInfo");
+    
+
     // Select the original item by its ID
     var originalItem = document.getElementById(item);
 
@@ -710,6 +324,8 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
         // Update the name with the new quantity
         existingNameElement.innerHTML = quantity + '<span> × </span>' + existingNameElement.getAttribute('data-name');
         existingNameElement.setAttribute('data-qty', quantity);  // Store the quantity as a custom data attribute
+
+        totalQty = updateTotalQuantity(1);
 
     } else {
         // If the item is not in the cart, clone and add it
@@ -768,13 +384,22 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
                 clonedItem.remove();
                 console.log("Item removed from the cart.");
             }
+            totalQty = updateTotalQuantity(-1);
+            totalPrice = updateTotalPrice(-priceToNumber(clonedPriceItem.innerText));
+            if(totalQty == 0){
+                isEmpty.style.display = "flex";
+                cartBottom.style.display = "none";
+                itemsCart.style.borderBottom = "none";
+            }
+            document.querySelector("#cartBottomInfo .subtotal-container p").innerText = "Subtotal: " + numberToPrice(totalPrice);
         };
 
         var editButton = document.createElement('button');
         editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
         editButton.classList.add('edit-button-item-cart');
         editButton.onclick = function () {
-            alert("Edit functionality coming soon!");  // Placeholder for future functionality
+            window.location.href='item.html';
+            // alert("Edit functionality coming soon!");  // Placeholder for future functionality
         };
 
         var targetDiv = clonedItem.querySelector('.button-cart-container');
@@ -784,7 +409,7 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
         }
 
         // Append the cloned item to the cart
-        var cart = document.getElementById('cart');
+        var cart = document.getElementById('cart-items');
         cart.appendChild(clonedItem);
 
         // Initialize the name with quantity and set custom data attribute for tracking
@@ -793,12 +418,150 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
         clonedNameItem.setAttribute('data-name', clonedName.innerHTML);  // Store the item name for reuse
 
         console.log("Item added to the cart.");
+
+        totalQty = updateTotalQuantity(1);
     }
+
+    // popup item------------------------------------------------------------ //
+
+    let modal = document.getElementById('myModal');
+    let modalContent = document.getElementById('modalContent');
+    modalContent.classList.remove('open');
+    // // Display the modal
+    // modal.style.display = "flex";
+    // setTimeout(() => {
+    //     modalContent.classList.add('open');
+    // }, 50); 
+
+//     // Get the original item element
+//     var originalItem = document.getElementById(item);
+//     console.log(originalItem);
+// let productName1=document.getElementById("name-1");
+// console.log(productName1);
+//     // Get data from the original item
+//     const imageSrc = originalItem.querySelector(`#${image}`).src;
+//     console.log(imageSrc);
+//     console.log(clonedNameItem);
+    
+//     const productName = clonedNameItem;
+//     console.log(productName);
+//     const productSKU = originalItem.querySelector(`#${SKU}`).innerText.trim();
+//     const productPrice = originalItem.querySelector(`#${price}`).innerText.trim();
+//     console.log(productPrice);  
+
+    console.log("name: " , name);
+    // Get the original item element
+    var originalItem = document.getElementById(item);
+    console.log(originalItem);
+
+    // Get data from the original item
+    const imageSrc = originalItem.querySelector(`#${image}`).src;
+    console.log(imageSrc);
+    console.log(originalItem.querySelector(`#${name}`));
+    const productName = originalItem.querySelector(`#${name}`);
+    if (!productName) {
+        console.error(`Element with ID ${name} not found`);
+    } else {
+        const productName = productName.innerText.trim();
+        console.log('Product Name:', productName);
+    }
+    console.log(productName);
+    const productSKU = originalItem.querySelector(`#${SKU}`).innerText.trim();
+    const productPrice = originalItem.querySelector(`#${price}`).innerText.trim();
+    console.log(productPrice);  
+
+
+    //calculate the total price in the cart
+    totalPrice = updateTotalPrice(priceToNumber(productPrice));
+
+
+    // Set the modal details
+    document.querySelector("#myModal .image-holder img").src = imageSrc;
+    // document.querySelector("#myModal .name-popup span").innerText = (productName.innerText).substring(3);
+    document.querySelector("#myModal .name-popup span").innerText = 'Festool Limited-Edition DOMINO XL DF 700, Accessories, and Tenon Kit 578508'; //temporarly instead of 'productName'
+    document.querySelector("#myModal .SKU--").innerText = productSKU;
+    document.querySelector("#myModal .item-price-popup span").innerText = productPrice;
+    document.querySelector("#myModal .cart-price-total span").innerText = numberToPrice(totalPrice);
+    document.querySelector("#myModal .cart-item-number span").innerText = `Cart subtotal (${totalQty} ${totalQty === 1 ? 'item' : 'items'})`;
+    document.querySelector("#cartBottomInfo .subtotal-container p").innerText = "Subtotal: " + numberToPrice(totalPrice);
+
+    cartBottom.style.display = "flex";
+
+    // Show the modal
+    // modal.style.display = "block";
+    // Display the modal
+    modal.style.display = "flex";
+    setTimeout(() => {
+        modalContent.classList.add('open');
+    }, 50); 
+
+    // Close modal when clicking on "X"
+    const closeBtn = document.querySelector("#myModal .close");
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    const continueShoppingBtn = document.querySelector("#myModal .continue-shopping-button");
+    continueShoppingBtn.onclick = function(){
+        modal.style.display = "none";
+    };
+
+    const checkoutBtn = document.querySelector("#myModal .checkout-button");
+    checkoutBtn.onclick = function(){
+        alert("Checkout functionality coming soon!");
+    }
+
+    // Close modal when clicking outside the modal content
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+}
+
+function updateTotalPrice(amount) {
+    // Select the cart element
+    let cart = document.getElementById('cart-items');
+
+    // Check if the total price data attribute exists, otherwise initialize it
+    let currentTotal = parseFloat(cart.getAttribute('data-total-price')) || 0;
+
+    // Update the total price
+    currentTotal += amount;
+
+    // Set the updated value in the data attribute
+    cart.setAttribute('data-total-price', currentTotal);
+
+    // Log the updated total price
+    console.log("Updated total price:", currentTotal);
+
+    return currentTotal;
+}
+
+function updateTotalQuantity(amount) {
+    let cart = document.getElementById('cart-items');
+    let currentTotalQty = parseInt(cart.getAttribute('data-total-qty')) || 0;
+    currentTotalQty += amount;
+    cart.setAttribute('data-total-qty', currentTotalQty);
+    console.log("Updated total quantity:", currentTotalQty);
+    return currentTotalQty;
 }
 
 
-//scrollButton
+function priceToNumber(price){
+    const priceString = price.replace(/[$,]/g, '');
+    const priceNumber = parseFloat(priceString);
+    return priceNumber;
+}
 
+function numberToPrice(price){
+    return (price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+}
+
+
+
+//Scroll Button Shop By Beand
 function scrollButton(sectionID){
     const target = document.getElementById(sectionID);
     const offset = 300;
@@ -806,5 +569,26 @@ function scrollButton(sectionID){
                 top: target.offsetTop - offset,
                 behavior: 'smooth'
             });
-    //document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth' });
+}
+
+function changeQuantity(amount) {
+    const quantityInput = document.getElementById('quantity');
+    let currentValue = parseInt(quantityInput.value, 10);
+    currentValue = isNaN(currentValue) ? 0 : currentValue;
+    quantityInput.value = Math.max(1, currentValue + amount); // Minimum value is set to 1
+  }
+
+
+
+function changeIMG(img){
+
+    let images = document.querySelectorAll('#all-img-product img');
+
+    images.forEach(function(image) {
+        image.style.border = 'none';
+    });
+    let IMG = document.getElementById(img);
+    let IMGsource = IMG.src;
+    document.querySelector("#main-page-product .img-item-container img").src = IMGsource;
+    IMG.style.border = "1px solid #B8121A";
 }
