@@ -168,19 +168,62 @@ i {
 
 .marketing{
   width: 100%;
-  height: 450px;
-  border: 2px solid #1A1A1A;
+  height: auto;
   justify-content: center; 
   display: flex;
 }
 
 .sub-marketing{
-  height: 450px;
+  height: auto;
   width: 75%;
   display: flex;
-  justify-content: space-between;
-  border: 2px solid blue;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0;
 }
+
+.kevin{
+  object-fit: cover;
+  width: 500px;
+  height: auto;
+}
+.kevin img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.slick-container2 {
+  background-color: whitesmoke;
+  /* margin-top: 50px; */
+  width: 600px; /* Full width */
+  height: 425px; /* Fixed height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.slick-container2 img {
+  z-index: 100;
+  width: 500px; /* Responsive width */
+  height: 425px; /* Fixed height */
+}
+
+.image-slider1 {
+  width: 100%; /* Full width */
+  height: 100%; /* Set slider height to 100% of the container */
+}
+
+.image-slider1 div {
+  width: 100%; /* Full width */
+  height: 100%; /* Each slide should take full height */
+}
+
+.image-slider1 img {
+  width: 95%; /* Responsive width */
+  height: 100%; /* Fill height */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+
 
 /*.free-delivery{
   height: 130px;
