@@ -175,17 +175,25 @@ i {
 
 .sub-marketing{
   height: auto;
-  width: 75%;
+  width: 1400px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 30px 0;
+  flex-wrap: wrap;
 }
 
+@media screen and (max-width:1400px) {
+    .sub-marketing{
+      width: 95% !important;
+      height: auto !important;
+    }
+}
 .kevin{
   object-fit: cover;
-  width: 500px;
+  width: 450px;
   height: auto;
+  margin: 20px;
 }
 .kevin img{
   width: 100%;
@@ -196,9 +204,10 @@ i {
 .slick-container2 {
   background-color: whitesmoke;
   /* margin-top: 50px; */
-  width: 600px; /* Full width */
-  height: 425px; /* Fixed height */
+  width: 800px; /* Full width */
+  height: 400px; /* Fixed height */
   overflow: hidden; /* Prevent overflow */
+  margin: 20px;
 }
 
 .slick-container2 img {
@@ -218,8 +227,10 @@ i {
 }
 
 .image-slider1 img {
-  width: 95%; /* Responsive width */
+  width: 100%; /* Responsive width */
   height: 100%; /* Fill height */
+  padding: 10px;
+  box-sizing: border-box;
   object-fit: cover; /* Maintain aspect ratio */
 }
 
