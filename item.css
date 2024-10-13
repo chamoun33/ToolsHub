@@ -495,6 +495,13 @@
     width: 40px;
 }
 
+.spec-info-container{
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none;    /* For Firefox */
+    -ms-user-select: none;     /* For IE/Edge */
+}
+
 /* .specs-td1{
     background-color: #eeeeee;
 }
@@ -502,7 +509,7 @@
     background-color: #e0e0e0;
 } */
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: #e7c4c6;
 }
 tr:nth-child(even):hover{
@@ -513,7 +520,7 @@ tr:nth-child(odd) {
 }
 tr:nth-child(odd):hover{
     background-color: #e7c4c6;
-}
+} */
 
 /* .specs-td1:hover{
     background-color: #e0e0e0;
@@ -521,3 +528,41 @@ tr:nth-child(odd):hover{
 .specs-td2:hover{
     background-color: #eeeeee;
 } */
+
+table {
+   
+    border-collapse: collapse;
+    background-color: white;
+  }
+
+  td {
+    padding: 8px;
+    color: #3b4248;
+    width: 50%;
+    font-weight: normal;
+    border-bottom: 1px solid #ddd;
+  }
+  tr{
+    width: 100%;
+  }
+
+  tr:nth-child(even) {
+    background-color: white;
+    color: black;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f7f7f7;
+    color: #333;
+  }
+
+  tr:nth-child(even):hover, 
+  tr:nth-child(odd):hover {
+    background-color: #e2e2e2;
+    transition: background-color 0.3s ease;
+  }
+
+  .mini-header {
+    color: black;
+    font-weight: 500;
+  }
