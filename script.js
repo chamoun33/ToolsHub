@@ -312,6 +312,8 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
         }
     }
 
+    var nameProduct = originalItem.querySelector(`#${name}`);
+
     // If item is already in the cart, just update the quantity
     if (itemAlreadyInCart) {
         console.log("Item is already in the cart, updating quantity");
@@ -397,10 +399,37 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
         var editButton = document.createElement('button');
         editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
         editButton.classList.add('edit-button-item-cart');
+
+        var ITEM = {
+            id: item,
+            name: originalItem.querySelector(`#${name}`).innerText.trim(),
+            price: originalItem.querySelector(`#${price}`).innerText.trim(),
+            SKU: originalItem.querySelector(`#${SKU}`).innerText.trim(),
+            image: originalItem.querySelector(`#${image}`).src
+        };
+
+        console.log('Method: ' + ITEM.name); 
+        console.log('Method: ' + ITEM.price);
+        console.log('Method: ' + ITEM.SKU);
+        console.log('Method: ' + ITEM.image);       
+
+
         editButton.onclick = function () {
-            window.location.href='item.html';
+
+            // Construct URL with query parameters
+            const url = `item.html?id=${ITEM.id}&name=${encodeURIComponent(ITEM.name)}&price=${ITEM.price}&SKU=${ITEM.SKU}&image=${encodeURIComponent(ITEM.image)}`;
+
+            // window.location.href='item.html';
+            window.location.href = url;
+
+
+            // openItemPage(item, image, name, price, SKU);
+
+
+
             // alert("Edit functionality coming soon!");  // Placeholder for future functionality
         };
+        document.body.appendChild(editButton);
 
         var targetDiv = clonedItem.querySelector('.button-cart-container');
         if (targetDiv) {
@@ -477,13 +506,22 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
 
     // Set the modal details
     document.querySelector("#myModal .image-holder img").src = imageSrc;
-    // document.querySelector("#myModal .name-popup span").innerText = (productName.innerText).substring(3);
-    document.querySelector("#myModal .name-popup span").innerText = 'Festool Limited-Edition DOMINO XL DF 700, Accessories, and Tenon Kit 578508'; //temporarly instead of 'productName'
+    // document.querySelector("#myModal .name-popup span").innerText = (nameProduct.innerText);
+    document.querySelectorAll("#myModal .name-popup span").innerText = 'Festool Limited-Edition DOMINO XL DF 700, Accessories, and Tenon Kit 578508'; //temporarly instead of 'productName'
     document.querySelector("#myModal .SKU--").innerText = productSKU;
     document.querySelector("#myModal .item-price-popup span").innerText = productPrice;
     document.querySelector("#myModal .cart-price-total span").innerText = numberToPrice(totalPrice);
     document.querySelector("#myModal .cart-item-number span").innerText = `Cart subtotal (${totalQty} ${totalQty === 1 ? 'item' : 'items'})`;
     document.querySelector("#cartBottomInfo .subtotal-container p").innerText = "Subtotal: " + numberToPrice(totalPrice);
+
+
+    // item page
+
+    document.querySelectorAll("#itemPage .img-item-container img").src = imageSrc;
+    document.querySelectorAll("#itemPage .item-name-container span").innerText = 'Festool Limited-Edition DOMINO XL DF 700, Accessories, and Tenon Kit 578508';
+    document.querySelectorAll("#itemPage .price-container span").innerText = productPrice;
+    document.querySelectorAll("#productSKU").innerText = "SKU: " + productSKU;
+    // item page
 
     cartBottom.style.display = "flex";
 
@@ -519,6 +557,33 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
     };
 
 }
+
+
+
+
+    //item HTML script on load
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+
+      console.log('ID:', params.get('id'));
+      console.log('Name:', params.get('name'));
+      console.log('Price:', params.get('price'));
+      console.log('SKU:', params.get('SKU'));
+      console.log('Image:', params.get('image'));
+
+      // Populate form fields with item data
+    //   document.getElementById('itemPage').innerText = params.get('id');
+      document.getElementById('itemName').innerText = params.get('name');
+      document.getElementById('itemPrice').innerText = params.get('price');
+      document.getElementById('itemSKU').innerText = params.get('SKU');
+      document.getElementById('img-item-page').src = params.get('image');
+    });
+
+    
+
+
+
+  
 
 function updateTotalPrice(amount) {
     // Select the cart element
@@ -592,3 +657,65 @@ function changeIMG(img){
     document.querySelector("#main-page-product .img-item-container img").src = IMGsource;
     IMG.style.border = "1px solid #B8121A";
 }
+
+// function openItemPage(item, image, name, price, SKU){
+//     let ITEMdescription = document.getElementById('itemPageDescription');
+//     let ITEMimages = document.getElementById('itemPageImages');
+//     var originalItem = document.getElementById(item);
+//     console.log(item);
+//     console.log(originalItem);
+//     console.log(image);
+//     console.log(price);
+//     console.log(SKU);
+
+
+
+//     const imageSrc = originalItem.querySelector(image).src;
+//     console.log(imageSrc);
+//     const productName = originalItem.querySelector(`#${name}`);
+//     if (!productName) {
+//         console.error(`Element with ID ${name} not found`);
+//     } else {
+//         const productName = productName.innerText.trim();
+//         console.log('Product Name:', productName);
+//     }
+//     const productSKU = originalItem.querySelector(`#${SKU}`).innerText.trim();
+//     const productPrice = originalItem.querySelector(`#${price}`).innerText.trim();
+//     console.log(productPrice);  
+
+
+
+
+//     document.querySelector("#itemPageImages .img-item-container img").src = imageSrc;
+//     document.querySelector("#itemPageDescription .item-name-container span").innerText = productName;
+//     document.querySelector("#itemPageDescription .price-container span").innerText = productPrice;
+//     document.querySelector("#productSKU").innerText = "SKU: " + productSKU;
+
+//     window.location.href='item.html';
+// }
+
+// function openItemPage(item, image, name, price, SKU) {
+//     // Select the original item by its ID
+//     const originalITEM = document.getElementById(item);
+//     if (!originalITEM) {
+//         console.error(`Item with ID ${item} not found.`);
+//         return;
+//     }
+//     console.log(imageSrc);
+//     imageSrc = "http://127.0.0.1:5500/images/ShopByToolsType/product-list/festool.jpeg";
+//     // Extract product details
+//     const productPrice = originalITEM.querySelector(`#${price}`).innerText.trim();
+//     const productSKU = originalITEM.querySelector(`#${SKU}`).innerText.trim();
+
+//     // Set default product name if not passed as parameter
+//     const productName = name || "Festool Limited-Edition DOMINO DF 500, Accessories, and Tenon Kit 578509";
+
+//     // Update the item page with extracted or passed values
+//     document.querySelector("#img-item-page").src = imageSrc;
+//     document.querySelector("#itemPageDescription .item-name-container span").innerText = productName;
+//     document.querySelector("#itemPageDescription .price-container span").innerText = productPrice;
+//     document.querySelector("#productSKU").innerText = `SKU: ${productSKU}`;
+
+//     // Navigate to the item page
+//     window.location.href = 'item.html';
+// }
