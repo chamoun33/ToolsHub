@@ -574,6 +574,7 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
       // Populate form fields with item data
     //   document.getElementById('itemPage').innerText = params.get('id');
       document.getElementById('itemName').innerText = params.get('name');
+      document.getElementById('topItemName').innerText = params.get('name');
       document.getElementById('itemPrice').innerText = params.get('price');
       document.getElementById('itemSKU').innerText = params.get('SKU');
       document.getElementById('img-item-page').src = params.get('image');
