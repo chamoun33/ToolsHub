@@ -417,11 +417,20 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
         editButton.onclick = function () {
 
             // Construct URL with query parameters
-            const url = `item.html?id=${ITEM.id}&name=${encodeURIComponent(ITEM.name)}&price=${ITEM.price}&SKU=${ITEM.SKU}&image=${encodeURIComponent(ITEM.image)}`;
+            // const url = `item.html?id=${ITEM.id}&name=${encodeURIComponent(ITEM.name)}&price=${ITEM.price}&SKU=${ITEM.SKU}&image=${encodeURIComponent(ITEM.image)}`;
+            // window.location.href = url;
 
-            // window.location.href='item.html';
-            window.location.href = url;
+            const itemData = {
+                id: ITEM.id,
+                name: ITEM.name,
+                price: ITEM.price,
+                SKU: ITEM.SKU,
+                image: ITEM.image
+            };
 
+            window.location.href='item.html';
+            
+            sessionStorage.setItem('selectedItem', JSON.stringify(itemData));
 
             // openItemPage(item, image, name, price, SKU);
 
@@ -562,23 +571,42 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
 
 
     //item HTML script on load
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   const params = new URLSearchParams(window.location.search);
+
+    //   console.log('ID:', params.get('id'));
+    //   console.log('Name:', params.get('name'));
+    //   console.log('Price:', params.get('price'));
+    //   console.log('SKU:', params.get('SKU'));
+    //   console.log('Image:', params.get('image'));
+
+    //   // Populate form fields with item data
+    // //   document.getElementById('itemPage').innerText = params.get('id');
+    //   document.getElementById('itemName').innerText = params.get('name');
+    //   document.getElementById('topItemName').innerText = params.get('name');
+    //   document.getElementById('itemPrice').innerText = params.get('price');
+    //   document.getElementById('itemSKU').innerText = params.get('SKU');
+    //   document.getElementById('img-item-page').src = params.get('image');
+    // });
+
+
+
+
     document.addEventListener('DOMContentLoaded', function () {
-      const params = new URLSearchParams(window.location.search);
-
-      console.log('ID:', params.get('id'));
-      console.log('Name:', params.get('name'));
-      console.log('Price:', params.get('price'));
-      console.log('SKU:', params.get('SKU'));
-      console.log('Image:', params.get('image'));
-
-      // Populate form fields with item data
-    //   document.getElementById('itemPage').innerText = params.get('id');
-      document.getElementById('itemName').innerText = params.get('name');
-      document.getElementById('topItemName').innerText = params.get('name');
-      document.getElementById('itemPrice').innerText = params.get('price');
-      document.getElementById('itemSKU').innerText = params.get('SKU');
-      document.getElementById('img-item-page').src = params.get('image');
-    });
+        const itemData = JSON.parse(sessionStorage.getItem('selectedItem'));
+      
+        if (itemData) {
+          // Populate form fields with item data
+        //   document.getElementById('itemPage').innerText = itemData.id;
+          document.getElementById('topItemName').innerText = itemData.name;
+          document.getElementById('itemPrice').innerText = itemData.price;
+          document.getElementById('itemSKU').innerText = itemData.SKU;
+          document.getElementById('img-item-page').src = itemData.image;
+        } else {
+          console.error('No item data found in sessionStorage.');
+        }
+      });
+      
 
     
 
