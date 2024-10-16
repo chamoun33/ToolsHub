@@ -123,6 +123,30 @@
     transition: all 0.2s ease-in-out;
     background-color: white;
 }
+@media screen and (max-width: 500px) {
+  .tool-type-item-div{
+    height: 175px !important;
+    width: 150px !important;
+  }
+  .tool-type-item-image{
+    height: 150px !important;
+    width: 150px !important;
+  }
+
+  .tool-type-item-image img{
+    height: 150px !important;
+    width: 150px !important;
+  }
+
+  .tool-type-item-name{
+    height: 25px !important;
+    width: 150px !important;
+  }
+
+  .tool-type-item-name p{
+    font-size: 14px !important;
+}
+}
 
 .tool-type-item-div:hover{
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -134,16 +158,21 @@
     height: 180px;
     object-fit: cover;
 }
+.tool-type-item-image img{
+  height: 180px ;
+  width: 180px ;
+}
 
 .tool-type-item-name{
     height: 30px;
-    width: 176px;
+    width: 180px;
     background-color: #b8121a;
     padding: 2px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .tool-type-item-name p{
