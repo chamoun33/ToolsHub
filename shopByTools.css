@@ -574,7 +574,6 @@
   }
   .grid-main-container{
     grid-template-columns: repeat(2, 1fr); /* become 2 columns */
-
   }
 }
 @media (max-width: 880px) {
