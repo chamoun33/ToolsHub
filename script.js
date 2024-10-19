@@ -25,11 +25,15 @@ function openNav() {
     if(mediaQuery <= 700){
         Width = 100;
         document.getElementById("mySidenav").style.width = Width + "%";
+        document.getElementById("cart-items").style.marginLeft = "0";
+        document.getElementById('cart-buttons').style.marginTop = "0";
         Width = 0;
     }
     else{
         Width = 450;
         document.getElementById("mySidenav").style.width = Width + "px";
+        document.getElementById("cart-items").style.marginLeft = "0";
+        document.getElementById('cart-buttons').style.marginTop = "0";
         Width = 0;
     }
     document.body.classList.add('no-scroll');
@@ -41,7 +45,8 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.body.classList.remove('no-scroll');
     document.getElementById("overlay").classList.remove('active');
-
+    document.getElementById('cart-items').style.marginLeft = '700px';
+    document.getElementById('cart-buttons').style.marginTop = "600px";
 }
 
 
@@ -748,3 +753,23 @@ function changeIMG(img){
 //     // Navigate to the item page
 //     window.location.href = 'item.html';
 // }
+
+
+
+
+
+
+// Load the JSON file and populate the dropdown
+fetch('lb.json')
+  .then(response => response.json())
+  .then(data => {
+    const dropdown = document.getElementById('cities');
+
+    data.forEach(cityInfo => {
+      const option = document.createElement('option');
+      option.value = cityInfo.city;
+      option.textContent = `${cityInfo.city} (${cityInfo.admin_name})`;
+      dropdown.appendChild(option);
+    });
+  })
+  .catch(error => console.error('Error loading JSON:', error));
