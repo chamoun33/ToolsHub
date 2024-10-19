@@ -466,6 +466,8 @@ body::-webkit-scrollbar {
   display: block;
   overflow-x: hidden;
   overflow: hidden;
+  margin-left: 700px;
+  transition: margin-left 1s ease;
 }
 
 
@@ -603,7 +605,10 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
   border-radius: 10px;
   transition: all 0.1s ease-in-out;
+  margin-top: 600px;
+  transition: margin-top 1s ease;
 }
+
 @media screen and (max-width: 900px) {
   .button-container-offer{
     background-color: #e6e6e6;
