@@ -152,9 +152,16 @@
     color: #131313;
 }
 
+.delivery-tax-main-container{
+    width: 100%;
+    height: auto;
+}
+
 .delivery-tax-info-container{
     width: 100%;
     height: auto;
+    margin-bottom: 16px;
+    border-bottom: 1.5px solid #72777e;
 }
 
 .estimate-delivery-and-tax-title{
@@ -285,14 +292,6 @@
     margin: 20px 0 0;
 }
 
-.Delivery-container{
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-    font-weight: 600;
-    color: #131313;
-}
-
 
 /*===================================================*/
 .checkbox {
@@ -346,10 +345,41 @@
   /***********************************************************/
 
 
+.Delivery-container{
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    font-weight: 600;
+    color: #131313;
+}
 .delivery-txt{
     color: #374151;
     font-size: 16px;
     font-weight: 400;
+    margin-left: 15px;
+}
+
+.delivery-check-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delivery-check{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery-check-amount{
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    font-weight: 400;
+    color: #131313;
 }
 
 
@@ -364,4 +394,46 @@
     color: #374151;
     font-size: 16px;
     font-weight: 400;
+    margin-left: 15px;
+}
+
+.pickUp-check-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pickUp-check{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pickUp-check-amount{
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    font-weight: 400;
+    color: #131313;
+}
+
+.checkout-button{
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    text-align: center;
+    border: 2.5px solid #000;
+    background-color: #b8121a;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.checkout-button:hover{
+    background-color: #1A1A1A;
 }
