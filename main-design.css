@@ -467,7 +467,7 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
   overflow: hidden;
   margin-left: 700px;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.6s ease;
 }
 
 
@@ -606,7 +606,7 @@ body::-webkit-scrollbar {
   border-radius: 10px;
   transition: all 0.1s ease-in-out;
   margin-top: 600px;
-  transition: margin-top 0.3s ease;
+  transition: margin-top 0.6s ease;
 }
 
 @media screen and (max-width: 900px) {
