@@ -327,108 +327,133 @@
                         <span>$1,499.00</span>
                     </div>
                 </div>
+                  <form class="delivery-tax-main-container">
+                    <div class="delivery-tax-info-container">
+                        <div class="estimate-delivery-and-tax-title">
+                            <span>Estimate Delivery and Tax</span>
 
-                <div class="delivery-tax-info-container">
-                    <div class="estimate-delivery-and-tax-title">
-                        <span>Estimate Delivery and Tax</span>
+                            <!-- <svg height="16px" width="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                              viewBox="0 0 185.344 185.344" xml:space="preserve">
+                                <g>
+                                  <g>
+                                <path style="fill:#010002;" d="M92.672,144.373c-2.752,0-5.493-1.044-7.593-3.138L3.145,59.301c-4.194-4.199-4.194-10.992,0-15.18
+                                    c4.194-4.199,10.987-4.199,15.18,0l74.347,74.341l74.347-74.341c4.194-4.199,10.987-4.199,15.18,0
+                                    c4.194,4.194,4.194,10.981,0,15.18l-81.939,81.934C98.166,143.329,95.419,144.373,92.672,144.373z"/>
+                                  </g>
+                                </g>
+                            </svg> -->
+                        </div>
 
-                        <svg height="16px" width="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	                         viewBox="0 0 185.344 185.344" xml:space="preserve">
-                            <g>
-	                            <g>
-		                        <path style="fill:#010002;" d="M92.672,144.373c-2.752,0-5.493-1.044-7.593-3.138L3.145,59.301c-4.194-4.199-4.194-10.992,0-15.18
-                                c4.194-4.199,10.987-4.199,15.18,0l74.347,74.341l74.347-74.341c4.194-4.199,10.987-4.199,15.18,0
-                                c4.194,4.194,4.194,10.981,0,15.18l-81.939,81.934C98.166,143.329,95.419,144.373,92.672,144.373z"/>
-	                            </g>
-                            </g>
-                        </svg>
-                    </div>
+                        <div class="main-container-info">
+                            <div class="box-info">
+                                <p class="deliveryEstimate-title">Enter your destination to get a shipping estimate.</p>
+                                
+                                <div for="city" class="city-container">City</div>
+                                <select id="cities" class="select-cities">
+                                    <option value="" disabled selected>Select Your City</option>
+                                </select>
 
-                    <div class="main-container-info">
-                        <div class="box-info">
-                            <p class="deliveryEstimate-title">Enter your destination to get a shipping estimate.</p>
-                            
-                            
+                                <div class="governorate-container">Governorate</div>
+                                <select id="governorates" class="select-governorates">
+                                    <option value="" disabled selected>Select Your Governorate</option>
+                                    <option value="gorv.1">Akkar</option>
+                                    <option value="gorv.2">North Lebanon</option>
+                                    <option value="gorv.3">Baalbek-Hermel</option>
+                                    <option value="gorv.4">Beirut</option>
+                                    <option value="gorv.5">Mount Lebanon</option>
+                                    <option value="gorv.6">Beqaa</option>
+                                    <option value="gorv.7">South Lebanon</option>
+                                    <option value="gorv.8">Nabatiyeh</option>
+                                </select>
 
-                            <div class="governorate-container">Governorate</div>
-                            <select id="governorates" class="select-governorates">
-                                <option value="" disabled selected>Select Your Governorate</option>
-                                <option value="gorv.1">Akkar</option>
-                                <option value="gorv.2">North Lebanon</option>
-                                <option value="gorv.3">Baalbek-Hermel</option>
-                                <option value="gorv.4">Beirut</option>
-                                <option value="gorv.5">Mount Lebanon</option>
-                                <option value="gorv.6">Beqaa</option>
-                                <option value="gorv.7">South Lebanon</option>
-                                <option value="gorv.8">Nabatiyeh</option>
-                            </select>
-
-                            <div class="district-container">District</div>
-                            <select id="districts" class="select-districts">
-                                <option value="" disabled selected>Select Your District</option>
-                                <option value="dist.1">Akkar</option>
-                                <option value="dist.2">Minieh-Dannieh</option>
-                                <option value="dist.3">Tripoli</option>
-                                <option value="dist.4">Zgharta</option>
-                                <option value="dist.5">Koura</option>
-                                <option value="dist.6">Bsharre</option>
-                                <option value="dist.7">Batroun</option>
-                                <option value="dist.8">Hermel</option>
-                                <option value="dist.9">Baalbek</option>
-                                <option value="dist.10">Beirut</option>
-                                <option value="dist.11">Byblos (Jbeil)</option>
-                                <option value="dist.12">Keserwan</option>
-                                <option value="dist.13">Matn</option>
-                                <option value="dist.14">Baabda</option>
-                                <option value="dist.15">Aley</option>
-                                <option value="dist.16">Chouf</option>
-                                <option value="dist.17">Zahleh</option>
-                                <option value="dist.18">Western Beqaa</option>
-                                <option value="dist.19">Rachaya</option>
-                                <option value="dist.20">Sidon</option>
-                                <option value="dist.21">Jezzine</option>
-                                <option value="dist.22">Tyre</option>
-                                <option value="dist.23">Nabatiyeh</option>
-                                <option value="dist.24">Hasbaya</option>
-                                <option value="dist.25">Marjaayoun</option>
-                                <option value="dist.26">Bint Jbeil</option>
-                            </select>   
-
-
-			    <div for="city" class="city-container">City</div>
-                            <select id="cities" class="select-cities">
-                                <option value="" disabled selected>Select Your City</option>
-			    </select>
+                                <div class="district-container">District</div>
+                                <select id="districts" class="select-districts">
+                                    <option value="" disabled selected>Select Your District</option>
+                                    <option value="dist.1">Akkar</option>
+                                    <option value="dist.2">Minieh-Dannieh</option>
+                                    <option value="dist.3">Tripoli</option>
+                                    <option value="dist.4">Zgharta</option>
+                                    <option value="dist.5">Koura</option>
+                                    <option value="dist.6">Bsharre</option>
+                                    <option value="dist.7">Batroun</option>
+                                    <option value="dist.8">Hermel</option>
+                                    <option value="dist.9">Baalbek</option>
+                                    <option value="dist.10">Beirut</option>
+                                    <option value="dist.11">Byblos (Jbeil)</option>
+                                    <option value="dist.12">Keserwan</option>
+                                    <option value="dist.13">Matn</option>
+                                    <option value="dist.14">Baabda</option>
+                                    <option value="dist.15">Aley</option>
+                                    <option value="dist.16">Chouf</option>
+                                    <option value="dist.17">Zahleh</option>
+                                    <option value="dist.18">Western Beqaa</option>
+                                    <option value="dist.19">Rachaya</option>
+                                    <option value="dist.20">Sidon</option>
+                                    <option value="dist.21">Jezzine</option>
+                                    <option value="dist.22">Tyre</option>
+                                    <option value="dist.23">Nabatiyeh</option>
+                                    <option value="dist.24">Hasbaya</option>
+                                    <option value="dist.25">Marjaayoun</option>
+                                    <option value="dist.26">Bint Jbeil</option>
+                                </select>   
 
 
 
-                            <div class="receive-product-method-container">
-                                <div class="Delivery-container">
-                                    <p style="margin-bottom: 5px;">Delivery</p>
-                                    
-                                    <label class="checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="delivery-txt">Delivery</span>
-                                      
-                                </div>
+                                <div class="receive-product-method-container">
+                                    <div class="Delivery-container">
+                                        <p style="margin-bottom: 5px;">Delivery</p>
+                                        
 
-                                <div class="pickUp-container">
-                                    <p style="margin-bottom: 5px;">In-store Pickup</p>
-                                    
-                                    <label class="checkbox">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <span class="pickUp-txt">Haret-Sakher | Warehouse</span>
-                                      
+                                        <div class="delivery-check-container">
+                                          <div class="delivery-check">
+
+                                            <label class="checkbox">
+                                              <input type="checkbox">
+                                              <span class="checkmark"></span>
+                                            </label>
+
+                                            <span class="delivery-txt">Delivery</span>
+                                            
+                                          </div>  
+
+                                          <div class="delivery-check-amount">
+                                            <span>+ $0.00</span>
+                                          </div>
+
+                                        </div>
+                                        <!-- <span class="delivery-txt">Delivery</span> -->
+                                          
+                                    </div>
+
+                                    <div class="pickUp-container">
+                                        <p style="margin-bottom: 5px;">In-store Pickup</p>
+                                        
+                                        <div class="pickUp-check-container">
+                                          <div class="pickUp-check">
+                                            <label class="checkbox">
+                                              <input type="checkbox">
+                                              <span class="checkmark"></span>
+                                            </label>
+
+                                            <span class="pickUp-txt">Haret-Sakher | Warehouse</span>
+                                            
+                                          </div>  
+
+                                          <div class="pickUp-check-amount">
+                                            <span>+ $0.00</span>
+                                          </div>
+
+                                        </div>
+                                          
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+
+                <button class="checkout-button" type="submit">Proceed To Checkout</button>
+              </form>
 
 
             </div>
