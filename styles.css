@@ -189,17 +189,6 @@ i {
       height: auto !important;
     }
 }
-@media screen and (max-width: 500px){
-    .slick-container2{
-      width: 100% !important;
-    }
-    .kevin{
-      width: 100% !important;
-    }
-    .slick-container2 img{
-      width: 95% !important;
-    }
-}
 .kevin{
   object-fit: cover;
   width: 450px;
@@ -245,6 +234,19 @@ i {
   object-fit: cover; /* Maintain aspect ratio */
 }
 
+@media screen and (max-width: 600px) {
+  .slick-container2{
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .slick-container2 img{
+    width: 100% !important;
+  }
+  .sub-marketing{
+    width: 100% !important;
+  }
+
+}
 
 
 /*.free-delivery{
