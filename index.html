@@ -1,962 +1,1217 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tools-Hub</title>
-  <link rel="icon" href="images/title-icon.png" type="image/png">
-  
-  <script>
-    function createAccount(){
-      window.location.href = 'create_account.html';
-    }
-
-    function seeMoreBrand(){
-      window.location.href = 'shopByBrand.html';
-    }
-  </script>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="main-design.css">
-  <link rel="stylesheet" href="drop-menu.css">
-  <link rel="stylesheet" href="sideDropdown.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
-  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-</head>
-<body> 
-    <header>
-  <div class="top-fixed-div" id="topFixedHeader">
-
-    <div class = "left"><span class="time">M-F 8:00 A.M. - 6:00 P.M.</span> <span class="city">| Haret-Sakher |</span><a href ="" class="customer-service">Customer Service</a></div>
-    <div class = "right"> 
-        <div class="logo-header">
-            <a href="https://www.instagram.com/" target="_blank" id="instagram"><i class="fa-brands fa-instagram fa-1.5x" ></i></a>
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-1.5x"></i></a>
-            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter fa-1.5x"></i></a>
-            <a href="tel:+96176132529" target="_blank" class="phone"><i class="fa-solid fa-phone fa-1.5x"></i></a>
-        </div>
-
-
-        <span class="tel">Tel: +961 81 222 444</span>
-      </div>
-        <!--        <b style="padding-right: 20px ; font-weight: 580;"><i class="fa-solid fa-phone"></i> &nbsp: +961 81 222 444</b></div> -->
-  </div>
-  </header>
-
-  <div class="main-top-container">
-    <div class="main-header" id="mainHeader">
-        <div class="side-dropdown-menu">
-          <button class="bar-button" onclick="openSideNav()"><i class="fa-solid fa-bars fa-2x"></i></button>
-        </div>
-
-        <div class="logo-container">
-          <a href="index.html"> <img src="images/GMK-Logo.png" class="enterprise-logo" alt="GMK_logo" id="logo"> </a>
-        </div>
-        <form action="/search" method="get" class="main-search-container">
-          <label for="search" class="search-bar"></label>
-          <input type="text" id="search" name="search" class="search-input" placeholder="Search entire store here...">
-          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
-        </form>
-      <div class="myProfile-myCart-container">
-        <button class="create-account" onclick="createAccount()" id="createAccountButton">My Profile  &nbsp &nbsp<i class="fa-solid fa-user"></i></button>
-
-        
-      
-        <button class="my-cart" onclick="openNav()" id="myCartButtonTop"> My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i></button>
-        <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-        <div id="main">
-        </div>
-        
-          
-      </div>
-    </div>
-  </div>
-
-
-  
-  <div id="mySidenav" class="sidenav">
-    <header class="top-my-cart">
-      <p>My Cart</p>
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    </header>
-    
-    <div class="main-items-container" id="cart-items">
-      <div class="empty-cart-container" id="emptyCart">
-        <span>Cart is empty</span>
-      </div>
-    </div>
-  </div>
-
-
-
-    <form action="/search" method="get" class="mediaQuery-searchBar">
-      <label for="search" class="search-bar"></label>
-      <input type="text" id="search" name="search" class="search-input-MQ" placeholder="Search entire store here...">
-      <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
-    </form>
-
-
-    <div id="overlay" class="overlay" onclick="closeNav()"></div>
-  
-  <!--sidenav-->
-
-
-
-
-    <div id="myBarMenu" class="sideNav"> 
-      <div class="main-container" id="mainContainer">
-        <header class="top-side-drop-down">
-          <p>Navigate Through Our Sections</p>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
-        </header>
-
-      <div class="option-container">
-        <div class="option-name-container">
-          <div class="name-chevron-container" id="SBBoption">
-
-            <div class="name-container">
-              <span><a href="shopByBrand.html">Shop By Brand</a></span>
-            </div>
-
-            <div class="chevron-container">
-              <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBBlist', 'SBBchevron', 'SBBoption')">
-                <i class="fa-solid fa-chevron-down fa-0.5" id="SBBchevron"></i>
-              </div>    
-            </div>
-
-          </div>
-
-          <div class="option-content-container" id="SBBlist">
-            <li><a>Bosh</a></li> 
-            <li><a>Festool</a></li> 
-            <li><a>Ingco</a></li>
-            <li><a>Jet</a></li>
-            <li><a>Metabo</a></li>
-            <li><a>Mirka</a></li>
-            <li><a>Makita</a></li>
-            <li><a>Powermatic</a></li>
-            <li><a>Total</a></li>
-          </div>
-        </div>
-
-          <div class="option-name-container">
-            <div class="name-chevron-container">
-
-              <div class="name-container">
-                <span><a href="#">Sales & Specials</a></span>
-              </div>
-
-              <div class="chevron-container" style="display: none;">
-                <div class="chevron-down-filter">
-                  <i class="fa-solid fa-chevron-down fa-0.5"></i>
-                </div>    
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="option-name-container">
-            <div class="name-chevron-container" id="SBTToption">
-
-              <div class="name-container">
-                <span><a href="shopByTools.html">Shop By Tools Type</a></span>
-              </div>
-
-              <div class="chevron-container">
-                <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBTTlist', 'SBTTchevron', 'SBTToption')">
-                  <i class="fa-solid fa-chevron-down fa-0.5" id="SBTTchevron"></i>
-                </div>    
-              </div>
-
-            </div>
-            <div class="option-content-container" id="SBTTlist">
-              <li><a>Air Tools</a></li> 
-              <li><a>Breaker Hammer</a></li> 
-              <li><a>Drills and Drivers</a></li>
-              <li><a>Fasteners</a></li>
-              <li><a>Grinders</a></li> 
-              <li><a>Hammers</a></li>
-              <li><a>Hand Tools</a></li>
-              <li><a>Jigs</a></li>
-              <li><a>Material Handling</a></li>
-              <li><a>Measuring</a></li>
-              <li><a>Nailers and Staplers</a></li>
-              <li><a>Safety Equipment</a></li> 
-              <li><a>Saws</a></li>
-              <li><a>Tool Storage</a></li>
-              <li><a>Workholding</a></li>
-              <li><a>Work Table and Supports</a></li>
-            </div>
-          </div>
-
-          
-          <div class="option-name-container">
-            <div class="name-chevron-container">
-
-              <div class="name-container">
-                <span><a href="#">Shop By Application</a></span>
-              </div>
-
-              <div class="chevron-container" style="display: none;">
-                <div class="chevron-down-filter">
-                  <i class="fa-solid fa-chevron-down fa-0.5"></i>
-                </div>    
-              </div>
-            </div>
-         </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <!--sidenav-->
-
-
-
-
-  <div class="nav-bar">
-    <div class="div-nav">
-        <ul class="menu">
-           
-            <li id="SBBsubmenu"><p><a href="shopByBrand.html">Shop By Brand &nbsp;<i class="fa-solid fa-angle-down angle-down"></i></a></p>
-                <ul class="submenu ul">
-                    <div class="shopByBrand-submenu-1">
-                      <li><a>Bosh</a></li> 
-                      <li><a>Festool</a></li> 
-                      <li><a>Ingco</a></li>
-                      <li><a>Jet</a></li>
-                      <li><a>Metabo</a></li>
-                      <li><a>Mirka</a></li>
-                      <li><a>Makita</a></li>
-                      <li><a>Powermatic</a></li>
-                      <li><a>Total</a></li>
-                    </div>
-                    <div class="shopByBrand-submenu-2">
-
-                    </div>
-                </ul>
-            </li>
-           
-            <li><p><a href="#">Sales & Specials <!--&nbsp;<i class="fa-solid fa-angle-down angle-down"></i>--></a></p>
-                <!-- <ul class="submenu ul">
-                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
-                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
-                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div>
-                </ul> -->
-            </li>
-        
-            <li id="SBTTsubmenu"><p><a href="shopByTools.html">Shop By Tools Type &nbsp;<i class="fa-solid fa-angle-down angle-down"></i></a></p>
-                <ul class="submenu ul">
-                    <div class="shopByToolType-submenu-1">
-                        <li><a>Air Tools</a></li> 
-                        <li><a>Breaker Hammer</a></li> 
-                        <li><a>Drills and Drivers</a></li>
-                        <li><a>Fasteners</a></li>
-                        <li><a>Grinders</a></li> 
-                        <li><a>Hammers</a></li>
-                        <li><a>Hand Tools</a></li>
-                        <li><a>Jigs</a></li>
-                        <li><a>Material Handling</a></li>
-                        <li><a>Measuring</a></li>
-                        <li><a>Nailers and Staplers</a></li>
-                        <li><a>Safety Equipment</a></li> 
-                        <li><a>Saws</a></li>
-                        <li><a>Tool Storage</a></li>
-                        <li><a>Workholding</a></li>
-                        <li><a>Work Table and Supports</a></li>
-                    </div>
-                    <div class="shopByToolType-submenu-2">
-
-                    </div>
-                </ul>
-            </li>
-
-            <li><p><a href="#">Shop By Application <!--&nbsp;<i class="fa-solid fa-angle-down angle-down"></i>--></a></p>
-                <!-- <ul class="submenu ul">
-                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
-                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
-                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div>
-                </ul> -->
-            </li>
-        </ul>
-    </div>
-</div>
-
-    
-<!--marketing boarder-->
-    <div class="marketing">
-      <div class="sub-marketing">
-        <div class="slick-container2">
-          <div class="image-slider1">
-              <!-- <div><img src="images/slide1.PNG" alt="Description Image 1"></div>
-              <div><img src="images/slide2.PNG" alt="Description Image 2"></div>
-              <div><img src="image/total.PNG" alt="Description Image 3"></div>
-              <div><img src="image/total.PNG" alt="Description Image 4"></div>
-              <div><img src="image/xcort.jpeg" alt="Description Image 5"></div>
-              <div><img src="image/xcort.jpeg" alt="Description Image 6"></div> -->
-              <div><img src="images/slider01.jpg" alt="Description Image 1"></div>
-              <div><img src="images/slider02.png" alt="Description Image 2"></div>
-          </div>
-      </div>
-
-      <div class="kevin">
-        <img src="images/hart.jpg">
-      </div>
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-     
-            $('.image-slider1').slick({
-                dots: true,
-                infinite: true,
-                speed: 1100,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                pauseOnHover: false,
-                pauseOnFocus: false
-            });
-        });
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="free-delivery-div">
-      <div class="free-delivery">
-        <div class="pre-parallelogram">
-          <div style="height: 30%; width: 80%; margin-right: auto; display: flex; align-items: flex-end;">
-            <hr class="hr">
-          </div>
-
-          <div class="space-between-hr">
-
-          </div>
-
-          <div style="height: 30%; width: 100%;">
-            <hr class="hr">
-          </div>   
-        </div>
-
-        <div class="parallelogram">
-          <div class="text-parallelogram">
-            <p>FREE DELIVERY ON ORDER <br>
-                OVER $150</p>
-          </div>
-        </div>
-
-        <div class="post-parallelogram">
-          <div style="height: 30%; width: 100%; display: flex; align-items: flex-end;">
-            <hr class="hr">
-          </div>
-
-          <div class="space-between-hr">
-
-          </div>
-
-          <div style="height: 30%; width: 80%; margin-left: auto;">
-            <hr class="hr">
-          </div>   
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="preferred-brand-background">
-      <div class="sub-preferred-brand">
-        <div class="preferred-brand-txt">
-          <p>PREFERRED BRANDS</p>
-        </div>
-        <div class="preferred-brand">
-          <div class="preferred-brand-img">
-            <img src="images/Festool.PNG" style="border: 2.5px solid rgb(38, 160, 38); border-radius: 8px; margin: 7px;">
-            <img src="images/Mirka.PNG" style="border: 2.5px solid white; border-radius: 8px; margin: 7px;">
-            <img src="images/powermatic.PNG" style="border: 2.5px solid rgba(255, 208, 0, 0.534); border-radius: 8px; margin: 7px;">
-            <img src="images/BOSH.PNG" style="border: 2.5px solid rgba(255, 0, 0, 0.514); border-radius: 8px; margin: 7px;">
-            <img src="images/Jet.PNG" style="border: 2.5px solid white; border-radius: 8px; margin: 7px;">
-          </div>
-        </div>
-        <div class="more-preferred-brand">
-          <button class="see-more-preferred-brand" onclick="seeMoreBrand()">SEE MORE</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="new-arrivals-div">
-      <div class="new-arrivals-border">
-        <div class="new-arrivals-txt-chevron">
-          <div class="new-arrivals-txt">
-              <p>New Arrivals</p>
-          </div>
-          <div class="new-arrivals-chevron">
-              <button class="new-arrivals-chevron-left" onclick="scroll_left()"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="new-arrivals-chevron-right" onclick="scrollRight()"><i class="fa-solid fa-chevron-right"></i></button>
-          </div>
-        </div>
-
-        <div class="new-arrivals-all-items-border">
-          <div class="new-arrivals-items-wrapper">
-            <div class="new-arrivals-items-border">
-              <div class="new-arrivals-items-image"> 
-
-              </div>
-              <div class="new-arrivals-items-description">
-                <div class="new-arrivals-items-free-delivery">
-                  <div class="new-arrivals-items-free-delivery-txt">
-                    <p class="free-delivery-txt">FREE DELIVERY</p>
-                  </div>
-                </div>
-                <div class="new-arrivals-items-info">
-                  <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                </div>
-                <div class="item-SKU">
-                  <p class="SKU-style">SKU: MB600643420</p>
-                </div>
-                <div class="item-price">
-                  <p class="item-price-style">$309.99</p>
-                </div>
-                <div class="border-add-to-cart-button">
-                  <button class="add-to-cart-button">ADD TO CART</button>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="new-arrivals-items-border">
-              <div class="new-arrivals-items-image"> 
-
-              </div>
-              <div class="new-arrivals-items-description">
-                <div class="new-arrivals-items-free-delivery">
-                  <div class="new-arrivals-items-free-delivery-txt">
-                    <p class="free-delivery-txt">FREE DELIVERY</p>
-                  </div>
-                </div>
-                <div class="new-arrivals-items-info">
-                  <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                </div>
-                <div class="item-SKU">
-                  <p class="SKU-style">SKU: MB600643420</p>
-                </div>
-                <div class="item-price">
-                  <p class="item-price-style">$309.99</p>
-                </div>
-                <div class="border-add-to-cart-button">
-                  <button class="add-to-cart-button">ADD TO CART</button>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="new-arrivals-items-border">
-              <div class="new-arrivals-items-image"> 
-
-              </div>
-              <div class="new-arrivals-items-description">
-                <div class="new-arrivals-items-free-delivery">
-                  <div class="new-arrivals-items-free-delivery-txt">
-                    <p class="free-delivery-txt">FREE DELIVERY</p>
-                  </div>
-                </div>
-                <div class="new-arrivals-items-info">
-                  <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                </div>
-                <div class="item-SKU">
-                  <p class="SKU-style">SKU: MB600643420</p>
-                </div>
-                <div class="item-price">
-                  <p class="item-price-style">$309.99</p>
-                </div>
-                <div class="border-add-to-cart-button">
-                  <button class="add-to-cart-button">ADD TO CART</button>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="free-same-day-div">
-      <div class="adj--width">
-        <div class="second-pre-parallelogram">
-          <div style="height: 30%; width: 80%; margin-right: auto; display: flex; align-items: flex-end;">
-            <hr class="hr">
-          </div>
-
-          <div class="second-space-between-hr">
-
-          </div>
-
-          <div style="height: 30%; width: 100%;">
-            <hr class="hr">
-          </div>   
-        </div>
-
-          <div class="second-parallelogram">
-            <div class="second-parallelogram-txt">
-              <p>FREE SAME-DAY DELIVERY</p>
-            </div>
-          </div>
-
-        <div class="second-post-parallelogram">
-          <div style="height: 30%; width: 100%; display: flex; align-items: flex-end;">
-            <hr class="hr">
-          </div>
-
-          <div class="second-space-between-hr">
-
-          </div>
-
-          <div style="height: 30%; width: 80%; margin-left: auto;">
-            <hr class="hr">
-          </div>   
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="brand-spotlights-div"> 
-      <div class="brand-spotlights-adj-width">
-        <div class="brand-spotlights-txt">
-          <p>Select Brand Spotlights</p>
-        </div>
-        <div class="brand-spotlights-post-div">
-          <div class="brand-spotlights-post-div2">
-            <div class="brand-content-div">
-              <img src="images/brand-content.PNG" alt="brand-content">
-            </div>
-            <div class="brand-content-item-div">
-              
-              
-              <div class="brand-spotlights-items-border">
-                <div class="brand-spotlights-items-image"> 
-  
-                </div>
-                <div class="brand-spotlights-items-description">
-                  <div class="brand-spotlights-items-free-delivery">
-                    <div class="brand-spotlights-items-free-delivery-txt">
-                      <p class="free-delivery-txt2">FREE DELIVERY</p>
-                    </div>
-                  </div>
-                  <div class="brand-spotlights-items-info">
-                    <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                  </div>
-                  <div class="item-SKU">
-                    <p class="SKU-style">SKU: MB600643420</p>
-                  </div>
-                  <div class="item-price">
-                    <p class="item-price-style">$309.99</p>
-                  </div>
-                  <div class="border-add-to-cart-button">
-                    <button class="add-to-cart-button">ADD TO CART</button>
-                  </div>
-                </div>
-              </div>
-
-
-
-              <div class="brand-spotlights-items-border">
-                <div class="brand-spotlights-items-image"> 
-  
-                </div>
-                <div class="brand-spotlights-items-description">
-                  <div class="brand-spotlights-items-free-delivery">
-                    <div class="brand-spotlights-items-free-delivery-txt">
-                      <p class="free-delivery-txt2">FREE DELIVERY</p>
-                    </div>
-                  </div>
-                  <div class="brand-spotlights-items-info">
-                    <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                  </div>
-                  <div class="item-SKU">
-                    <p class="SKU-style">SKU: MB600643420</p>
-                  </div>
-                  <div class="item-price">
-                    <p class="item-price-style">$309.99</p>
-                  </div>
-                  <div class="border-add-to-cart-button">
-                    <button class="add-to-cart-button">ADD TO CART</button>
-                  </div>
-                </div>
-              </div>
-
-
-
-              <div class="brand-spotlights-items-border">
-                <div class="brand-spotlights-items-image"> 
-  
-                </div>
-                <div class="brand-spotlights-items-description">
-                  <div class="brand-spotlights-items-free-delivery">
-                    <div class="brand-spotlights-items-free-delivery-txt">
-                      <p class="free-delivery-txt2">FREE DELIVERY</p>
-                    </div>
-                  </div>
-                  <div class="brand-spotlights-items-info">
-                    <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                  </div>
-                  <div class="item-SKU">
-                    <p class="SKU-style">SKU: MB600643420</p>
-                  </div>
-                  <div class="item-price">
-                    <p class="item-price-style">$309.99</p>
-                  </div>
-                  <div class="border-add-to-cart-button">
-                    <button class="add-to-cart-button">ADD TO CART</button>
-                  </div>
-                </div>
-              </div>
-
-
-
-              <div class="brand-spotlights-items-border">
-                <div class="brand-spotlights-items-image"> 
-  
-                </div>
-                <div class="brand-spotlights-items-description">
-                  <div class="brand-spotlights-items-free-delivery">
-                    <div class="brand-spotlights-items-free-delivery-txt">
-                      <p class="free-delivery-txt2">FREE DELIVERY</p>
-                    </div>
-                  </div>
-                  <div class="brand-spotlights-items-info">
-                    <p class="item-info-style item-info">Metabo 5 in. Brushles Anger Grinder WEPBA 20-125 Quick DS BL 600643420</p>
-                  </div>
-                  <div class="item-SKU">
-                    <p class="SKU-style">SKU: MB600643420</p>
-                  </div>
-                  <div class="item-price">
-                    <p class="item-price-style">$309.99</p>
-                  </div>
-                  <div class="border-add-to-cart-button">
-                    <button class="add-to-cart-button">ADD TO CART</button>
-                  </div>
-                </div>
-              </div>
-
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="customer-info-main-div">
-      <div class="customer-info-inner-div">
-        <div class="customer-info-div">
-          <div class="customer-info-inner-inner-div">
-            <div class="customer-info-icon-div">
-              <div class="customer-info-icon">
-                <i class="fa-solid fa-truck fa-2x" style="color: white;"></i>
-              </div>
-            </div>
-            <div class="customer-info-name-div">
-              <div class="customer-info-name">
-                <p>Free Delivery</p>
-              </div>
-            </div>
-            <div class="customer-info-description-div">
-              <div class="customer-info-description">
-                <p>Get free shipping on all orders<br>over $150.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="customer-info-div">
-          <div class="customer-info-inner-inner-div">
-            <div class="customer-info-icon-div">
-              <div class="customer-info-icon">
-                <i class="fa-solid fa-credit-card fa-2x" style="color: white;"></i>
-              </div>
-            </div>
-            <div class="customer-info-name-div">
-              <div class="customer-info-name">
-                <p>Financing Options</p>
-              </div>
-            </div>
-            <div class="customer-info-description-div">
-              <div class="customer-info-description">
-                <p>Upgrade your workshop<br>without breaking the bank.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="customer-info-div">
-          <div class="customer-info-inner-inner-div">
-            <div class="customer-info-icon-div">
-              <div class="customer-info-icon">
-                <i class="fa-solid fa-retweet fa-2x" style="color: white;"></i>
-              </div>
-            </div>
-            <div class="customer-info-name-div">
-              <div class="customer-info-name">
-                <p>Easy Returns</p>
-              </div>
-            </div>
-            <div class="customer-info-description-div">
-              <div class="customer-info-description">
-                <p>30-day returns/exchanges on<br>eligible orders.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="customer-info-div">
-          <div class="customer-info-inner-inner-div">
-            <div class="customer-info-icon-div">
-              <div class="customer-info-icon">
-                <i class="fa-brands fa-bitcoin fa-2x" style="color: white;"></i>
-              </div>
-            </div>
-            <div class="customer-info-name-div">
-              <div class="customer-info-name">
-                <p>Reward Points</p>
-              </div>
-            </div>
-            <div class="customer-info-description-div">
-              <div class="customer-info-description">
-                <p>Earn reward points with every<br>purchase.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!--        
--->
-    <div class="about-GMK-div">
-      <div class="about-GMK-adj-width">
-        <div class="about-GMK-img-div">
-          <img src="images/civil.PNG" style="height: 100%; width: 100%;">
-        </div>
-        <div class="about-GMK-txt-div">
-          <div class="about-GMK-title">
-            <p>ABOUT GMK TOOLS</p>
-          </div>
-          <div class="about_GMK-txt">
-            <p style="line-height: 30px;">GMK Tools is a premier enterprise specializing in the sale of high-quality 
-              tools designed to meet the diverse needs of professionals and hobbyists alike. 
-              With a commitment to excellence, GMK Tools offers a comprehensive range of products, 
-              including hand tools, power tools, and accessories, ensuring top-notch performance and durability. 
-              Our mission is to provide innovative solutions that empower our customers to achieve their goals with efficiency and precision. 
-              Trust GMK Tools for all your tool needs, where quality and customer satisfaction are our top priorities.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="subscribe-for-news-div">
-      <div class="subscribe-adj-width">
-        <div class="subscribe-title">
-          <p>Be the first to know</p>
-        </div>
-        <div class="subscribe-title-info">
-          <p>Subscribe for our best offers.</p>
-        </div>
-        <div class="subscribe-input-button-div">
-          <form class="subscribe-form">
-            <label for="textbox"></label>
-            <input type="email" id="textbox" name="textbox" placeholder="Enter your email address" class="subscribe-email-input">
-            <button class="subscribe-button">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <footer class="footer-main-container">
-      <div class="footer-container">
-        <div class="item-container">
-          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('aboutUs', 'aboutUsChevron')">
-            <span>ABOUT US</span>
-            <i class="fa-solid fa-chevron-down downChevronFooter" id="aboutUsChevron"></i>
-          </div>
-          <div class="item-content-container" id="aboutUs">
-            <li><a href="">About Us</a></li>
-            <li><a href="">Financing</a></li>
-            <li><a href="">Shipping</a></li>
-            <li><a href="">Returns/Exanges & Warranties</a></li>
-            <li><a href="">Terms & Conditions</a></li>
-          </div>
-        </div>
-
-
-        <div class="item-container">
-          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('customCenter', 'custoemCenterChevron')">
-            <span>CUSTOM CENTER</span>
-            <i class="fa-solid fa-chevron-down downChevronFooter" id="custoemCenterChevron"></i>
-          </div>
-          <div class="item-content-container" id="customCenter">
-            <li><a href="">My Account</a></li>
-            <li><a href="">Affiliate Program FAQ</a></li>
-            <li><a href="">Pricing</a></li>
-            <li><a href="">Reward Program</a></li>
-            <li><a href="">Layaway</a></li>
-          </div>
-        </div>
-
-
-        <div class="item-container">
-          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('info', 'infoChevron')">
-            <span>INFO</span>
-            <i class="fa-solid fa-chevron-down downChevronFooter" id="infoChevron"></i>
-          </div>
-          <div class="item-content-container" id="info">
-            <li><a href="">Blog</a></li>
-            <li><a href="">Privacy Policy</a></li>
-            <li><a href="">Frequently Asked Questions</a></li>
-            <li><a href="">Catalog</a></li>
-            <li><a href="">Tax Exemption</a></li>
-          </div>
-        </div>
-
-
-        <div class="item-container">
-          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('contact', 'contactChevron')">
-            <span>CONTACT</span>
-            <i class="fa-solid fa-chevron-down downChevronFooter" id="contactChevron"></i>
-          </div>
-          <div class="item-content-container" id="contact">
-            <li><a href="">Contact Us</a></li>
-            <li><a href="">Customer Service</a></li>
-            <li><a href="">Estimate Request</a></li>
-            <li><a href="">Driving Direction</a></li>
-            <li><a href="">Technical Support</a></li>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
-
-
-
-    <footer class="footer-div">
-      <div class="footer-adj-width" id="no-underline">
-        <div class="footer-item-div" id="footerItem">
-          <div class="footer-title">
-            <p>ABOUT US</p>
-          </div>
-            <p><a href="">About Us</a></p>
-            <p><a href="">Financing</a></p>
-            <p><a href="">Shipping</a></p>
-            <p><a href="">Returns/Exanges & Warranties</a></p>
-            <p><a href="">Terms & Conditions</a></p>
-        </div>
-        <div class="footer-item-div" id="footerItem2">
-          <div class="footer-title">
-            <p>CUSTOMER CENTER</p>
-          </div>
-            <p><a href="">My Account</a></p>
-            <p><a href="">Affiliate Program FAQ</a></p>
-            <p><a href="">Pricing</a></p>
-            <p><a href="">Reward Program</a></p>
-            <p><a href="">Layaway</a></p>
-          </div>
-        <div class="footer-item-div">
-          <div class="footer-title">
-            <p>INFO</p>
-          </div>
-            <p><a href="">Blog</a></p>
-            <p><a href="">Privacy Policy</a></p>
-            <p><a href="">Frequently Asked Questions</a></p>
-            <p><a href="">Catalog</a></p>
-            <p><a href="">Tax Exemption</a></p>
-        </div>
-        <div class="footer-item-div">
-          <div class="footer-title">
-            <p>CONTACT</p>
-          </div>
-            <p><a href="">Contact Us</a></p>
-            <p><a href="">Customer Service</a></p>
-            <p><a href="">Estimate Request</a></p>
-            <p><a href="">Driving Direction</a></p>
-            <p><a href="">Technical Support</a></p>
-        </div>
-        
-        <!-- <div class="footer-item-div-2">
-          <div class="social-media-main">
-            <div class="mail-main-div">
-              <a href="mailto:GMK.TOOLS.HUB@gmail.com" class="mail-div">GMK.TOOLS.HUB@gmail.com</a>
-              <i class="envelope fa-solid fa-envelope fa-2x"></i>
-            </div>
-            <div class="mail-main-div">
-
-            </div>
-          </div>
-          
-        </div> -->
-      </div>
-    </footer>
-
-    <style>
-      /* Reset default margin and padding */
-      html, body {
-          /*font-family: "Berlin Sans FB", sans-serif;*/
-          width:100%;
-          font-family: "Outfit", sans-serif;
-          background-color: whitesmoke;
-          width: 100%;
-          overflow-x: hidden;
-          margin: 0;
-      }
-  
-  
-    </style>
-    
-    <script src="script.js"></script>
-    <script>
-      function scrollLeft() {
-        const wrapper = document.querySelector('.new-arrivals-items-wrapper');
-        console.log(wrapper); // Check if this logs the correct element
-        wrapper.scrollBy({
-        left: -wrapper.clientWidth / 2,
-        behavior: 'smooth'
-    });
+a{
+  color: white;
 }
-    </script>
-</body>
-</html>
+
+
+
+
+/*.div-nav ul{
+  list-style: none;
+  display: flex;
+  transition: ease 0.7s;
+}
+
+.div-nav ul li{
+  padding: 10px 30px;
+  position: relative;
+}
+
+.div-nav ul li a{
+  text-decoration: none;
+  font-size: 21px;
+  color: white;
+}
+
+
+.div-nav li:hover{
+  i{
+  rotate: 180deg;
+  }
+}
+
+.dropdown-menu{
+  display: none;
+}
+
+.dropdown-menu{
+  color: black;
+}
+.dropdown-menu a:hover{
+  color: #b8121a;
+  text-decoration: underline;
+}
+.dropdown-menu p:hover{
+  color: #b8121a;
+}
+.dropdown-menu ul li p:hover{
+  color: #b8121a;
+}
+
+
+.div-nav ul li:hover .dropdown-menu{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.div-nav ul li:hover .dropdown-menu ul{
+  display: block;
+  margin: 10px;
+}
+
+.div-nav ul li:hover .dropdown-menu ul li{
+  width: 150px;
+  padding: 10px;
+}
+*/
+/* .nav-bar{
+  height: 60px;
+  background-color: #b8121a;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.div-nav{
+  height: 60px;
+  width: 70%;
+  background-color: #1A1A1A;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  font-size: 21px;
+}
+
+
+
+
+.ul {
+  text-align: center;
+}
+.ul li {
+  display: inline-block;
+  margin-right: 15px;
+  transition: all 0.3s ease-in-out;
+}
+.ul li:hover .submenu {
+  height: 200px;
+}
+.ul li:hover i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out 0.1s; 
+}
+.ul li:hover a {
+  color: #b8121a;
+}
+.ul li:hover a::before {
+  visibility: visible;
+  transform: scale(1, 1);
+}
+.ul li .submenu {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  height: 0;
+  box-sizing: border-box;
+  transition: height 0.3s ease-in-out;
+  transition-delay: 0.1s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2; 
+  display: flex;
+  justify-content: center;
+}
+
+
+.ul li .submenu a {
+  color: black;
+  margin-top: 20px;
+  font-size: 80%;
+  font-weight: 400;
+}
+.ul li .submenu a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.ul li a {
+  color: white;
+  display: block;
+  padding: 0 7px;
+  margin: 0 0 10px;
+  text-decoration: none;
+  position: relative;
+}
+.ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -10px;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0, 0);
+  visibility: hidden;
+}
+
+i {
+  transition: transform 0.3s ease-in-out; 
+} */
+
+
+
+
+.marketing{
+  width: 100%;
+  height: auto;
+  justify-content: center; 
+  display: flex;
+}
+
+.sub-marketing{
+  height: auto;
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width:1400px) {
+    .sub-marketing{
+      width: 95% !important;
+      height: auto !important;
+    }
+}
+.kevin{
+  object-fit: cover;
+  width: 450px;
+  height: auto;
+  margin: 20px;
+}
+.kevin img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.slick-container2 {
+  background-color: whitesmoke;
+  /* margin-top: 50px; */
+  width: 800px; /* Full width */
+  height: 400px; /* Fixed height */
+  overflow: hidden; /* Prevent overflow */
+  margin: 20px;
+}
+
+.slick-container2 img {
+  z-index: 100;
+  width: 500px; /* Responsive width */
+  height: 425px; /* Fixed height */
+}
+
+.image-slider1 {
+  width: 100%; /* Full width */
+  height: 100%; /* Set slider height to 100% of the container */
+}
+
+.image-slider1 div {
+  width: 100%; /* Full width */
+  height: 100%; /* Each slide should take full height */
+}
+
+.image-slider1 img {
+  width: 100%; /* Responsive width */
+  height: 100%; /* Fill height */
+  padding: 10px;
+  box-sizing: border-box;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+@media screen and (max-width: 600px) {
+  .slick-container2{
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .slick-container2 img{
+    width: 100% !important;
+  }
+  .sub-marketing{
+    width: 100% !important;
+  }
+
+}
+
+
+/*.free-delivery{
+  height: 130px;
+  background-color: black;
+  width: 100%;
+  background-image: url(free\ delivery.png);
+}*/
+
+.free-delivery-div{
+  width: 100%; 
+  height: auto; 
+  background-color: #1A1A1A; 
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.parallelogram{
+  width: 600px;
+  height: 130px;
+  background-color: #b8121a;
+  transform: skew(30deg);
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+}
+
+.free-delivery{
+  height: auto;
+  width: 74%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+@media (max-width: 1500px){
+  .free-delivery{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px){
+  .parallelogram{
+    width: 500px;
+  }
+  .text-parallelogram{
+    width: 500px;
+  }
+}
+
+@media (max-width: 870px){
+  .free-delivery{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  } 
+  
+  .parallelogram{
+    width: 86%;
+  }
+
+  .pre-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 5px;
+  }
+
+  .space-between-hr{
+    height: 10px !important;
+  }
+
+  .post-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .text-parallelogram p{
+    font-size: 180% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .text-parallelogram p{
+    font-size: 140% !important;
+  }
+}
+
+.text-parallelogram{
+  transform: skew(-30deg);
+  height: 130px;
+  width: 600px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.text-parallelogram p{
+  font-weight: 750; 
+  font-size: 215%; 
+  text-align: center; 
+  line-height: 1.4;
+  margin: 0;
+}
+
+.pre-parallelogram{
+  height: 130px;
+  width: 25%;
+}
+
+
+.space-between-hr{
+  height: 40%; 
+  width: 100%;
+}
+
+.post-parallelogram{
+  height: 130px;
+  width: 25%;
+}
+
+    
+/*
+.pre-parallelogram, .post-parallelogram {
+  height: 130px;
+  width: 350px;
+  display: flex; 
+  flex-direction: column; 
+}
+  
+.pre-parallelogram {
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+  
+.post-parallelogram {
+  justify-content: flex-start; 
+  align-items: flex-end; 
+} 
+*/
+  
+
+.hr{
+  border: none; 
+  height: 5px; 
+  width: 95%;
+  border-radius: 2px;
+  position: relative;
+  background-color: white;
+}
+
+.preferred-brand-background{
+  background-color: #1A1A1A;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*  background-color: #222021;*/
+}
+
+
+.preferred-brand-txt{
+  color: white;
+  height: 20%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  font-size: 200%; 
+  font-weight: 550; 
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  align-items: center;
+  margin: 40px .0;
+}
+
+.preferred-brand-txt p{
+  margin: 0;
+}
+
+.sub-preferred-brand{
+  height: auto;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.preferred-brand{
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.preferred-brand-img{
+  height: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.more-preferred-brand{
+  height: 19%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 40px 0;
+}
+
+
+.see-more-preferred-brand{
+  border: 2px solid black;
+  height: 42px;
+  width: 130px;
+  color: white;
+  background-color: #b8121a;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in  0.15s;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.see-more-preferred-brand:hover{
+  background-color: #1A1A1A;
+}
+
+.new-arrivals-div{
+  height: 600px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (max-width: 950px) {
+  .new-arrivals-border{
+    width: 90% !important;
+  }
+}
+
+.new-arrivals-border{
+  height: 500px;
+  width: 75%;
+}
+
+.new-arrivals-txt-chevron{
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-arrivals-txt{
+  height: 100%;
+  width: 200px;
+  font-size: 200%;
+  font-weight: 650; 
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.new-arrivals-chevron{
+  height: 60%;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.new-arrivals-chevron-right,
+.new-arrivals-chevron-left{
+  height: 100%;
+  width: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+
+.new-arrivals-all-items-border{
+  height: 84%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+ 
+}
+
+.new-arrivals-items-wrapper {
+  display: flex;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  justify-content: flex-start;
+  width: 100%;
+  align-content: normal;
+}
+@media screen and (max-width: 900px) {
+  .new-arrivals-items-wrapper{
+    overflow-x: auto;
+  }
+}
+
+.new-arrivals-items-border{
+  height: 378px; 
+  width: 315px;
+  border: 1px solid black;
+  border-radius: 2%;
+  margin-right: 20px;
+} 
+
+@media screen and (max-width: 700px) {
+  .new-arrivals-items-border{
+    width: 290px !important;
+    height: 358px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .new-arrivals-items-border{
+    width: 275px !important;
+    height: 343px !important;
+  }
+}
+
+.new-arrivals-items-image{
+  height: 50%;
+  width: 100%;
+  border-bottom: 1px solid rgb(167, 166, 166);
+  border-top-left-radius: 2;
+  border-top-right-radius: 2%;
+  object-fit: scale-down;
+}
+
+
+.new-arrivals-items-description{
+  height: 49%;
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.new-arrivals-items-free-delivery{
+  height: 25%;
+  width: 53%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.new-arrivals-items-free-delivery-txt{
+  height: 55%;
+  width: 60%;
+  border: 1px solid black ;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.free-delivery-txt{
+  font-size: 64%;
+  font-weight: 700;
+}
+
+.new-arrivals-items-info{
+  height: 14%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-info-style{
+  font-size: 90%;
+  font-weight: 700;
+}
+
+.item-info{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+/*
+.new-arrivals-all-items-info:hover .item-info{
+  white-space: normal;
+  overflow: visible;
+}
+  */
+
+.item-SKU{
+  height: 11%;
+  width: 60%;
+  color: #b8121a;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+ 
+.SKU-style{
+  font-size: 72%;
+}
+
+.item-price{
+  height: 18%;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.item-price-style{
+  font-size: 130%;
+  font-weight: 700;
+}
+
+.border-add-to-cart-button{
+  height: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-cart-button{
+  border: 2px solid black;
+  height: 33px;
+  width: 150px;
+  color: white;
+  background-color: #b8121a;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in  0.15s;
+  font-size: 65%;
+  font-weight: bold;
+}
+
+.add-to-cart-button:hover{
+  background-color: #1A1A1A;
+}
+
+
+.free-same-day-div{
+  height: auto;
+  width: 100%;
+  background-color: #1A1A1A;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.adj--width{
+  height: auto;
+  width: 75%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+
+.second-parallelogram{
+  height: 110px;
+  width: 620px;
+  background-color: #b8121a;
+  transform: skew(30deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 1500px){
+  .adj--width{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px){
+  .second-parallelogram{
+    width: 500px;
+  }
+  .second-parallelogram-txt{
+    width: 500px;
+  }
+}
+
+@media (max-width: 870px){
+  .adj--width{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  } 
+  
+  .second-parallelogram{
+    width: 80%;
+  }
+
+  .second-pre-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 5px;
+  }
+
+  .second-space-between-hr{
+    height: 10px !important;
+  }
+
+  .second-post-parallelogram{
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .second-parallelogram-txt{
+    font-size: 180% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .second-parallelogram-txt{
+    font-size: 140% !important;
+  }
+}
+
+
+.second-parallelogram-txt{
+  transform: skew(-30deg);
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 220%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.second-pre-parallelogram{
+  height: 110px;
+  width: 25%;
+}
+
+.second-post-parallelogram{
+  height: 110px;
+  width: 25%;
+}
+
+.second-space-between-hr{
+  height: 40%;
+  width: 100%;
+}
+
+
+.brand-spotlights-div{
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+@media screen and (max-width: 500px){
+  .brand-spotlights-adj-width{
+    width: 100% !important;
+  }
+  .brand-spotlights-txt{
+    text-align: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .brand-spotlights-txt p{
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+}
+
+.brand-spotlights-adj-width{
+  height: 100%;
+  width: 75%;
+}
+
+.brand-spotlights-txt{
+  height: 13%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 230%;
+  font-weight: 600;
+}
+
+.brand-spotlights-post-div{
+  height: auto;
+  width: 100%;
+  margin: 35px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-spotlights-post-div2{
+  height: auto;
+  width: 100%;
+  background-color: #1A1A1A;
+  padding: 23px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.brand-content-div{
+  height: auto;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.brand-content-img-div{
+  height: 90%;
+  width: 90%;
+}
+
+.brand-content-item-div{
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 10px;
+}
+
+
+
+/*========================================================================================================================================================================*/
+
+
+.brand-spotlights-items-border{
+  height: 320px;
+  width: 240px;
+  border-radius: 2%;
+  margin: 10px;
+  background-color: white;
+}
+
+.brand-spotlights-items-image{
+  height: 50%;
+  width: 100%;
+  border-bottom: 1px solid rgb(167, 166, 166);
+  border-top-left-radius: 2;
+  border-top-right-radius: 2%;
+  object-fit: cover;
+}
+
+
+.brand-spotlights-items-description{
+  height: 49%;
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.brand-spotlights-items-free-delivery{
+  height: 25%;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.brand-spotlights-items-free-delivery-txt{
+  height: 55%;
+  width: 60%;
+  border: 1px solid black ;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.free-delivery-txt2{
+  font-size: 54%;
+  font-weight: 600;
+}
+
+.brand-spotlights-items-info{
+  height: 14%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-info-style{
+  font-size: 90%;
+  font-weight: 700;
+}
+
+.item-info{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+.item-SKU{
+  height: 11%;
+  width: 60%;
+  color: #b8121a;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+ 
+.SKU-style{
+  font-size: 72%;
+}
+
+.item-price{
+  height: 18%;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.item-price-style{
+  font-size: 130%;
+  font-weight: 700;
+}
+
+.border-add-to-cart-button{
+  height: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-cart-button{
+  border: 2px solid black;
+  height: 33px;
+  width: 150px;
+  color: white;
+  background-color: #b8121a;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in  0.15s;
+  font-size: 65%;
+  font-weight: bold;
+}
+
+.add-to-cart-button:hover{
+  background-color: #1A1A1A;
+}
+
+.customer-info-main-div{
+  height: auto;
+  width: 100%;
+  background-color: #b8121a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-info-inner-div{
+  height: auto;
+  width: 68.5%;
+  display: flex;
+  margin: 70px 0;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px){
+  .customer-info-inner-div{
+    width: 100%;
+  }
+}
+
+
+.customer-info-div{
+  height: 270px;
+  width: 270px;
+  border-radius: 10px;
+  background-color:  #1A1A1A;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-info-div:hover .customer-info-icon{
+  background-color: black;
+}
+.customer-info-div:hover{
+  background-color: white;
+}
+.customer-info-div:hover .customer-info-name{
+  color: black;
+}
+.customer-info-div:hover .customer-info-description{
+  color: black;
+}
+
+.customer-info-inner-inner-div{
+  height: 85%;
+  width: 72%;
+}
+
+.customer-info-icon-div{
+  height: 32%;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-info-icon{
+  height: 100%;
+  width: 38%;
+  border-radius: 40px;
+  background-color: #b8121a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-info-name-div{
+  height: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-info-name{
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 120%;
+  font-weight: 500;
+}
+.customer-info-description-div{
+  height: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-info-description{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 84%;
+  font-weight: 400;
+  text-align: center;
+}
+
+.about-GMK-div{
+  height: auto;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 560px) {
+  .about-GMK-adj-width{
+    width: 95% !important;
+  }
+  .about_GMK-txt p{
+    line-height: 10px;
+    font-size: 15px;
+  }
+
+  .about-GMK-title p{
+    margin: 0;
+    margin-top: 30px;
+  }
+}
+
+.about-GMK-adj-width{
+  height: auto;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-GMK-img-div{
+  height: 100%;
+  width: 520px;
+  margin: 0 10px;
+  object-fit: cover;
+}
+
+.about-GMK-txt-div{
+  height: auto;
+  width: 730px;
+  margin: 0 10px;
+}
+
+.about-GMK-title{
+  height: 20%;
+  width: 100%;
+  font-size: 180%;
+  font-weight: 600;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.about_GMK-txt{
+  height: 80%;
+  width: 100%;
+  font-size: 110%;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+}
+
