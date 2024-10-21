@@ -229,8 +229,8 @@ i {
 .image-slider1 img {
   width: 100%; /* Responsive width */
   height: 100%; /* Fill height */
-  padding: 10px;
-  box-sizing: border-box;
+/*   padding: 10px;
+  box-sizing: border-box; */
   object-fit: cover; /* Maintain aspect ratio */
 }
 
