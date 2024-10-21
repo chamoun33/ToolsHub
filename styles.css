@@ -248,7 +248,7 @@ i {
   }
   .kevin{
     margin: 0 !important;
-    height: 400px !important;
+    height: auto !important;
     width: 100% !important;
     padding: 0 5px !important;
     box-sizing: border-box;
