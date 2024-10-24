@@ -28,8 +28,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 <body> 
     <header>
@@ -796,14 +798,48 @@
           <p>Subscribe for our best offers.</p>
         </div>
         <div class="subscribe-input-button-div">
-          <form class="subscribe-form">
+          <form class="subscribe-form" id="subscribeForm">
             <label for="textbox"></label>
-            <input type="email" id="textbox" name="textbox" placeholder="Enter your email address" class="subscribe-email-input">
-            <button class="subscribe-button">Subscribe</button>
+            <input type="email" id="userEmail" name="textbox" placeholder="Enter your email address" class="subscribe-email-input">
+            <button class="subscribe-button" type="submit">Subscribe</button>
           </form>
         </div>
       </div>
     </div>
+
+
+    <script>
+      // Initialize EmailJS with your User ID
+      (function() {
+          emailjs.init("3iM3Bz2Tug-byp7UC");  // Replace with your actual User ID from EmailJS   |public_|
+      })();
+  
+      // Handle the form submission
+      document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+          event.preventDefault();  // Prevent form from refreshing the page
+  
+          // Get the entered email and name from the form
+          const userEmail = document.getElementById('userEmail').value;
+  
+          // Define your service and template IDs
+          const serviceID = 'service_tkw9ovd';  // Replace with your Service ID
+          const templateID = 'template_6kvq76y';  // Replace with your Template ID
+  
+          // Send email with dynamic data
+          emailjs.send(serviceID, templateID, {
+              user_email: userEmail,  // This will replace {{user_email}} in the template
+              website_link: 'https://chamoun33.github.io/ToolsHub/', // Your website link
+              reply_to: userEmail
+          })
+          .then(() => {
+              alert('Subscription successful! Check your inbox for confirmation.');
+          }, (err) => {
+              console.error('EmailJS error:', err);
+              alert('Failed to send email. Please try again.');
+          });
+      });
+  </script>
+  
 
 
 
