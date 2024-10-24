@@ -95,14 +95,24 @@ window.onload = function defaultOpenBlockFilter() {
 //side dropdown
 
 function openSideNav() {
-    //closeNav();
+    // closeNav();
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.add("open"); // Add the 'open' class to apply transitions
+    document.getElementById('ShopByBrandID').style.marginTop = "0";
+    document.getElementById('SalesAndSpecialsID').style.marginTop = "0";
+    document.getElementById('ShopByToolsTypeID').style.marginTop = "0";
+    document.getElementById('ShopByApplicationID').style.marginTop = "0";
 }
 
 function closeSideNav() {
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.remove("open"); // Remove the 'open' class to reverse transitions
+    setTimeout(function(){
+        document.getElementById('ShopByBrandID').style.marginTop = "1000px";
+        document.getElementById('SalesAndSpecialsID').style.marginTop = "1000px";
+        document.getElementById('ShopByToolsTypeID').style.marginTop = "1000px";
+        document.getElementById('ShopByApplicationID').style.marginTop = "1000px";
+    }, 200)
 }
     
 
