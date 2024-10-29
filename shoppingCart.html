@@ -105,112 +105,112 @@
 
 
 
-    <div id="myBarMenu" class="sideNav"> 
-      <div class="main-container" id="mainContainer">
-        <header class="top-side-drop-down">
-          <p>Navigate Through Our Sections</p>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
-        </header>
+  <div id="myBarMenu" class="sideNav"> 
+    <div class="main-container" id="mainContainer">
+      <header class="top-side-drop-down">
+        <p>Navigate Through Our Sections</p>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
+      </header>
 
-      <div class="option-container">
-        <div class="option-name-container">
-          <div class="name-chevron-container" id="SBBoption">
+    <div class="option-container">
+      <div class="option-name-container" id="ShopByBrandID">
+        <div class="name-chevron-container" id="SBBoption">
+
+          <div class="name-container">
+            <span><a href="shopByBrand.html">Shop By Brand</a></span>
+          </div>
+
+          <div class="chevron-container">
+            <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBBlist', 'SBBchevron', 'SBBoption')">
+              <i class="fa-solid fa-chevron-down fa-0.5" id="SBBchevron"></i>
+            </div>    
+          </div>
+
+        </div>
+
+        <div class="option-content-container" id="SBBlist">
+          <li><a>Bosh</a></li> 
+          <li><a>Festool</a></li> 
+          <li><a>Ingco</a></li>
+          <li><a>Jet</a></li>
+          <li><a>Metabo</a></li>
+          <li><a>Mirka</a></li>
+          <li><a>Makita</a></li>
+          <li><a>Powermatic</a></li>
+          <li><a>Total</a></li>
+        </div>
+      </div>
+
+        <div class="option-name-container" id="SalesAndSpecialsID">
+          <div class="name-chevron-container">
 
             <div class="name-container">
-              <span><a href="shopByBrand.html">Shop By Brand</a></span>
+              <span><a href="#">Sales & Specials</a></span>
             </div>
 
-            <div class="chevron-container">
-              <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBBlist', 'SBBchevron', 'SBBoption')">
-                <i class="fa-solid fa-chevron-down fa-0.5" id="SBBchevron"></i>
+            <div class="chevron-container" style="display: none;">
+              <div class="chevron-down-filter">
+                <i class="fa-solid fa-chevron-down fa-0.5"></i>
               </div>    
             </div>
 
           </div>
+        </div>
 
-          <div class="option-content-container" id="SBBlist">
-            <li><a>Bosh</a></li> 
-            <li><a>Festool</a></li> 
-            <li><a>Ingco</a></li>
-            <li><a>Jet</a></li>
-            <li><a>Metabo</a></li>
-            <li><a>Mirka</a></li>
-            <li><a>Makita</a></li>
-            <li><a>Powermatic</a></li>
-            <li><a>Total</a></li>
+
+        <div class="option-name-container" id="ShopByToolsTypeID">
+          <div class="name-chevron-container" id="SBTToption">
+
+            <div class="name-container">
+              <span><a href="shopByTools.html">Shop By Tools Type</a></span>
+            </div>
+
+            <div class="chevron-container">
+              <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBTTlist', 'SBTTchevron', 'SBTToption')">
+                <i class="fa-solid fa-chevron-down fa-0.5" id="SBTTchevron"></i>
+              </div>    
+            </div>
+
+          </div>
+          <div class="option-content-container" id="SBTTlist">
+            <li><a>Air Tools</a></li> 
+            <li><a>Breaker Hammer</a></li> 
+            <li><a>Drills and Drivers</a></li>
+            <li><a>Fasteners</a></li>
+            <li><a>Grinders</a></li> 
+            <li><a>Hammers</a></li>
+            <li><a>Hand Tools</a></li>
+            <li><a>Jigs</a></li>
+            <li><a>Material Handling</a></li>
+            <li><a>Measuring</a></li>
+            <li><a>Nailers and Staplers</a></li>
+            <li><a>Safety Equipment</a></li> 
+            <li><a>Saws</a></li>
+            <li><a>Tool Storage</a></li>
+            <li><a>Workholding</a></li>
+            <li><a>Work Table and Supports</a></li>
           </div>
         </div>
 
-          <div class="option-name-container">
-            <div class="name-chevron-container">
+        
+        <div class="option-name-container" id="ShopByApplicationID">
+          <div class="name-chevron-container">
 
-              <div class="name-container">
-                <span><a href="#">Sales & Specials</a></span>
-              </div>
+            <div class="name-container">
+              <span><a href="#">Shop By Application</a></span>
+            </div>
 
-              <div class="chevron-container" style="display: none;">
-                <div class="chevron-down-filter">
-                  <i class="fa-solid fa-chevron-down fa-0.5"></i>
-                </div>    
-              </div>
-
+            <div class="chevron-container" style="display: none;">
+              <div class="chevron-down-filter">
+                <i class="fa-solid fa-chevron-down fa-0.5"></i>
+              </div>    
             </div>
           </div>
+       </div>
 
-
-          <div class="option-name-container">
-            <div class="name-chevron-container" id="SBTToption">
-
-              <div class="name-container">
-                <span><a href="shopByTools.html">Shop By Tools Type</a></span>
-              </div>
-
-              <div class="chevron-container">
-                <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBTTlist', 'SBTTchevron', 'SBTToption')">
-                  <i class="fa-solid fa-chevron-down fa-0.5" id="SBTTchevron"></i>
-                </div>    
-              </div>
-
-            </div>
-            <div class="option-content-container" id="SBTTlist">
-              <li><a>Air Tools</a></li> 
-              <li><a>Breaker Hammer</a></li> 
-              <li><a>Drills and Drivers</a></li>
-              <li><a>Fasteners</a></li>
-              <li><a>Grinders</a></li> 
-              <li><a>Hammers</a></li>
-              <li><a>Hand Tools</a></li>
-              <li><a>Jigs</a></li>
-              <li><a>Material Handling</a></li>
-              <li><a>Measuring</a></li>
-              <li><a>Nailers and Staplers</a></li>
-              <li><a>Safety Equipment</a></li> 
-              <li><a>Saws</a></li>
-              <li><a>Tool Storage</a></li>
-              <li><a>Workholding</a></li>
-              <li><a>Work Table and Supports</a></li>
-            </div>
-          </div>
-
-          
-          <div class="option-name-container">
-            <div class="name-chevron-container">
-
-              <div class="name-container">
-                <span><a href="#">Shop By Application</a></span>
-              </div>
-
-              <div class="chevron-container" style="display: none;">
-                <div class="chevron-down-filter">
-                  <i class="fa-solid fa-chevron-down fa-0.5"></i>
-                </div>    
-              </div>
-            </div>
-         </div>
-
-        </div>
       </div>
     </div>
+  </div>
   </div>
 
 
@@ -408,7 +408,7 @@
                                           <div class="delivery-check">
 
                                             <label class="checkbox">
-                                              <input type="checkbox">
+                                              <input type="checkbox" id="checkboxDelivery" onclick="checkCheckBoxPickUp()">
                                               <span class="checkmark"></span>
                                             </label>
 
@@ -431,7 +431,7 @@
                                         <div class="pickUp-check-container">
                                           <div class="pickUp-check">
                                             <label class="checkbox">
-                                              <input type="checkbox">
+                                              <input type="checkbox" id="checkboxPickUp" onclick="checkCheckBoxDelivery()">
                                               <span class="checkmark"></span>
                                             </label>
 
