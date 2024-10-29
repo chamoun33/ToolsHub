@@ -783,3 +783,22 @@ fetch('lb.json')
     });
   })
   .catch(error => console.error('Error loading JSON:', error));
+
+
+function checkCheckBoxDelivery(){
+    let delivery = document.getElementById('checkboxDelivery');
+    let pickUp = document.getElementById('checkboxPickUp');
+
+    if(delivery.checked){
+        delivery.checked = false;
+    }
+  }
+
+  function checkCheckBoxPickUp(){
+    let delivery = document.getElementById('checkboxDelivery');
+    let pickUp = document.getElementById('checkboxPickUp');
+
+    if(pickUp.checked){
+        pickUp.checked = false;
+    }
+  }
