@@ -107,6 +107,9 @@
     .cartItems-product-title-container{
         font-size: 14px;
     }
+    .cartItems-price-container{
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 420px) {
