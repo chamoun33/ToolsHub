@@ -99,19 +99,28 @@ function openSideNav() {
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.add("open"); // Add the 'open' class to apply transitions
     document.getElementById('ShopByBrandID').style.marginTop = "0";
+    document.getElementById('ShopByBrandID').style.opacity = "1";
     document.getElementById('SalesAndSpecialsID').style.marginTop = "0";
+    document.getElementById('SalesAndSpecialsID').style.opacity = "1";
     document.getElementById('ShopByToolsTypeID').style.marginTop = "0";
+    document.getElementById('ShopByToolsTypeID').style.opacity = "1";
     document.getElementById('ShopByApplicationID').style.marginTop = "0";
+    document.getElementById('ShopByApplicationID').style.opacity = "1";
+
 }
 
 function closeSideNav() {
     const sidenav = document.getElementById("myBarMenu");
     sidenav.classList.remove("open"); // Remove the 'open' class to reverse transitions
     setTimeout(function(){
-        document.getElementById('ShopByBrandID').style.marginTop = "1000px";
-        document.getElementById('SalesAndSpecialsID').style.marginTop = "1000px";
-        document.getElementById('ShopByToolsTypeID').style.marginTop = "1000px";
-        document.getElementById('ShopByApplicationID').style.marginTop = "1000px";
+        document.getElementById('ShopByBrandID').style.marginTop = "500px";
+        document.getElementById('ShopByBrandID').style.opacity = "0";
+        document.getElementById('SalesAndSpecialsID').style.marginTop = "500px";
+        document.getElementById('SalesAndSpecialsID').style.opacity = "0";
+        document.getElementById('ShopByToolsTypeID').style.marginTop = "500px";
+        document.getElementById('ShopByToolsTypeID').style.opacity = "0";
+        document.getElementById('ShopByApplicationID').style.marginTop = "500px";
+        document.getElementById('ShopByApplicationID').style.opacity = "0";
     }, 200)
 }
     
@@ -607,20 +616,20 @@ function addToCart(item, item_img, image, item_description, item_name, name, SKU
 
 
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const itemData = JSON.parse(sessionStorage.getItem('selectedItem'));
+document.addEventListener('DOMContentLoaded', function () {
+    const itemData = JSON.parse(sessionStorage.getItem('selectedItem'));
       
-        if (itemData) {
-          // Populate form fields with item data
-        //   document.getElementById('itemPage').innerText = itemData.id;
-          document.getElementById('topItemName').innerText = itemData.name;
-          document.getElementById('itemPrice').innerText = itemData.price;
-          document.getElementById('itemSKU').innerText = itemData.SKU;
-          document.getElementById('img-item-page').src = itemData.image;
-        } else {
-          console.error('No item data found in sessionStorage.');
-        }
-      });
+    if (itemData) {
+        // Populate form fields with item data
+    //   document.getElementById('itemPage').innerText = itemData.id;
+        document.getElementById('topItemName').innerText = itemData.name;
+        document.getElementById('itemPrice').innerText = itemData.price;
+        document.getElementById('itemSKU').innerText = itemData.SKU;
+        document.getElementById('img-item-page').src = itemData.image;
+    } else {
+        console.error('No item data found in sessionStorage.');
+    }
+});
       
 
     
@@ -785,7 +794,7 @@ fetch('lb.json')
   .catch(error => console.error('Error loading JSON:', error));
 
 
-function checkCheckBoxDelivery(){
+  function checkCheckBoxDelivery(){
     let delivery = document.getElementById('checkboxDelivery');
     let pickUp = document.getElementById('checkboxPickUp');
 
@@ -802,3 +811,126 @@ function checkCheckBoxDelivery(){
         pickUp.checked = false;
     }
   }
+
+
+
+
+
+
+
+  function openingOfShoppingCart() {
+    // Select all elements with class 'item-in-cart-border'
+    const items = document.getElementsByClassName('item-in-cart-border');
+    
+    // Logging each item to console for debugging
+    for (let i = 0; i < items.length; i++) {
+        console.log(items[i]);
+    }
+
+    // Arrays to hold details
+    const itemsDetails = [];
+    const itemsNameArray = [];
+    const itemsPriceArray = [];
+    const itemsIMGArray = [];
+
+    // Collect names from 'product-title-container'
+    const itemNameElements = document.querySelectorAll('.item-name-cart-container');
+    itemNameElements.forEach(item => {
+        const span = item.querySelector("span");
+        const name = span ? span.textContent : "";
+        console.log(name);
+        itemsNameArray.push({ name });
+    });
+
+    // Collect prices from 'price-title-container'
+    const itemPriceElements = document.querySelectorAll('.price-item-cart');
+    itemPriceElements.forEach(item => {
+        const span = item.querySelector("span");
+        const price = span ? span.textContent : "";
+        console.log(price);
+        itemsPriceArray.push({ price });
+    });
+
+    // Collect image sources from 'product-image-holder'
+    const itemIMGElements = document.querySelectorAll('.img-item-in-cart-border');
+    itemIMGElements.forEach(item => {
+        const img = item.querySelector("img");
+        const image = img ? img.src : "";
+        itemsIMGArray.push({ image });
+    });
+
+    // Combine details into itemsDetails array
+    for (let i = 0; i < items.length; i++) {
+        itemsDetails[i] = {
+            image: itemsIMGArray[i].image,
+            name: itemsNameArray[i].name,
+            price: itemsPriceArray[i].price
+        };
+
+        console.log(itemsDetails[i]);
+    }
+
+
+    
+
+    // Save to sessionStorage
+    sessionStorage.setItem("cartItems", JSON.stringify(itemsDetails));
+    console.log("Items saved to sessionStorage:", itemsDetails);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the cart items from sessionStorage
+    const storedItems = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
+
+    const cartItemsContainer = document.getElementById('cartItems-SC');
+
+    // Loop through each item and dynamically create the cart item structure
+    storedItems.forEach(item => {
+        // Create the main container for the cart item
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cartItems-product-container"); // Matches your structure
+
+        // Create and add the image
+        const imgElement = document.createElement("img");
+        imgElement.src = item.image;
+        imgElement.alt = item.name;
+        imgElement.classList.add("cartItems-IMG");
+        itemDiv.appendChild(imgElement);
+
+        // Create and add the product title
+        const titleContainer = document.createElement("div");
+        titleContainer.classList.add("cartItems-product-title-container");
+        const titleSpan = document.createElement("span");
+        titleSpan.textContent = item.name;
+        titleContainer.appendChild(titleSpan);
+        itemDiv.appendChild(titleContainer);
+
+        // Create and add the price
+        const priceContainer = document.createElement("div");
+        priceContainer.classList.add("cartItems-price-container");
+        const priceSpan = document.createElement("span");
+        priceSpan.textContent = item.price;
+        priceContainer.appendChild(priceSpan);
+        itemDiv.appendChild(priceContainer);
+
+        // Add the constructed cart item to the container
+        cartItemsContainer.appendChild(itemDiv);
+    });
+
+    // Update the cart summary (Total price calculation)
+    updateCartSummary(storedItems);
+});
+
+function updateCartSummary(items) {
+    const summaryElement = document.getElementById('subtotalAmount').querySelector("span");
+    let total = 0;
+
+    items.forEach(item => {
+        let itemPrice = priceToNumber(item.price); 
+        total += itemPrice; 
+    });
+
+    let subtotal = numberToPrice(total);
+
+    summaryElement.textContent = subtotal;
+}
