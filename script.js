@@ -832,15 +832,22 @@ fetch('lb.json')
     const itemsNameArray = [];
     const itemsPriceArray = [];
     const itemsIMGArray = [];
+    let nameOfItem;
 
     // Collect names from 'product-title-container'
     const itemNameElements = document.querySelectorAll('.item-name-cart-container');
     itemNameElements.forEach(item => {
-        const span = item.querySelector("span");
-        const name = span ? span.textContent : "";
+        const name = item.textContent.trim();
+        nameOfItem = name;
         console.log(name);
         itemsNameArray.push({ name });
     });
+
+    // check the qty
+    let checkQTY = nameOfItem.split("×");
+    let QTY = checkQTY[0].trim();
+    console.log("Qty: " + QTY);
+    let finalQty = parseInt(QTY, 10);
 
     // Collect prices from 'price-title-container'
     const itemPriceElements = document.querySelectorAll('.price-item-cart');
@@ -848,7 +855,12 @@ fetch('lb.json')
         const span = item.querySelector("span");
         const price = span ? span.textContent : "";
         console.log(price);
-        itemsPriceArray.push({ price });
+        let PRICE = parseFloat(price.replace(/[^0-9.-]+/g, '')) || 0;
+        console.log(PRICE);
+        PRICE *= finalQty;
+        let finalPrice = "$" + PRICE.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        console.log(finalPrice);
+        itemsPriceArray.push({ finalPrice });
     });
 
     // Collect image sources from 'product-image-holder'
@@ -864,7 +876,7 @@ fetch('lb.json')
         itemsDetails[i] = {
             image: itemsIMGArray[i].image,
             name: itemsNameArray[i].name,
-            price: itemsPriceArray[i].price
+            price: itemsPriceArray[i].finalPrice
         };
 
         console.log(itemsDetails[i]);
@@ -934,3 +946,105 @@ function updateCartSummary(items) {
 
     summaryElement.textContent = subtotal;
 }
+
+
+// function openingOfShoppingCart() {
+//     const items = document.getElementsByClassName('item-in-cart-border');
+//     const itemsDetails = [];
+//     const itemsNameArray = [];
+//     const itemsPriceArray = [];
+//     const itemsIMGArray = [];
+//     let nameOfItem;
+
+//     // Collect names from 'item-name-cart-container'
+//     const itemNameElements = document.querySelectorAll('.item-name-cart-container');
+//     itemNameElements.forEach(item => {
+//         const name = item.textContent.trim();
+//         nameOfItem = name;
+//         itemsNameArray.push({ name });
+//     });
+
+//     // Extract quantity from name text
+//     let checkQTY = nameOfItem.split("×");
+//     let QTY = checkQTY[0].trim();
+//     let finalQty = parseInt(QTY, 10);
+
+//     // Collect prices from 'price-item-cart'
+//     const itemPriceElements = document.querySelectorAll('.price-item-cart');
+//     itemPriceElements.forEach(item => {
+//         const span = item.querySelector("span");
+//         let price = span ? span.textContent : "";
+//         let PRICE = parseFloat(price.replace(/[^0-9.-]+/g, '')) || 0;
+//         PRICE *= finalQty; // Adjust price based on quantity
+//         let finalPrice = "$" + PRICE.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//         itemsPriceArray.push({ finalPrice });
+//     });
+
+//     // Collect image sources from 'product-image-holder'
+//     const itemIMGElements = document.querySelectorAll('.img-item-in-cart-border');
+//     itemIMGElements.forEach(item => {
+//         const img = item.querySelector("img");
+//         const image = img ? img.src : "";
+//         itemsIMGArray.push({ image });
+//     });
+
+//     // Combine details into itemsDetails array
+//     for (let i = 0; i < items.length; i++) {
+//         itemsDetails[i] = {
+//             image: itemsIMGArray[i].image,
+//             name: itemsNameArray[i].name,
+//             price: itemsPriceArray[i].finalPrice
+//         };
+//     }
+
+//     // Save to sessionStorage
+//     sessionStorage.setItem("cartItems", JSON.stringify(itemsDetails));
+// }
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const storedItems = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
+//     const cartItemsContainer = document.getElementById('cartItems-SC');
+
+//     storedItems.forEach(item => {
+//         const itemDiv = document.createElement("div");
+//         itemDiv.classList.add("cartItems-product-container");
+
+//         const imgElement = document.createElement("img");
+//         imgElement.src = item.image;
+//         imgElement.alt = item.name;
+//         imgElement.classList.add("cartItems-IMG");
+//         itemDiv.appendChild(imgElement);
+
+//         const titleContainer = document.createElement("div");
+//         titleContainer.classList.add("cartItems-product-title-container");
+//         const titleSpan = document.createElement("span");
+//         titleSpan.textContent = item.name;
+//         titleContainer.appendChild(titleSpan);
+//         itemDiv.appendChild(titleContainer);
+
+//         const priceContainer = document.createElement("div");
+//         priceContainer.classList.add("cartItems-price-container");
+//         const priceSpan = document.createElement("span");
+//         priceSpan.textContent = item.price;
+//         priceContainer.appendChild(priceSpan);
+//         itemDiv.appendChild(priceContainer);
+
+//         cartItemsContainer.appendChild(itemDiv);
+//     });
+
+//     updateCartSummary(storedItems);
+// });
+
+// function updateCartSummary(items) {
+//     const summaryElement = document.getElementById('subtotalAmount').querySelector("span");
+//     let total = 0;
+
+//     items.forEach(item => {
+//         let itemPrice = priceToNumber(item.price); 
+//         total += itemPrice; 
+//     });
+
+//     let subtotal = numberToPrice(total);
+
+//     summaryElement.textContent = subtotal;
+// }
