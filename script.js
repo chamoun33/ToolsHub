@@ -818,52 +818,125 @@ fetch('lb.json')
 
 
 
-  function openingOfShoppingCart() {
+//   function openingOfShoppingCart() {
+//     // Select all elements with class 'item-in-cart-border'
+//     const items = document.getElementsByClassName('item-in-cart-border');
+    
+//     // Logging each item to console for debugging
+//     for (let i = 0; i < items.length; i++) {
+//         console.log(items[i]);
+//     }
+
+//     // Arrays to hold details
+//     const itemsDetails = [];
+//     const itemsNameArray = [];
+//     const itemsPriceArray = [];
+//     const itemsIMGArray = [];
+//     let nameOfItem;
+
+//     // Collect names from 'product-title-container'
+//     const itemNameElements = document.querySelectorAll('.item-name-cart-container');
+//     itemNameElements.forEach(item => {
+//         const name = item.textContent.trim();
+//         nameOfItem = name;
+//         console.log(name);
+//         itemsNameArray.push({ name });
+//     });
+
+//     // check the qty
+//     let checkQTY = nameOfItem.split("×");
+//     let QTY = checkQTY[0].trim();
+//     console.log("Qty: " + QTY);
+//     let finalQty = parseInt(QTY, 10);
+
+//     // Collect prices from 'price-title-container'
+//     const itemPriceElements = document.querySelectorAll('.price-item-cart');
+//     itemPriceElements.forEach(item => {
+//         const span = item.querySelector("span");
+//         const price = span ? span.textContent : "";
+//         console.log(price);
+//         let PRICE = parseFloat(price.replace(/[^0-9.-]+/g, '')) || 0;
+//         console.log(PRICE);
+//         PRICE *= finalQty;
+//         let finalPrice = "$" + PRICE.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//         console.log(finalPrice);
+//         itemsPriceArray.push({ finalPrice });
+//     });
+
+//     // Collect image sources from 'product-image-holder'
+//     const itemIMGElements = document.querySelectorAll('.img-item-in-cart-border');
+//     itemIMGElements.forEach(item => {
+//         const img = item.querySelector("img");
+//         const image = img ? img.src : "";
+//         itemsIMGArray.push({ image });
+//     });
+
+//     // Combine details into itemsDetails array
+//     for (let i = 0; i < items.length; i++) {
+//         itemsDetails[i] = {
+//             image: itemsIMGArray[i].image,
+//             name: itemsNameArray[i].name,
+//             price: itemsPriceArray[i].finalPrice
+//         };
+
+//         console.log(itemsDetails[i]);
+//     }
+
+
+    
+
+//     // Save to sessionStorage
+//     sessionStorage.setItem("cartItems", JSON.stringify(itemsDetails));
+//     console.log("Items saved to sessionStorage:", itemsDetails);
+// }
+
+
+
+
+function openingOfShoppingCart() {
     // Select all elements with class 'item-in-cart-border'
     const items = document.getElementsByClassName('item-in-cart-border');
     
-    // Logging each item to console for debugging
-    for (let i = 0; i < items.length; i++) {
-        console.log(items[i]);
-    }
-
     // Arrays to hold details
     const itemsDetails = [];
     const itemsNameArray = [];
     const itemsPriceArray = [];
     const itemsIMGArray = [];
-    let nameOfItem;
 
-    // Collect names from 'product-title-container'
+    // Collect names and calculate quantity per item
     const itemNameElements = document.querySelectorAll('.item-name-cart-container');
     itemNameElements.forEach(item => {
         const name = item.textContent.trim();
-        nameOfItem = name;
-        console.log(name);
-        itemsNameArray.push({ name });
+        console.log("Full name and quantity text:", name);
+        
+        // Extract quantity and item name from the text
+        const [qtyPart, itemName] = name.split("×").map(part => part.trim());
+        const quantity = parseInt(qtyPart, 10);
+        console.log("Extracted Quantity:", quantity);
+        console.log("Extracted Item Name:", itemName);
+
+        itemsNameArray.push({ name: name, quantity });
     });
 
-    // check the qty
-    let checkQTY = nameOfItem.split("×");
-    let QTY = checkQTY[0].trim();
-    console.log("Qty: " + QTY);
-    let finalQty = parseInt(QTY, 10);
-
-    // Collect prices from 'price-title-container'
+    // Collect prices and calculate total price per item
     const itemPriceElements = document.querySelectorAll('.price-item-cart');
-    itemPriceElements.forEach(item => {
+    itemPriceElements.forEach((item, index) => {
         const span = item.querySelector("span");
-        const price = span ? span.textContent : "";
-        console.log(price);
-        let PRICE = parseFloat(price.replace(/[^0-9.-]+/g, '')) || 0;
-        console.log(PRICE);
-        PRICE *= finalQty;
-        let finalPrice = "$" + PRICE.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        console.log(finalPrice);
-        itemsPriceArray.push({ finalPrice });
+        const priceText = span ? span.textContent : "";
+        console.log("Price Text:", priceText);
+
+        // Convert price to a number and multiply by quantity
+        const priceNumber = parseFloat(priceText.replace(/[^0-9.-]+/g, '')) || 0;
+        const totalItemPrice = priceNumber * itemsNameArray[index].quantity;
+        
+        // Format the final price
+        const formattedPrice = "$" + totalItemPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        console.log("Final Price with Quantity:", formattedPrice);
+
+        itemsPriceArray.push({ price: formattedPrice });
     });
 
-    // Collect image sources from 'product-image-holder'
+    // Collect image sources
     const itemIMGElements = document.querySelectorAll('.img-item-in-cart-border');
     itemIMGElements.forEach(item => {
         const img = item.querySelector("img");
@@ -876,19 +949,22 @@ fetch('lb.json')
         itemsDetails[i] = {
             image: itemsIMGArray[i].image,
             name: itemsNameArray[i].name,
-            price: itemsPriceArray[i].finalPrice
+            quantity: itemsNameArray[i].quantity,
+            price: itemsPriceArray[i].price
         };
 
-        console.log(itemsDetails[i]);
+        console.log("Item Details:", itemsDetails[i]);
     }
-
-
-    
 
     // Save to sessionStorage
     sessionStorage.setItem("cartItems", JSON.stringify(itemsDetails));
     console.log("Items saved to sessionStorage:", itemsDetails);
 }
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // Retrieve the cart items from sessionStorage
