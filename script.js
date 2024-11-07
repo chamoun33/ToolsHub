@@ -1011,6 +1011,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function updateCartSummary(items) {
     const summaryElement = document.getElementById('subtotalAmount').querySelector("span");
+    const grandTotalEXCL = document.getElementById('grandTotalExclTAX').querySelector("span");
+    const grandTotalINCl = document.getElementById('grandTotalInclTAX').querySelector("span");
     let total = 0;
 
     items.forEach(item => {
@@ -1021,6 +1023,9 @@ function updateCartSummary(items) {
     let subtotal = numberToPrice(total);
 
     summaryElement.textContent = subtotal;
+    grandTotalEXCL.textContent = subtotal;
+    let grandTotal = total + ( total * 0.05);
+    grandTotalINCl.textContent = numberToPrice(grandTotal);
 }
 
 
