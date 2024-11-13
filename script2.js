@@ -14,7 +14,7 @@ function startQuiz(numOfQuestions, cond){
 
         if (condition === 'limited'){
             if (checkQuestions < numberOfQuestions){
-                fetch('https://the-trivia-api.com/api/questions?limit=1')
+                fetch('https://the-trivia-api.com/api/questions?categories=history&limit=1')
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
@@ -33,7 +33,7 @@ function startQuiz(numOfQuestions, cond){
 
             document.getElementById('exit-unlimitedQuiz-container').style.display = 'flex';
 
-            fetch('https://the-trivia-api.com/api/questions?limit=1')
+            fetch('https://the-trivia-api.com/api/questions?categories=science&limit=1')
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
@@ -44,6 +44,8 @@ function startQuiz(numOfQuestions, cond){
             questionCounter ++;
         }
     }
+
+    //https://the-trivia-api.com/api/questions?limit=1
 
     // Display question and answers
     function displayQuestion(questionData) {
@@ -76,11 +78,13 @@ function startQuiz(numOfQuestions, cond){
             selectedButton.style.backgroundColor = '#28a745';
             document.getElementById('mainBox').style.border = '2px solid #28a745';
             score ++;
-            setTimeout(fetchQuestion, 800);
+            // setTimeout(fetchQuestion, 800);
+            fetchQuestion();
         } else {
             selectedButton.style.backgroundColor = '#dc3545';
             document.getElementById('mainBox').style.border = '2px solid #dc3545';
-            setTimeout(fetchQuestion, 800);
+            // setTimeout(fetchQuestion, 800);
+            fetchQuestion();
         }
 
         // setTimeout(fetchQuestion, 1000); // Load next question after delay
