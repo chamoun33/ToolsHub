@@ -1,10 +1,13 @@
+let score;
+let checkQuestions;
+let condition;
+
 function startQuiz(numOfQuestions, cond){
 
     let numberOfQuestions = numOfQuestions;
-    let checkQuestions = 0;
-    let condition = cond;
-    let score = 0;
-    let questionCounter = 0;
+    checkQuestions = 0;
+    condition = cond;
+    score = 0;
 
     console.log('startQuiz started');
 
@@ -14,7 +17,7 @@ function startQuiz(numOfQuestions, cond){
 
         if (condition === 'limited'){
             if (checkQuestions < numberOfQuestions){
-                fetch('https://the-trivia-api.com/api/questions?categories=history&limit=1')
+                fetch('https://the-trivia-api.com/api/questions?categories=music&limit=1')
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
@@ -22,26 +25,26 @@ function startQuiz(numOfQuestions, cond){
                 })
                 .catch(error => console.error('Error fetching question:', error));
                 checkQuestions ++;
+                console.log('Question questionned: ' + checkQuestions);
             }
             else{
                 displayResult();
             }
-            console.log('Question questionned: ' + checkQuestions);
         }
         
         if(condition === 'unlimited'){
 
             document.getElementById('exit-unlimitedQuiz-container').style.display = 'flex';
 
-            fetch('https://the-trivia-api.com/api/questions?categories=science&limit=1')
+            fetch('https://the-trivia-api.com/api/questions?categories=geography&limit=1')
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
                     displayQuestion(questionData);
                 })
                 .catch(error => console.error('Error fetching question:', error));
-
-            questionCounter ++;
+                checkQuestions ++;
+                console.log('Question questionned: ' + checkQuestions);
         }
     }
 
@@ -76,33 +79,29 @@ function startQuiz(numOfQuestions, cond){
 
         if (selectedButton.innerHTML === correctAnswer) {
             selectedButton.style.backgroundColor = '#28a745';
-            document.getElementById('mainBox').style.border = '2px solid #28a745';
+            document.getElementById('mainBox').classList.add("highlighted-green");
+            setTimeout(() => {
+                document.getElementById('mainBox').classList.remove("highlighted-green");
+            }, (2000));
             score ++;
+            console.log('Score: ' + score);
             // setTimeout(fetchQuestion, 800);
             fetchQuestion();
         } else {
             selectedButton.style.backgroundColor = '#dc3545';
-            document.getElementById('mainBox').style.border = '2px solid #dc3545';
+            document.getElementById('mainBox').classList.add("highlighted-red")
+            setTimeout(() => {
+                document.getElementById('mainBox').classList.remove("highlighted-red");
+            }, (2000));
+            console.log('Score: ' + score);
             // setTimeout(fetchQuestion, 800);
             fetchQuestion();
         }
 
         // setTimeout(fetchQuestion, 1000); // Load next question after delay
-        console.log('Score: ' + score);
     }
 
-    function displayResult(){
-        document.getElementById('mainBox').style.border = '2px solid #6a53eb';
-        document.getElementById('finalScore').style.display = 'block';
-        let displayScore = document.getElementById('score');
-        displayScore.innerHTML = score + '/' + numberOfQuestions;
-        displayScore.style.display = 'block';
-        document.getElementById('question').style.display = 'none';
-        document.getElementById('answers').style.display = 'none';
-        document.getElementById('restart-quote').style.display = 'block';
-        document.getElementById('restartQuiz').style.display = 'block';
-        document.getElementById('fialUI-id').style.display = 'flex';
-    }
+    
 
 }
 
@@ -134,4 +133,29 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
 
 function startUnlimitedQuestion(){
     startQuiz(0, 'unlimited');
+}
+
+
+function displayResult(){
+    document.getElementById('mainBox').style.border = '2px solid #6a53eb';
+    document.getElementById('finalScore').style.display = 'block';
+    let displayScore = document.getElementById('score');
+    displayScore.innerHTML = score + '/' + (condition == 'unlimited' ? checkQuestions - 1 : checkQuestions);
+    displayScore.style.display = 'block';
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('answers').style.display = 'none';
+    document.getElementById('restart-quote').style.display = 'block';
+    document.getElementById('restartQuiz').style.display = 'block';
+    document.getElementById('fialUI-id').style.display = 'flex';
+    document.getElementById('exit-unlimitedQuiz-container').style.display = 'none';
+}
+
+function switchUI_2(){
+    document.getElementById('finalScore').style.display = 'none';
+    document.getElementById('score').style.display = 'none';
+    document.getElementById('fialUI-id').style.display = 'none';
+    document.getElementById('question').style.display = 'block';
+    document.getElementById('quiz-number-question').style.display = 'block';
+    document.getElementById('quizForm').style.display = 'flex';
+    document.getElementById('unlimitedQuestionContainer').style.display = 'block';
 }
