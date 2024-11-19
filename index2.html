@@ -3,132 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles2.css">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <script src="script2.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
 </head>
 <body>
     <main class="main-container">
         <nav>
             <p style="margin: 0;">Hello, can you hear me?</p>
         </nav>
+
         <div class="box-holder-container">
             <div class="box-container" id="mainBox">
-                <div class="question-container">
-                    <!--First UI {-->
-                    <p id="question01">Learn & Grow</p>
-                    <p id="quote">Every quiz is an opportunity to learn something new and interesting.</p>
-                    <!--First UI }-->
 
-                    <!--Second UI {-->
-                    <p id="question">Ready to get started?</p>
-                    <p id="quiz-number-question">Please choose how many questions you'd like for your quiz!</p>
-                    <!--Second UI }-->
-
-                    <!--Final UI {-->
-                    <p id="finalScore">Your final score here!</p>
-                    <p id="score"></p>
-                    <!--Final UI }-->
-
+                <!--Display score info UI {-->
+                <div class="display-score-info-container" id="score-info-container">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="22px" height="22px" id="settingICON" onclick="editSettings()">    
+                        <path d="M 10.490234 2 C 10.011234 2 9.6017656 2.3385938 9.5097656 2.8085938 L 9.1757812 
+                        4.5234375 C 8.3550224 4.8338012 7.5961042 5.2674041 6.9296875 5.8144531 L 5.2851562 5.2480469 
+                        C 4.8321563 5.0920469 4.33375 5.2793594 4.09375 5.6933594 L 2.5859375 8.3066406 C 2.3469375 
+                        8.7216406 2.4339219 9.2485 2.7949219 9.5625 L 4.1132812 10.708984 C 4.0447181 11.130337 4 
+                        11.559284 4 12 C 4 12.440716 4.0447181 12.869663 4.1132812 13.291016 L 2.7949219 14.4375 C 
+                        2.4339219 14.7515 2.3469375 15.278359 2.5859375 15.693359 L 4.09375 18.306641 C 4.33275 
+                        18.721641 4.8321562 18.908906 5.2851562 18.753906 L 6.9296875 18.1875 C 7.5958842 18.734206 
+                        8.3553934 19.166339 9.1757812 19.476562 L 9.5097656 21.191406 C 9.6017656 21.661406 10.011234 
+                        22 10.490234 22 L 13.509766 22 C 13.988766 22 14.398234 21.661406 14.490234 21.191406 L 14.824219 
+                        19.476562 C 15.644978 19.166199 16.403896 18.732596 17.070312 18.185547 L 18.714844 18.751953 
+                        C 19.167844 18.907953 19.66625 18.721641 19.90625 18.306641 L 21.414062 15.691406 C 21.653063 
+                        15.276406 21.566078 14.7515 21.205078 14.4375 L 19.886719 13.291016 C 19.955282 12.869663 20 
+                        12.440716 20 12 C 20 11.559284 19.955282 11.130337 19.886719 10.708984 L 21.205078 9.5625 C 
+                        21.566078 9.2485 21.653063 8.7216406 21.414062 8.3066406 L 19.90625 5.6933594 C 19.66725 
+                        5.2783594 19.167844 5.0910937 18.714844 5.2460938 L 17.070312 5.8125 C 16.404116 5.2657937 
+                        15.644607 4.8336609 14.824219 4.5234375 L 14.490234 2.8085938 C 14.398234 2.3385937 13.988766 
+                        2 13.509766 2 L 10.490234 2 z M 12 8 C 14.209 8 16 9.791 16 12 C 16 14.209 14.209 16 12 16 C 
+                        9.791 16 8 14.209 8 12 C 8 9.791 9.791 8 12 8 z"/>
+                    </svg>
+                    
+                    <span style="text-align: end;" id="score-info">Score: 4/15</span>
                 </div>
-                <div class="choices-container" id="answers">
+                <!--Display score info UI }-->
 
-                    <!--First UI {-->
-                    <button class="start-button" onclick="switchUI()" id="FirstUI-button">Start Your Quiz Adventure Now!</button>
-                    <!--First UI  }-->
 
-                    <!--Second UI {-->
-                    <form id="quizForm" class="form"> 
-                        <input type="number" class="number-of-quiz" id="numQuestions" name="numQuestions" min="1" max="100" placeholder="..." required> 
-                        <button type="submit" id="startQuiz" class="startQuiz-button">
-                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </form>
-                    <div class="unlimited-question" id="unlimitedQuestionContainer">
-                        <p>Start an <strong>unlimited</strong> quiz:</p>
 
-                        <button class="unlimitedQuiz-button" onclick="startUnlimitedQuestion()">
-                            <svg height="30px" width="30px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                viewBox="0 0 512 512"  xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:#000000;}
-                                </style>
-                                <g>
-                                    <path class="st0" d="M501.98,206.15c-9.769-23.023-25.998-42.56-46.458-56.389c-10.181-6.873-21.446-12.34-33.536-16.068
-                                        c-12.009-3.809-24.842-5.798-38.088-5.798c-16.982,0-33.294,3.316-48.197,9.365c-1.246,0.492-2.402,0.986-3.558,1.568
-                                        c-13.416,5.879-25.675,14.16-36.188,24.017c-3.396,3.227-6.623,6.623-9.858,10.432c-5.709,6.542-11.588,14.079-17.305,21.696
-                                        c-1.157,1.568-2.402,3.226-3.558,4.804c-3.146,4.302-33.212,48.358-38.509,56.226c-2.652,3.97-5.798,8.442-9.195,13.327
-                                        c-0.744,1.076-1.568,2.24-2.393,3.396c-5.636,8.031-11.928,16.481-17.726,23.937c-2.895,3.72-5.798,7.197-8.281,10.1
-                                        c-2.563,2.976-4.884,5.378-6.542,6.954c-7.116,6.704-15.486,12.171-24.672,15.899c-9.194,3.728-19.214,5.798-29.816,5.798
-                                        c-7.286,0-14.322-0.996-20.944-2.815c-3.396-0.913-6.712-2.07-9.939-3.477c-14.248-5.968-26.419-16.068-34.95-28.74
-                                        c-4.302-6.372-7.699-13.327-10.019-20.783c-2.233-7.456-3.558-15.316-3.558-23.597c0-11.014,2.24-21.365,6.21-30.892
-                                        c6.049-14.24,16.149-26.329,28.821-34.942c6.372-4.31,13.326-7.618,20.782-9.939c7.448-2.321,15.316-3.638,23.597-3.638
-                                        c10.602,0.08,20.622,2.07,29.816,5.79c9.187,3.808,17.556,9.194,24.672,15.898c1.658,1.577,3.979,4.059,6.542,6.962
-                                        c4.472,5.216,9.769,11.92,15.074,18.964c2.07,2.814,4.14,5.628,6.21,8.523c7.949-11.588,21.858-31.959,29.144-42.48
-                                        c-1.237-1.658-2.482-3.307-3.72-4.965c-3.316-4.23-6.631-8.281-9.938-12.009c-3.316-3.809-6.462-7.205-9.858-10.432
-                                        c-11.426-10.772-24.922-19.545-39.746-25.586c-14.904-6.049-31.222-9.365-48.196-9.365c-17.637,0-34.53,3.566-49.927,10.108
-                                        c-23.022,9.688-42.487,25.918-56.316,46.369c-6.873,10.19-12.332,21.527-16.141,33.536C1.989,229.997,0,242.75,0,256.004
-                                        c0,17.637,3.558,34.53,10.02,49.846c9.768,23.104,25.998,42.569,46.369,56.397c10.27,6.874,21.535,12.332,33.624,16.141
-                                        c12.008,3.728,24.842,5.717,38.088,5.717c16.974,0,33.293-3.316,48.196-9.356c14.824-6.049,28.239-14.824,39.666-25.506l0.08-0.081
-                                        c3.397-3.146,6.543-6.631,9.858-10.44c5.709-6.542,11.588-14.071,17.305-21.689c1.157-1.577,2.402-3.154,3.558-4.723
-                                        c3.146-4.391,44.307-64.758,47.696-69.642c0.752-1.076,1.577-2.232,2.401-3.396c5.637-7.95,11.928-16.48,17.726-23.928
-                                        c2.895-3.728,5.798-7.206,8.281-10.101c2.564-2.984,4.885-5.386,6.542-6.962c7.116-6.704,15.486-12.09,24.673-15.898
-                                        c2.24-0.906,4.472-1.649,6.792-2.402c7.286-2.15,14.984-3.307,23.023-3.388c11.013,0.08,21.446,2.232,30.882,6.291
-                                        c14.241,5.96,26.42,16.06,34.943,28.732c4.31,6.38,7.706,13.335,10.019,20.782c2.321,7.456,3.566,15.324,3.566,23.605
-                                        c0,11.014-2.24,21.446-6.21,30.883c-6.049,14.24-16.149,26.419-28.821,34.942c-6.372,4.31-13.326,7.707-20.782,9.939
-                                        c-7.367,2.321-15.316,3.648-23.597,3.648c-10.602,0-20.622-2.07-29.816-5.798c-9.187-3.728-17.557-9.195-24.673-15.899
-                                        c-1.658-1.577-3.979-4.059-6.542-6.954c-4.472-5.135-9.776-11.928-15.074-18.963c-2.15-2.815-4.221-5.718-6.291-8.613
-                                        c-0.663,0.994-1.326,1.99-2.07,3.065c-13.666,20.039-22.279,32.71-26.994,39.576c1.237,1.658,2.483,3.235,3.72,4.893
-                                        c3.316,4.221,6.631,8.281,9.938,12c3.234,3.808,6.462,7.294,9.858,10.44c11.426,10.763,24.923,19.538,39.746,25.587
-                                        c14.904,6.04,31.215,9.356,48.197,9.356c17.636,0,34.53-3.558,49.846-10.019c23.103-9.769,42.56-25.999,56.396-46.458
-                                        c6.866-10.181,12.421-21.446,16.141-33.536C510.01,282.083,512,269.25,512,256.004C512,238.367,508.442,221.474,501.98,206.15z"/>
-                                </g>
-                            </svg>
-                        </button>
+
+                <!--First UI {-->
+                <div class="welcome-page" id="firstUI">
+                    <div class="question-container">
+                        <p id="question01" style="font-size: 28px; font-weight: 700;">Learn & Grow</p>
+                        <p id="quote">Every quiz is an opportunity to learn something new and interesting.</p>
                     </div>
-                    <!--Second UI }-->
+
+                    <div class="choices-container">
+                        <button class="start-button" onclick="switchUI_1()" id="FirstUI-button">Start Your Quiz Adventure Now!</button>
+                    </div>
                 </div>
+                <!--First UI }-->
 
 
-                <!--Final UI {-->
-                <div class="FinalUI-restart" id="fialUI-id">
-                    <p id="restart-quote">Test Your Knowledge Again!</p>
-                    <button class="restartQuiz" id="restartQuiz">
-                        <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7629 2.0007C17.211 2.02117 16.7802 2.48517 16.8007 3.03708L16.8985 5.67483C15.5455 4.62548 13.846 4.00001 12 4.00001C7.58172 4.00001 4 7.58174 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68631 8.68629 6.00001 12 6.00001C13.5794 6.00001 15.0168 6.60994 16.089 7.60891L12.6839 8.00677C12.1354 8.07087 11.7427 8.56751 11.8068 9.11607C11.8709 9.66462 12.3675 10.0574 12.9161 9.99326L18.1161 9.38567C18.6341 9.32514 19.0186 8.87659 18.9993 8.35536L18.7993 2.96295C18.7788 2.41104 18.3148 1.98023 17.7629 2.0007Z" fill="#000000"/>
+
+
+
+                <!--Settings UI {-->
+                <div id="settings">
+                        <h2 style="margin-top: 18px; font-size: 24px;">Select Quiz Settings</h2>
+                
+                    <label for="difficulty-dropdown">Choose Difficulty</label>
+                    <div class="dropdown-wrapper">
+                        <div class="option-dropdown" id="difficulty-dropdown" style="margin-top: 10px;" onclick="openDropdown(this,'diff-dp')">
+                            <span style="padding-left: 5px;" id="difficultyPlaceholder">Select Difficulty</span>
+                            <i class="fa-solid fa-chevron-down" style="font-size: 11px;"></i>
+                            
+                        </div>
+                        <div class="dropdown" id="diff-dp">
+                            <div class="dropdown-options" onclick="modifyAPIdiff('easy')"><span>Easy</span></div>
+                            <div class="dropdown-options" onclick="modifyAPIdiff('medium')"><span>Medium</span></div>
+                            <div class="dropdown-options" onclick="modifyAPIdiff('hard')"><span>Hard</span></div>
+                    
+                        </div>
+                    </div>
+                    <label for="topic-dropdown" style="margin-top: 20px;">Choose Topic</label>
+                    <div class="dropdown-wrapper">
+                        <div class="option-dropdown" id="Topic" style="margin-top: 10px;" onclick="openDropdown(this,'top-dp')">
+                            <span style="padding-left: 5px;" id="topicPlaceholder">Select Topic</span>
+                            <i class="fa-solid fa-chevron-down" style="font-size: 11px;"></i>
+                            
+                        </div>
+                        <div class="dropdown" id="top-dp" style="justify-content: flex-start;">
+                    
+                            <div class="dropdown-options" onclick="modifyAPI('general_knowledge', 'General Knowledge')"><span>General Knowledge</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('science', 'Science')"><span>Science</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('music', 'Music')"><span>Music</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('society_and_culture', 'society and culture')"><span>Society and Culture</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('food_and_drink', 'Food and Drink')"><span>Food and Drink</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('history', 'History')"><span>History</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('sport_and_leisure', 'Sports and Leisure')"><span>Sports and Leisure</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('geography', 'Geography')"><span>Geography</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('arts_and_literature', 'Arts and Literature')"><span>Arts and Literature</span></div>
+                            <div class="dropdown-options" onclick="modifyAPI('film_and_tv', 'Film and TV')"><span>Film and TV</span></div>
+                    
+                        </div>
+                    </div>
+                
+                    <button class="confirm-quiz-btn" id="confirmButton" onclick="createAPI()"  style="margin-top: 25px;  margin-bottom: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-dasharray="24" stroke-dashoffset="24" 
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 11l6 6l10 -10">
+                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="24;0"/>
+                            </path>
                         </svg>
                     </button>
                 </div>
-                <!--Final UI }-->
-                
-                <div class="exit-unlimitedQuiz" id="exit-unlimitedQuiz-container">
+                <!--Settings UI }-->
 
-                    <p>End your quiz here.</p>
 
-                    <button class="exitButton" onclick="displayResult()">
-                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_429_11067)">
-                            <path d="M15 4.00098H5V18.001C5 19.1055 5.89543 20.001 7 20.001H15" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 15.001L19 12.001M19 12.001L16 9.00098M19 12.001H9" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_429_11067">
-                            <rect width="24" height="24" fill="white" transform="translate(0 0.000976562)"/>
-                            </clipPath>
-                            </defs>
-                            </svg>
-                    </button>
+
+
+
+                <!--Question number UI {-->
+                <div id="numberOfQuestions">
+                    <div class="question-container">
+                        <p id="question01">Ready to get started?</p>
+                        <p id="quiz-number-question">Please choose how many questions you'd like for your quiz!</p>
+                    </div>
+
+
+                    <div class="choices-container">
+                        <form id="quizForm" class="form"> 
+                            <input type="number" class="number-of-quiz" id="numQuestions" name="numQuestions" min="1" max="100" placeholder="..." required> 
+                            <button type="submit" id="startQuiz" class="startQuiz-button">
+                                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                        <div class="unlimited-question" id="unlimitedQuestionContainer">
+                            <p>Start an <strong>unlimited</strong> quiz:</p>
+    
+                            <button class="unlimitedQuiz-button" onclick="startUnlimitedQuestion()">
+                                <svg height="30px" width="30px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    viewBox="0 0 512 512"  xml:space="preserve">
+                                    <style type="text/css">
+                                        .st0{fill:#000000;}
+                                    </style>
+                                    <g>
+                                        <path class="st0" d="M501.98,206.15c-9.769-23.023-25.998-42.56-46.458-56.389c-10.181-6.873-21.446-12.34-33.536-16.068
+                                            c-12.009-3.809-24.842-5.798-38.088-5.798c-16.982,0-33.294,3.316-48.197,9.365c-1.246,0.492-2.402,0.986-3.558,1.568
+                                            c-13.416,5.879-25.675,14.16-36.188,24.017c-3.396,3.227-6.623,6.623-9.858,10.432c-5.709,6.542-11.588,14.079-17.305,21.696
+                                            c-1.157,1.568-2.402,3.226-3.558,4.804c-3.146,4.302-33.212,48.358-38.509,56.226c-2.652,3.97-5.798,8.442-9.195,13.327
+                                            c-0.744,1.076-1.568,2.24-2.393,3.396c-5.636,8.031-11.928,16.481-17.726,23.937c-2.895,3.72-5.798,7.197-8.281,10.1
+                                            c-2.563,2.976-4.884,5.378-6.542,6.954c-7.116,6.704-15.486,12.171-24.672,15.899c-9.194,3.728-19.214,5.798-29.816,5.798
+                                            c-7.286,0-14.322-0.996-20.944-2.815c-3.396-0.913-6.712-2.07-9.939-3.477c-14.248-5.968-26.419-16.068-34.95-28.74
+                                            c-4.302-6.372-7.699-13.327-10.019-20.783c-2.233-7.456-3.558-15.316-3.558-23.597c0-11.014,2.24-21.365,6.21-30.892
+                                            c6.049-14.24,16.149-26.329,28.821-34.942c6.372-4.31,13.326-7.618,20.782-9.939c7.448-2.321,15.316-3.638,23.597-3.638
+                                            c10.602,0.08,20.622,2.07,29.816,5.79c9.187,3.808,17.556,9.194,24.672,15.898c1.658,1.577,3.979,4.059,6.542,6.962
+                                            c4.472,5.216,9.769,11.92,15.074,18.964c2.07,2.814,4.14,5.628,6.21,8.523c7.949-11.588,21.858-31.959,29.144-42.48
+                                            c-1.237-1.658-2.482-3.307-3.72-4.965c-3.316-4.23-6.631-8.281-9.938-12.009c-3.316-3.809-6.462-7.205-9.858-10.432
+                                            c-11.426-10.772-24.922-19.545-39.746-25.586c-14.904-6.049-31.222-9.365-48.196-9.365c-17.637,0-34.53,3.566-49.927,10.108
+                                            c-23.022,9.688-42.487,25.918-56.316,46.369c-6.873,10.19-12.332,21.527-16.141,33.536C1.989,229.997,0,242.75,0,256.004
+                                            c0,17.637,3.558,34.53,10.02,49.846c9.768,23.104,25.998,42.569,46.369,56.397c10.27,6.874,21.535,12.332,33.624,16.141
+                                            c12.008,3.728,24.842,5.717,38.088,5.717c16.974,0,33.293-3.316,48.196-9.356c14.824-6.049,28.239-14.824,39.666-25.506l0.08-0.081
+                                            c3.397-3.146,6.543-6.631,9.858-10.44c5.709-6.542,11.588-14.071,17.305-21.689c1.157-1.577,2.402-3.154,3.558-4.723
+                                            c3.146-4.391,44.307-64.758,47.696-69.642c0.752-1.076,1.577-2.232,2.401-3.396c5.637-7.95,11.928-16.48,17.726-23.928
+                                            c2.895-3.728,5.798-7.206,8.281-10.101c2.564-2.984,4.885-5.386,6.542-6.962c7.116-6.704,15.486-12.09,24.673-15.898
+                                            c2.24-0.906,4.472-1.649,6.792-2.402c7.286-2.15,14.984-3.307,23.023-3.388c11.013,0.08,21.446,2.232,30.882,6.291
+                                            c14.241,5.96,26.42,16.06,34.943,28.732c4.31,6.38,7.706,13.335,10.019,20.782c2.321,7.456,3.566,15.324,3.566,23.605
+                                            c0,11.014-2.24,21.446-6.21,30.883c-6.049,14.24-16.149,26.419-28.821,34.942c-6.372,4.31-13.326,7.707-20.782,9.939
+                                            c-7.367,2.321-15.316,3.648-23.597,3.648c-10.602,0-20.622-2.07-29.816-5.798c-9.187-3.728-17.557-9.195-24.673-15.899
+                                            c-1.658-1.577-3.979-4.059-6.542-6.954c-4.472-5.135-9.776-11.928-15.074-18.963c-2.15-2.815-4.221-5.718-6.291-8.613
+                                            c-0.663,0.994-1.326,1.99-2.07,3.065c-13.666,20.039-22.279,32.71-26.994,39.576c1.237,1.658,2.483,3.235,3.72,4.893
+                                            c3.316,4.221,6.631,8.281,9.938,12c3.234,3.808,6.462,7.294,9.858,10.44c11.426,10.763,24.923,19.538,39.746,25.587
+                                            c14.904,6.04,31.215,9.356,48.197,9.356c17.636,0,34.53-3.558,49.846-10.019c23.103-9.769,42.56-25.999,56.396-46.458
+                                            c6.866-10.181,12.421-21.446,16.141-33.536C510.01,282.083,512,269.25,512,256.004C512,238.367,508.442,221.474,501.98,206.15z"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
+                <!--Question number UI }-->
 
-                <!-- <button id="next-question" onclick="fetchQuestion()">Next Question</button> -->
+
+
+
+                <!--Quiz UI {-->
+                <div class="quiz-container" id="quizContainer">
+                    <div class="question-container">
+                        <p id="question"></p>
+                    </div>
+
+                    <div class="choices-container" id="answers">
+
+                    </div>
+
+                    <div class="exit-unlimitedQuiz" id="exit-unlimitedQuiz-container">
+
+                        <p>End your quiz here.</p>
+    
+                        <button class="exitButton" onclick="displayResult()">
+                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_429_11067)">
+                                <path d="M15 4.00098H5V18.001C5 19.1055 5.89543 20.001 7 20.001H15" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 15.001L19 12.001M19 12.001L16 9.00098M19 12.001H9" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_429_11067">
+                                <rect width="24" height="24" fill="white" transform="translate(0 0.000976562)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+                        </button>
+                    </div>
+                </div>
+                <!--Quiz UI }-->
+
+
+
+                <!--Loading UI {-->
+                <div class="loading-container" id="loading-page">
+                    <div class="spinner"></div>
+                </div>
+                <!--Loading UI }-->
+
+
+
+
+
+
+                <!--Display info UI {-->
+                <div class="display-info-container" id="info-container">
+                    <span style="text-align: start;" id="category-info">Category: History</span>
+                    <span style="text-align: center;" id="difficulty-info">Difficulty: Medium</span>
+                    <span style="text-align: end;" id="question-counter-info">Quesions: 55</span>
+                </div>
+                <!--Display info UI {-->
+
+
+
+
+                <!--Score UI {-->
+                <div class="score-container" id="final-score-container">
+                    <div class="question-container">
+                        <p id="finalScore">Your final score here!</p>
+                        <p id="score"></p>
+                    </div>
+
+                    <div class="restart-container">
+                        <p>Test Your Knowledge Again!</p>
+                        <button class="restartQuiz" id="restartQuiz" onclick="restartQuiz()">
+                            <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7629 2.0007C17.211 2.02117 16.7802 2.48517 16.8007 3.03708L16.8985 
+                                5.67483C15.5455 4.62548 13.846 4.00001 12 4.00001C7.58172 4.00001 4 7.58174 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 
+                                20 16.4183 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 
+                                6 12C6 8.68631 8.68629 6.00001 12 6.00001C13.5794 6.00001 15.0168 6.60994 16.089 7.60891L12.6839 8.00677C12.1354 8.07087 
+                                11.7427 8.56751 11.8068 9.11607C11.8709 9.66462 12.3675 10.0574 12.9161 9.99326L18.1161 9.38567C18.6341 9.32514 19.0186 
+                                8.87659 18.9993 8.35536L18.7993 2.96295C18.7788 2.41104 18.3148 1.98023 17.7629 2.0007Z" fill="#000000"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!--Score UI }-->
 
             </div>
         </div>
+
+        <footer>
+            <span style="text-align: start;">David Chamoun</span>
+            <span style="text-align: center;">© 2024 All Rights Reserved.</span>
+            <span style="text-align: end;">...</span>
+        </footer>
     </main>
 </body>
 </html>
