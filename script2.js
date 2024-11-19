@@ -19,7 +19,7 @@ let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
 
         if (condition === 'limited'){
             if (checkQuestions < numberOfQuestions){
-                fetch('https://the-trivia-api.com/api/questions?categories=music&limit=1')
+                fetch(API)
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
