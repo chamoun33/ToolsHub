@@ -195,6 +195,7 @@ function switchUI_2(){
     console.log("UI 2 switched!");
 
     document.getElementById('numberOfQuestions').style.display = 'flex';
+    document.getElementById('numQuestions').focus();
     document.getElementById('settings').style.display = 'none';
 }
 
