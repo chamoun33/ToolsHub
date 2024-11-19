@@ -165,7 +165,9 @@ function displayResult(){
     document.getElementById('quizContainer').style.display = 'none';
     document.getElementById('final-score-container').style.display = 'flex';
     document.getElementById('info-container').style.display = 'none';
-    document.getElementById('score-info-container').style.display = 'none';
+    // document.getElementById('score-info-container').style.display = 'none';
+    document.getElementById('settingICON').style.visibility = 'visible';
+    document.getElementById('score-info').style.visibility = 'hidden';
 
     if(condition === 'limited'){
         setTimeout(() => 
@@ -207,9 +209,18 @@ function restartQuiz(){
     secondPartAPI = '';
     
     document.getElementById('final-score-container').style.display = 'none';
+    document.getElementById('score-info-container').style.display = 'none';
     document.getElementById('loading-page').style.display = 'flex';
+    document.getElementById('score-info').style.visibility = 'visible';
     document.getElementById('mainBox').style.border = '2px solid #000';
-    document.getElementById('settingICON').style.visibility = 'visible';
+    
+    if(condition === 'limited'){
+        document.getElementById('settingICON').style.visibility = 'hidden';
+    }
+    else{
+        document.getElementById('settingICON').style.visibility = 'visible';
+    }
+
     fetchQuestion();
 }
 
@@ -226,6 +237,7 @@ function editSettings(){
     document.getElementById('settings').style.display = 'flex';
     document.getElementById('info-container').style.display = 'none';
     document.getElementById('score-info-container').style.display = 'none';
+    document.getElementById('final-score-container').style.display = 'none';
 }
 
 
