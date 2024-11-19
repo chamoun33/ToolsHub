@@ -80,6 +80,10 @@ nav{
     .choice{
         width: 100% !important;
     }
+
+    footer span{
+        font-size: 11px !important;
+    }
 }
 
 .highlighted-red{
