@@ -1,5 +1,5 @@
 let score = 0;
-let checkQuestions = 0;
+let checkQuestions = 0, Qcounter = 0;
 let condition;
 let API = '';
 let firstPartAPI = 'https://the-trivia-api.com/api/questions?categories=';
@@ -7,8 +7,13 @@ let secondPartAPI = '';
 let numberOfQuestions;
 let category = 'General Knowledge', difficulty = 'Easy';
 let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
+let currentQuestion;
 
-
+let answer01, answer02, answer03, answer04;
+let CorrectAnswer;
+let questions = [];
+let printed;
+Boolean(printed);
 
     
     
@@ -23,6 +28,7 @@ let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
+                    currentQuestion = questionData.question;
                     document.getElementById('quizContainer').style.display = 'flex';
                     document.getElementById('loading-page').style.display = 'none';
                     document.getElementById('info-container').style.display = 'flex'; 
@@ -39,32 +45,26 @@ let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
         }
         
         if(condition === 'unlimited'){
-
-            // document.getElementById('mainBox').style.display = 'none';
-            // document.getElementById('loading-container').style.display= 'block';
-
             
 
             fetch(API)
                 .then(response => response.json())
                 .then(data => {
                     const questionData = data[0];
-                    displayQuestion(questionData);
+                    currentQuestion = questionData.question;
                     document.getElementById('exit-unlimitedQuiz-container').style.display = 'flex';
                     document.getElementById('quizContainer').style.display = 'flex';
                     document.getElementById('loading-page').style.display = 'none';
                     document.getElementById('info-container').style.display = 'flex'; 
                     document.getElementById('score-info-container').style.display = 'flex';
+                    displayQuestion(questionData);
                 })
                 .catch(error => console.error('Error fetching question:', error));
-
-                // document.getElementById('mainBox').style.display = 'block';
-                // document.getElementById('loading-container').style.display= 'none';
-
 
                 checkQuestions ++;
                 console.log('Question questionned: ' + checkQuestions);
         }
+        Qcounter ++;
     }
 
     //https://the-trivia-api.com/api/questions?limit=1
@@ -91,6 +91,11 @@ let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
         const answers = [...questionData.incorrectAnswers, questionData.correctAnswer]
             .sort(() => Math.random() - 0.5);
 
+        [answer01, answer02, answer03, answer04] = answers;
+        CorrectAnswer = questionData.correctAnswer;
+
+        
+
         answers.forEach(answer => {
             const button = document.createElement('button');
             button.classList.add('choice');
@@ -98,6 +103,7 @@ let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
             button.onclick = () => handleAnswerSelection(button, questionData.correctAnswer);
             answersContainer.appendChild(button);
         });
+
     }
 
     // Handle answer selection and load next question
@@ -126,9 +132,145 @@ let categoryAPI = 'general_knowledge', difficultyAPi = 'easy';
             fetchQuestion();
         }
 
+        questions.push({
+            questionNbr: (Qcounter - 1),
+            question: currentQuestion, 
+            answer1: answer01, 
+            answer2: answer02, 
+            answer3: answer03, 
+            answer4: answer04, 
+            choosedAnswer: selectedButton.innerHTML,
+            correctAnswer: CorrectAnswer
+        });
+
+        // questions.forEach(answer => {
+        //     console.log(`Question: ${answer.question} \n Answer 1: ${answer.answer1} \n Answer 2: ${answer.answer2} \n Answer 3: ${answer.answer3} \n Answer 4: ${answer.answer4} \n Answer Choosed: ${answer.choosedAnswer} \n\n`);
+        // })
+
+        console.log(questions);
+
+
+        console.log('==================');
+
         // setTimeout(fetchQuestion, 1000); // Load next question after delay
     }
 
+
+    function DisplaySummaryQuestions(){
+
+        if(!printed){
+            printed = true;
+                questions.forEach(q => {
+                    const mainConatiner = document.getElementById('summaryMainBoxContainer');
+
+                    const mainQuestionContainer = document.createElement('div');
+                    mainQuestionContainer.className = 'summary-question-result-container';
+
+                    const questionContainer = document.createElement('div');
+                    questionContainer.className = 'summary-question-container';
+
+                    const questionn = document.createElement('p');
+                    questionn.className = 'SummaryQuestion';
+                    questionn.textContent = q.questionNbr + ' - ' + q.question;
+
+                    const answersContainer = document.createElement('div');
+                    answersContainer.className = 'summary-answers-container';
+
+                    const answer_1 = document.createElement('p');
+                    answer_1.textContent = '● \u00A0' + q.answer1;
+
+                    const answer_2 = document.createElement('p');
+                    answer_2.textContent = '● \u00A0' + q.answer2;
+
+                    const answer_3 = document.createElement('p');
+                    answer_3.textContent = '● \u00A0' + q.answer3;
+
+                    const answer_4 = document.createElement('p');
+                    answer_4.textContent = '● \u00A0' + q.answer4;
+
+                    const score = document.createElement('p');
+                    
+                    if(q.choosedAnswer === q.correctAnswer){
+                        score.className = 'summaryPassedQuestionScore';
+                        score.textContent = '+ 10';
+
+                        mainQuestionContainer.classList.add('green');
+
+                        if(q.choosedAnswer === q.answer1){
+                            answer_1.classList.add('answerHighlightedGreen');
+                        }
+                        else if(q.choosedAnswer === q.answer2){
+                            answer_2.classList.add('answerHighlightedGreen');
+                        }
+                        else if(q.choosedAnswer === q.answer3){
+                            answer_3.classList.add('answerHighlightedGreen');
+                        }
+                        else{
+                            answer_4.classList.add('answerHighlightedGreen');
+                        }
+
+                    }
+                    else{
+                        score.className = 'summaryFailedQuestionScore';
+                        score.textContent = '+ 0';
+                        mainQuestionContainer.classList.add('red');
+
+                        if(q.choosedAnswer === q.answer1){
+                            answer_1.classList.add('answerHighlightedRed');
+                        }
+                        else if(q.choosedAnswer === q.answer2){
+                            answer_2.classList.add('answerHighlightedRed');
+                        }
+                        else if(q.choosedAnswer === q.answer3){
+                            answer_3.classList.add('answerHighlightedRed');
+                        }
+                        else{
+                            answer_4.classList.add('answerHighlightedRed');
+                        }
+
+
+                        if(q.correctAnswer === q.answer1){
+                            answer_1.classList.add('answerHighlightedGreen');
+                        }
+                        else if(q.correctAnswer === q.answer2){
+                            answer_2.classList.add('answerHighlightedGreen');
+                        }
+                        else if(q.correctAnswer === q.answer3){
+                            answer_3.classList.add('answerHighlightedGreen');
+                        }
+                        else{
+                            answer_4.classList.add('answerHighlightedGreen');
+                        }
+                    }
+                    
+
+                    questionContainer.appendChild(questionn);
+                    questionContainer.appendChild(score);
+
+                    answersContainer.appendChild(answer_1);
+                    answersContainer.appendChild(answer_2);
+                    answersContainer.appendChild(answer_3);
+                    answersContainer.appendChild(answer_4);
+
+                    mainQuestionContainer.appendChild(questionContainer);
+                    mainQuestionContainer.appendChild(answersContainer);
+
+                    mainConatiner.appendChild(mainQuestionContainer);
+
+            })
+        }
+
+        document.getElementById('summaryMainContainer').style.display = 'block';
+        document.getElementById('mainBox').style.display = 'none';
+
+        
+    }
+
+
+    function backToScore(){
+        document.getElementById('summaryMainContainer').style.display = 'none';
+        document.getElementById('mainBox').style.display = 'block';
+    }
     
 
 
@@ -178,6 +320,13 @@ function displayResult(){
         document.getElementById('mainBox').style.border = '2px solid #6a53eb';
     }
 
+    if(condition === 'unlimited' && checkQuestions === 1){
+        document.getElementById('resultSummary').style.display = 'none';
+    }
+    else{
+        document.getElementById('resultSummary').style.display = 'flex';
+    }
+
 
     let displayScore = document.getElementById('score');
     displayScore.innerHTML = score + '/' + (condition == 'unlimited' ? ((checkQuestions - 1)*10) : (checkQuestions*10));
@@ -207,6 +356,9 @@ function restartQuiz(){
     checkQuestions = 0;
     firstPartAPI = 'https://the-trivia-api.com/api/questions?categories=';
     secondPartAPI = '';
+    questions = [];
+    printed = false;
+    Qcounter = 0;
     
     document.getElementById('final-score-container').style.display = 'none';
     document.getElementById('score-info-container').style.display = 'none';
@@ -221,6 +373,8 @@ function restartQuiz(){
         document.getElementById('settingICON').style.visibility = 'visible';
     }
 
+    document.getElementById('summaryMainBoxContainer').innerHTML = '';
+
     fetchQuestion();
 }
 
@@ -230,6 +384,9 @@ function editSettings(){
     checkQuestions = 0;
     firstPartAPI = 'https://the-trivia-api.com/api/questions?categories=';
     secondPartAPI = '';
+    questions = [];
+    printed = false;
+    Qcounter = 0;
 
 
     document.getElementById('quizContainer').style.display = 'none';
@@ -238,6 +395,9 @@ function editSettings(){
     document.getElementById('info-container').style.display = 'none';
     document.getElementById('score-info-container').style.display = 'none';
     document.getElementById('final-score-container').style.display = 'none';
+    document.getElementById('exit-unlimitedQuiz-container').style.display = 'none';
+    document.getElementById('summaryMainBoxContainer').innerHTML = '';
+
 }
 
 
