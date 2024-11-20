@@ -158,7 +158,14 @@ Boolean(printed);
 
     function DisplaySummaryQuestions(){
 
+        
+
         if(!printed){
+
+            let correctAnswersCounter = 0;
+            let incorrectAnswersCounter = 0;
+
+
             printed = true;
                 questions.forEach(q => {
                     const mainConatiner = document.getElementById('summaryMainBoxContainer');
@@ -209,6 +216,7 @@ Boolean(printed);
                             answer_4.classList.add('answerHighlightedGreen');
                         }
 
+                        correctAnswersCounter ++;
                     }
                     else{
                         score.className = 'summaryFailedQuestionScore';
@@ -241,6 +249,8 @@ Boolean(printed);
                         else{
                             answer_4.classList.add('answerHighlightedGreen');
                         }
+
+                        incorrectAnswersCounter ++;
                     }
                     
 
@@ -258,6 +268,24 @@ Boolean(printed);
                     mainConatiner.appendChild(mainQuestionContainer);
 
             })
+
+            document.getElementById('SummaryCategory').innerHTML = 'Category: ' + category;
+            document.getElementById('SummaryDifficulty').innerHTML = 'Difficulty: ' + difficulty;
+            document.getElementById('SummaryQuestionID').innerHTML = 'Questions: ' + (Qcounter - 1);
+            document.getElementById('SummaryCorrectAnswer').innerHTML = 'Correct Answers: ' + correctAnswersCounter;
+            document.getElementById('SummaryIncorrectAnswers').innerHTML = 'Incorrect Answers: ' + incorrectAnswersCounter;
+            document.getElementById('SummaryScore').innerHTML = 'Score: ' + score + '/' + (Qcounter - 1)*10;
+
+            if(correctAnswersCounter === Qcounter - 1){
+                document.getElementById('SummaryScore').style.color = "#28a745";
+            }
+            else if(Qcounter > 1 && score <= (Qcounter / 2) + 0.5){
+                document.getElementById('SummaryScore').style.color = "#dc3545";
+            }
+            else{
+                document.getElementById('SummaryScore').style.color = "#252d9c";
+            }
+            
         }
 
         document.getElementById('summaryMainContainer').style.display = 'block';
