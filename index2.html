@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/png" href="Images/quiz.png">
     <script src="script2.js" defer></script>
+    <link rel="icon" type="image/png" href="Images/quiz.png">
 </head>
 <body>
     <main class="main-container">
@@ -266,11 +266,87 @@
                                 8.87659 18.9993 8.35536L18.7993 2.96295C18.7788 2.41104 18.3148 1.98023 17.7629 2.0007Z" fill="#000000"/>
                             </svg>
                         </button>
+
+                        
+                    </div>
+
+                    <div class="restart-container" id="resultSummary">
+                        <p>See your Answers</p>
+
+                        <button class="restartQuiz" onclick="DisplaySummaryQuestions()" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                                <path fill="#000000" d="M14 23h8v2h-8zm-4 0h2v2h-2zm4-5h8v2h-8zm-4 0h2v2h-2zm4-5h8v2h-8zm-4 
+                                0h2v2h-2z"/><path fill="#000000" d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 
+                                0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <!--Score UI }-->
 
             </div>
+
+
+
+            <!--Summary UI {-->
+            <div class="summary-main-container" id="summaryMainContainer">
+
+                <div class="summaryConatinerHeader">
+                    <span style="width: 10%; text-align: start;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"  id="backSVG" onclick="backToScore()">
+                            <path fill="#333" d="m4 10l-.707.707L2.586 10l.707-.707zm17 8a1 1 0 1 1-2 0zM8.293 
+                            15.707l-5-5l1.414-1.414l5 5zm-5-6.414l5-5l1.414 1.414l-5 5zM4 9h10v2H4zm17 7v2h-2v-2zm-7-7a7 
+                            7 0 0 1 7 7h-2a5 5 0 0 0-5-5z"/>
+                        </svg>
+                    </span>
+
+                    <p>Here's a summary of your quiz performance</p>
+
+                    <span style="width: 10%; text-align: end;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 14 16"  id="infoSVG">
+                            <path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7c.19-.18.42-.28.7-.28c.28 
+                            0 .52.09.7.28c.18.19.28.42.28.7c0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 
+                            7.99c-.02-.25-.11-.48-.31-.69c-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31c-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69c.2.2.42.31.69.31h1c.27 
+                            0 .48-.11.69-.31c.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68c0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 
+                            5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7s-7-3.12-7-7s3.14-7 7-7z" fill="#333333"/>
+                        </svg>
+                    </span>
+                </div>
+
+                <div class="main-holder-container" id="summaryMainBoxContainer">
+                    <!-- <div class="summary-question-result-container green">
+                        <div class="summary-question-container">
+                            <p class="SummaryQuestion">What is the capital of France?</p>
+                            <p class="summaryPassedQuestionScore">+ 10</p>
+                        </div>
+
+                        <div class="summary-answers-container">
+                            <p>● &nbsp; Berlin</p>
+                            <p style="background-color: #0d3d0d;">● &nbsp; Paris</p>
+                            <p>● &nbsp; Beirut</p>
+                            <p>● &nbsp; California</p>
+                        </div>
+                    </div>
+
+
+                    <div class="summary-question-result-container red">
+                        <div class="summary-question-container">
+                            <p class="SummaryQuestion">What word describes something that is difficult to read, like with bad handwriting?</p>
+                            <p class="summaryFailedQuestionScore">+ 0</p>
+                        </div>
+
+                        <div class="summary-answers-container">
+                            <p>● &nbsp; Illegal</p>
+                            <p style="background-color: #5c0909;">● &nbsp; Illicit</p>
+                            <p style="background-color: #0d3d0d;">● &nbsp; Illegible</p>
+                            <p>● &nbsp; Invisible</p>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+            <!--Summary UI }-->
+
         </div>
 
         <footer>
