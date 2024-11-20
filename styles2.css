@@ -206,6 +206,7 @@ nav{
     border: 2px solid #6a53eb;
     border-radius: 5px;
     outline: none;
+    font-family: "Outfit", sans-serif;
 }
 .number-of-quiz:focus{
     box-shadow: #7c68eebe 0px 2px 8px, #7B68EEbe 0px 2px 8px;
@@ -727,4 +728,36 @@ footer span{
     box-sizing: border-box;
     width: 100%;
     border-radius: 5px;
+}
+@media screen and (max-width: 900px) {
+    .summaryConatinerHeader{
+        font-size: 18px;
+    }
+    .summary-answers-container p{
+        font-size: 14px;
+    }
+    .SummaryQuestion{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .summary-main-container{
+        width: 98% !important;
+    }
+    .summary-answers-container{
+        padding: 0;
+    }
+    .summary-answers-container p{
+        padding-left: 15px;
+    }
+    .summaryFailedQuestionScore{
+        padding: 0;
+    }
+    .summaryPassedQuestionScore{
+        padding: 0;
+    }
+    .SummaryQuestion{
+        margin-bottom: 15px !important;
+    }
 }
