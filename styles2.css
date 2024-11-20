@@ -739,6 +739,12 @@ footer span{
     .SummaryQuestion{
         font-size: 16px;
     }
+    .summaryConatinerHeader{
+        height: 9% !important;
+    }
+    .main-holder-container{
+        height: 91% !important;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -753,9 +759,11 @@ footer span{
     }
     .summaryFailedQuestionScore{
         padding: 0;
+        font-size: 16px !important;
     }
     .summaryPassedQuestionScore{
         padding: 0;
+        font-size: 16px !important;
     }
     .SummaryQuestion{
         margin-bottom: 15px !important;
