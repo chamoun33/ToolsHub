@@ -143,6 +143,20 @@
                                 </svg>
                             </button>
                         </form>
+
+                        <div class="timer-checkBox-container">
+                            
+                            <p>Add <strong>timer</strong> to your quiz</p>
+
+                            <div class="checkbox-wrapper-22">
+                                <label class="switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <div class="slider round"></div>
+                                </label>
+                            </div>
+
+                        </div>
+
                         <div class="unlimited-question" id="unlimitedQuestionContainer">
                             <p>Start an <strong>unlimited</strong> quiz:</p>
     
@@ -194,6 +208,11 @@
 
                 <!--Quiz UI {-->
                 <div class="quiz-container" id="quizContainer">
+
+                    <div class="timer-container" id="timerContainer">
+                        <span id="timer">01:59</span>
+                    </div>
+
                     <div class="question-container">
                         <p id="question"></p>
                     </div>
@@ -223,6 +242,8 @@
                 </div>
                 <!--Quiz UI }-->
 
+                
+
 
 
                 <!--Loading UI {-->
@@ -249,6 +270,10 @@
 
                 <!--Score UI {-->
                 <div class="score-container" id="final-score-container">
+
+                    <div class="question-container" id="outOfTime">
+                        <p style="font-size: 20px; color: #dc3545;">You run out of time!</p>
+                    </div>
                     <div class="question-container">
                         <p id="finalScore">Your final score here!</p>
                         <p id="score"></p>
