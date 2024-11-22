@@ -407,6 +407,8 @@ function startUnlimitedQuestion(){
 
 
 function displayResult(){
+    clearInterval(countdown);
+    
     document.getElementById('quizContainer').style.display = 'none';
     document.getElementById('final-score-container').style.display = 'flex';
     document.getElementById('info-container').style.display = 'none';
