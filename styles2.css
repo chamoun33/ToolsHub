@@ -790,3 +790,10 @@ footer span{
     display: flex;
     justify-content: center;
 }
+
+
+@media screen and (max-width: 450px) {
+    .quizDescriptionContainer span{
+        font-size: 10px !important;
+    }
+}
