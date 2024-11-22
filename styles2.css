@@ -254,6 +254,91 @@ input[type=number] {
     box-shadow: #7B68EEbe 0px 2px 8px, #7B68EEbe 0px 2px 8px;
 }
 
+
+
+.timer-checkBox-container{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer-checkBox-container p{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.timer-container{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+    justify-content: center;
+}
+
+/** check box style */
+.checkbox-wrapper-22 .switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+
+  .checkbox-wrapper-22 .switch input {
+    display:none;
+  }
+
+  .checkbox-wrapper-22 .slider {
+    background-color: #2D2F33;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+
+  .checkbox-wrapper-22 .slider:before {
+    background-color: #1B1C1E;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+
+  .checkbox-wrapper-22 input:checked + .slider {
+    background-color: #6a53eb;
+  }
+
+  .checkbox-wrapper-22 input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .checkbox-wrapper-22 .slider.round {
+    border-radius: 34px;
+  }
+
+  .checkbox-wrapper-22 .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+/* check boc style */
+
 .exit-unlimitedQuiz{
     width: 100%;
     height: auto;
@@ -288,6 +373,10 @@ input[type=number] {
     font-size: 50px;
     font-weight: 600;
     margin-top: 25px;
+}
+
+#outOfTime{
+    display: none;
 }
 
 .restartQuiz{
@@ -790,7 +879,6 @@ footer span{
     display: flex;
     justify-content: center;
 }
-
 
 @media screen and (max-width: 450px) {
     .quizDescriptionContainer span{
