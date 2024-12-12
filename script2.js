@@ -17,6 +17,11 @@ Boolean(printed, checkTimeStart);
 checkTimeStart = false;
 const timer = document.getElementById('checkbox');
 
+let firstChance, secondChance, thirdChance;
+Boolean(firstChance, secondChance, thirdChance);
+firstChance = true, secondChance = true, thirdChance = true;
+
+
 
     
     
@@ -48,7 +53,7 @@ const timer = document.getElementById('checkbox');
             }
         }
         
-        if(condition === 'unlimited'){
+        if((condition === 'unlimited')){
             
 
             fetch(API)
@@ -127,6 +132,24 @@ const timer = document.getElementById('checkbox');
 
     // Handle answer selection and load next question
     function handleAnswerSelection(selectedButton, correctAnswer) {
+
+        if((condition === 'unlimited') && (!(selectedButton.innerHTML === correctAnswer))){
+            if(firstChance){
+                document.getElementById("first-chance").style.fill = "red";
+                firstChance = false;
+            }
+            else if(secondChance){
+                document.getElementById("second-chance").style.fill = "red";
+                secondChance = false;
+            }
+            else{
+                document.getElementById("third-chance").style.fill = "red";
+                thirdChance = false;
+                displayResult();
+            }
+        }
+
+        
         const answerButtons = document.querySelectorAll('.choice');
         answerButtons.forEach(button => button.disabled = true);
 
@@ -140,6 +163,7 @@ const timer = document.getElementById('checkbox');
             console.log('Score: ' + score);
             // setTimeout(fetchQuestion, 800);
             fetchQuestion();
+            
         } else {
             selectedButton.style.backgroundColor = '#dc3545';
             document.getElementById('mainBox').classList.add("highlighted-red")
@@ -148,7 +172,14 @@ const timer = document.getElementById('checkbox');
             }, (2000));
             console.log('Score: ' + score);
             // setTimeout(fetchQuestion, 800);
-            fetchQuestion();
+
+            if(condition === 'limited'){
+                fetchQuestion();
+            }
+            else if((condition === 'unlimited') && (thirdChance)){
+                fetchQuestion();
+            }
+            
         }
 
         questions.push({
@@ -165,6 +196,8 @@ const timer = document.getElementById('checkbox');
         // questions.forEach(answer => {
         //     console.log(`Question: ${answer.question} \n Answer 1: ${answer.answer1} \n Answer 2: ${answer.answer2} \n Answer 3: ${answer.answer3} \n Answer 4: ${answer.answer4} \n Answer Choosed: ${answer.choosedAnswer} \n\n`);
         // })
+
+        
 
         console.log(questions);
 
@@ -409,12 +442,15 @@ function startUnlimitedQuestion(){
 function displayResult(){
     clearInterval(countdown);
     
+    console.log("displayResult called");
     document.getElementById('quizContainer').style.display = 'none';
+    console.log("quizContainer should be hidden");
     document.getElementById('final-score-container').style.display = 'flex';
     document.getElementById('info-container').style.display = 'none';
     // document.getElementById('score-info-container').style.display = 'none';
     document.getElementById('settingICON').style.visibility = 'visible';
     document.getElementById('score-info').style.visibility = 'hidden';
+
 
     if(condition === 'limited'){
         setTimeout(() => 
@@ -467,6 +503,9 @@ function restartQuiz(){
     Qcounter = 0;
     checkTimeStart = false;
     clearInterval(countdown);
+    firstChance = true;
+    secondChance = true;
+    thirdChance = true;
     
     document.getElementById('final-score-container').style.display = 'none';
     document.getElementById('score-info-container').style.display = 'none';
@@ -474,6 +513,10 @@ function restartQuiz(){
     document.getElementById('score-info').style.visibility = 'visible';
     document.getElementById('mainBox').style.border = '2px solid #000';
     document.getElementById('outOfTime').style.display = 'none';
+
+    document.getElementById("first-chance").style.fill = "#3b3b3b";
+    document.getElementById("second-chance").style.fill = "#3b3b3b";
+    document.getElementById("third-chance").style.fill = "#3b3b3b";
     
     if(condition === 'limited'){
         document.getElementById('settingICON').style.visibility = 'hidden';
@@ -499,11 +542,15 @@ function editSettings(){
     checkTimeStart = false;
     timer.checked = false;
     clearInterval(countdown);
+    firstChance = true;
+    secondChance = true;
+    thirdChance = true;
 
 
     document.getElementById('quizContainer').style.display = 'none';
     document.getElementById('settingICON').style.visibility = 'hidden';
     document.getElementById('settings').style.display = 'flex';
+    document.getElementById('mainBox').style.border = '2px solid #000';
     document.getElementById('info-container').style.display = 'none';
     document.getElementById('score-info-container').style.display = 'none';
     document.getElementById('final-score-container').style.display = 'none';
@@ -511,6 +558,9 @@ function editSettings(){
     document.getElementById('summaryMainBoxContainer').innerHTML = '';
     document.getElementById('outOfTime').style.display = 'none';
 
+    document.getElementById("first-chance").style.fill = "#3b3b3b";
+    document.getElementById("second-chance").style.fill = "#3b3b3b";
+    document.getElementById("third-chance").style.fill = "#3b3b3b";
 }
 
 
