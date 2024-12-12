@@ -470,7 +470,7 @@ function displayResult(){
 
 
     let displayScore = document.getElementById('score');
-    displayScore.innerHTML = score + '/' + (condition == 'unlimited' ? ((checkQuestions - 1)*10) : (checkQuestions*10));
+    displayScore.innerHTML = score + '/' + (condition == 'unlimited' ? ((checkQuestions)*10) : (checkQuestions*10));
     // displayScore.innerHTML = score + '/' + (Qcounter - 1)*10;
 }
 
