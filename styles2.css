@@ -54,6 +54,257 @@ nav{
     box-sizing: border-box;
 }
 
+.welcome-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.login-information-container{
+    width: 100%;
+    height: auto;
+    padding: 20px 70px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#signIn_span{
+    cursor: pointer;
+    border-bottom: 2px solid #1B1C1E; 
+    transition: all 0.2s ease-in-out;
+    color: #6a53eb;
+    border-color: #6a53eb;
+}
+/* #signIn_span:hover{
+    color: #6a53eb;
+    border-color: #6a53eb;
+} */
+
+
+#signUp_span{
+    cursor: pointer;
+    border-bottom: 2px solid #1B1C1E; 
+    transition: all 0.2s ease-in-out;
+}
+/* #signUp_span:hover{
+    color: #6a53eb;
+    border-color: #6a53eb;
+} */
+
+#signUp-form{
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.next-button{
+    width: 120px;
+    height: 50px;
+    border: 2px solid #6a53eb;
+    background-color: #1B1C1E;
+    color: #6a53eb;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Outfit", sans-serif;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+.next-button:hover{
+    color: #1B1C1E;
+    background-color: #6a53eb;
+}
+
+#SignUp2{
+    display: none;
+}
+
+#box_singIn{
+    display: none;
+}
+
+/*Input*/
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    margin: 30px 0;
+    width: 100%;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 15px;
+    color: #fff;
+    padding: 7px 8px;
+    background: transparent;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+  
+  .form__field::placeholder {
+    color: transparent;
+  }
+  
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 500;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #6a53eb, #6A5ACD);
+    border-image-slice: 1;
+  }
+  
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #6A5ACD;
+    font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+/*Input*/
+
+
+/*Button*/
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #6a53eb;
+    box-shadow: 0 0 0 2px #6a53eb;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #6a53eb;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #6a53eb;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px #6a53eb;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+
+/*Button*/
+
+.link-txt{
+    color: #B3B3B3;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 400;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+}
+.link-txt:hover{
+    color: #6a53eb;
+}
+
+
 .box-container{
     width: 600px;
     height: auto;
@@ -67,6 +318,9 @@ nav{
     border-radius: 15px;
     transition: border-color 1s ease;
 }   
+#mainBox{
+    display: none;
+}
 
 @media screen and (max-width: 500px) {
     .box-container{
