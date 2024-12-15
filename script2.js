@@ -24,7 +24,28 @@ firstChance = true, secondChance = true, thirdChance = true;
 
 
     
+function signUp_UI(){
+    document.getElementById('signIn_span').style.borderColor = " #1B1C1E ";
+    document.getElementById('signIn_span').style.color = " #D3D3D3 ";
+    document.getElementById('signUp_span').style.borderColor = " #6a53eb ";
+    document.getElementById('signUp_span').style.color = " #6a53eb ";
+    document.getElementById('signIn-form').style.display = "none";
+    document.getElementById('signUp-form').style.display = "block";
+}
+
+function signIn_UI(){
+    document.getElementById('signUp_span').style.borderColor = " #1B1C1E ";
+    document.getElementById('signUp_span').style.color = " #D3D3D3 ";
+    document.getElementById('signIn_span').style.borderColor = " #6a53eb ";
+    document.getElementById('signIn_span').style.color = " #6a53eb ";
+    document.getElementById('signIn-form').style.display = "block";
+    document.getElementById('signUp-form').style.display = "none";
+}
     
+// function switchSignUp_ui(){
+//     document.getElementById('SignUp1').style.display = "none";
+//     document.getElementById('SignUp2').style.display = "block";
+// }
 
 
     // Fetch question from TriviaDB API
@@ -480,7 +501,16 @@ function switchUI_1(){
     console.log("UI 1 switched!");
 
     document.getElementById('firstUI').style.display = 'none';
+    // document.getElementById('settings').style.display = 'flex';
+    document.getElementById('box_singIn').style.display = 'block';
+}
+
+function switchUI_1_1(){
+    console.log("UI 1.1 switched!");
+    document.getElementById('box_singIn').style.display = 'none';
     document.getElementById('settings').style.display = 'flex';
+    document.getElementById('signIn-Up-container').style.display = "none";
+    document.getElementById('mainBox').style.display = "block";
 }
 
 
