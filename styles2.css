@@ -70,6 +70,26 @@ nav{
     border-radius: 10px;
 }
 
+@media screen and (max-width: 550px) {
+    .login-information-container{
+        padding: 20px 35px !important;
+    }
+    .form__label{
+        font-size: 16px !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    .login-information-container{
+        padding: 20px 5px !important;
+    }
+    .form__label{
+        font-size: 15px !important;
+    }
+    .form__field{
+        font-size: 14px !important;
+    }
+}
+
 #signIn_span{
     cursor: pointer;
     border-bottom: 2px solid #1B1C1E; 
