@@ -17,6 +17,21 @@ body {
     text-align: center;
 }
 
+button {
+    font-family: 'Caveat', cursive, sans-serif !important; 
+}
+
+html, body {
+    overflow: scroll;  /* Keep scrolling enabled */
+}
+
+/* Hide the scrollbar for webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 0px;  /* Hides the scrollbar */
+    height: 0px;
+}
+
+
 .container {
     background: rgba(255, 255, 255, 0.2);
     /* Transparent White */
