@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - David Chamoun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+    <!-- <link rel="icon" type="image/png" href="Images/quiz.png"> -->
+</head>
+
+<body>
+    <span id="home"></span>
+    <div class="background-container">
+        <img src="Images/home2.jpg" alt="Background Image" class="background-image">
+    </div>
+
+    <div class="main-info-container">
+        <div class="info-container">
+            <p class="fullName-container">
+                DAVID CHAMOUN
+            </p>
+            <p class="major-container">
+                Computer Science
+            </p>
+
+            <div class="logos-container">
+                <a href="https://x.com"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/chamoun33/CV"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/david-chamoun-716b102b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+                    target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="mouse-icon">
+            <div class="wheel"></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-collapse">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#bio">About</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Biography-->
+    <span id="bio"></span>
+    <div class="section-container">
+        <div class="container_1">
+
+            <div class="about-header-container">BIO</div>
+
+            <div class="decorative-divider">
+                <div class="line"></div>
+                <i class="fa fa-star"></i>
+                <div class="line"></div>
+            </div>
+
+            <div class="about-content-container">
+                <div class="about-info-container">
+                    <p>
+                        I'm a passionate and driven individual with a strong enthusiasm for web development and software
+                        engineering.
+                        I thrive on solving complex problems and transforming ideas into interactive, user-friendly
+                        experiences.
+                        Technology is not just a career for me — it's a space where I continuously challenge myself,
+                        explore new tools,
+                        and build things that make a difference.
+                        <br><br>
+                        Whether I'm experimenting with new frameworks, improving existing code, or designing clean UI
+                        experiences,
+                        I bring creativity, focus, and dedication to every project I touch. In my free time, I enjoy
+                        exploring new
+                        technologies, building personal projects, and growing my technical skill set.
+                        <br><br>
+                        If you're curious to know more about my work and experience, feel free to
+                        <a href="assets/David Chamoun - CV.pdf" target="_blank"
+                            style="color:#0077cc; text-decoration:underline;">view my CV here</a>.
+                    </p>
+
+                </div>
+
+                <div class="about-profilePic-container">
+                    <div class="profilePic">
+                        <img src="Images/IMG-20250413-WA0014.jpg" alt="DavidChamoun">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <span id="project"></span>
+    <div class="section-container">
+        <div class="container" style="width: 1400px;">
+
+            <div class="projects-header-container">Projects</div>
+
+            <div class="decorative-divider">
+                <div class="line"></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <div class="line"></div>
+            </div>
+            <div class="project-container">
+                <div class="parent-image-container" onclick="openPreview('https://quizzone.rf.gd', 'QuizZone')">
+                    <div class="image-container">
+                        <img src="/Images/QuizIMG.png" alt="QuizZone Project" class="project-image">
+                        <div class="overlay-hover">
+                            <div class="project-title">QuizZone</div>
+                            <button class="preview-button">Live Preview</button>
+                            <div class="made-in">
+                                <span>
+                                    <span class="tech-item">HTML</span>
+                                    <span class="tech-item">CSS</span>
+                                    <span class="tech-item">JS</span>
+                                    <span class="tech-item">PHP</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="parent-image-container"
+                    onclick="openPreview('https://davidchamoun.github.io/Personal/', 'Yalla Out')">
+                    <div class="image-container">
+                        <img src="/Images/YallaOut.png" alt="Yalla Out Adventures" class="project-image">
+                        <div class="overlay-hover">
+                            <div class="project-title">Adventure</div>
+                            <button class="preview-button">Live Preview</button>
+                            <div class="made-in">
+                                <span>
+                                    <span class="tech-item">HTML</span>
+                                    <span class="tech-item">CSS</span>
+                                    <span class="tech-item">JS</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="parent-image-container"
+                    onclick="openPreview('https://chamoun33.github.io/ToolsHub/', 'Tools Website')">
+                    <div class="image-container">
+                        <img src="/Images/Logo higher pixels.png" alt="Tools Website Project" class="project-image">
+                        <div class="overlay-hover">
+                            <div class="project-title">Tools Website</div>
+                            <button class="preview-button">Live Preview</button>
+                            <div class="made-in">
+                                <span>
+                                    <span class="tech-item">HTML</span>
+                                    <span class="tech-item">CSS</span>
+                                    <span class="tech-item">JS</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="parent-image-container"
+                    onclick="openPreview('https://youtube.com', 'Maronite Association')">
+                    <div class="image-container">
+                        <img src="/Images/LogoAR.png" alt="Maronite Association Project" class="project-image">
+                        <div class="overlay-hover">
+                            <div class="project-title">Maronite Association</div>
+                            <button class="preview-button">Live Preview</button>
+                            <div class="made-in">
+                                <span>
+                                    <span class="tech-item">HTML</span>
+                                    <span class="tech-item">CSS</span>
+                                    <span class="tech-item">JS</span>
+                                    <span class="tech-item">PHP</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for Live Preview -->
+            <div id="previewModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modalTitle">Live Preview</h3>
+                        <button class="close-button" onclick="closePreview()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="loading-spinner" id="loadingSpinner"></div>
+                        <iframe id="previewIframe" class="preview-iframe" style="display: none;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function openPreview(url, title) {
+                    const modal = document.getElementById('previewModal');
+                    const iframe = document.getElementById('previewIframe');
+                    const modalTitle = document.getElementById('modalTitle');
+                    const loadingSpinner = document.getElementById('loadingSpinner');
+
+                    // Set modal title
+                    modalTitle.textContent = title + ' - Live Preview';
+
+                    // Disable background scrolling completely
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${window.scrollY}px`;
+                    document.body.style.width = '100%';
+
+                    // Show modal
+                    modal.classList.add('active');
+
+                    // Show loading spinner
+                    loadingSpinner.style.display = 'block';
+                    iframe.style.display = 'none';
+
+                    // Load the website
+                    iframe.src = url;
+
+                    // Handle iframe load
+                    iframe.onload = function () {
+                        loadingSpinner.style.display = 'none';
+                        iframe.style.display = 'block';
+                    };
+                }
+
+                function closePreview() {
+                    const modal = document.getElementById('previewModal');
+                    const iframe = document.getElementById('previewIframe');
+
+                    // Get the scroll position before restoring
+                    const scrollY = document.body.style.top;
+
+                    modal.classList.remove('active');
+
+                    // Restore background scrolling
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.overflow = '';
+                    document.body.style.width = '';
+
+                    // Restore scroll position
+                    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+                    // Clear iframe source to stop loading
+                    setTimeout(() => {
+                        iframe.src = '';
+                    }, 300);
+                }
+
+                // Close modal when clicking outside
+                document.getElementById('previewModal').addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        closePreview();
+                    }
+                });
+
+                // Close modal with Escape key
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        closePreview();
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+
+    <!-- <div class="about-header-container">Skills</div>
+
+            <div class="decorative-divider">
+                <div class="line"></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <div class="line"></div>
+            </div> -->
+
+
+    <!--Skills-->
+    <span id="skills"></span>
+    <div class="main-skills">
+        <div class="skills-section">
+            <div class="section-header">
+                <div class="about-header-container">Skills</div>
+
+                <div class="decorative-divider">
+                    <div class="line"></div>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="skill-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3,3H21V21H3V3M5,5V19H19V5H5M7,7H17V9H7V7M7,11H17V13H7V11M7,15H14V17H7V15Z" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Technical Skills</h3>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4 class="category-title">Frontend</h4>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">HTML</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">CSS</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">85%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">React</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4 class="category-title">Backend</h4>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">PHP</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <div class="skill-name">MySQL</div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-soft-skills">
+                <!-- Tools -->
+                <div class="compact-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M21.71,20.29L20.29,21.71A1,1 0 0,1 18.88,21.71L7,9.85A3.81,3.81 0 0,1 6,10A4,4 0 0,1 2,6A4,4 0 0,1 6,2A4,4 0 0,1 10,6A3.81,3.81 0 0,1 9.85,7L21.71,18.88A1,1 0 0,1 21.71,20.29M5.62,2.08A2,2 0 0,0 4,4A2,2 0 0,0 6,6A2,2 0 0,0 8,4A2,2 0 0,0 6,2A2,2 0 0,0 5.62,2.08M18.5,13A1.5,1.5 0 0,1 17,11.5A1.5,1.5 0 0,1 18.5,10A1.5,1.5 0 0,1 20,11.5A1.5,1.5 0 0,1 18.5,13M13.5,18A1.5,1.5 0 0,1 12,16.5A1.5,1.5 0 0,1 13.5,15A1.5,1.5 0 0,1 15,16.5A1.5,1.5 0 0,1 13.5,18M18.5,8A1.5,1.5 0 0,1 17,6.5A1.5,1.5 0 0,1 18.5,5A1.5,1.5 0 0,1 20,6.5A1.5,1.5 0 0,1 18.5,8Z" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Git (85%)</div>
+                        <div class="skill-tag">Figma (75%)</div>
+                        <div class="skill-tag">VS Code (95%)</div>
+                        <div class="skill-tag">Postman (80%)</div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="compact-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19M12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17Z" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Soft Skills</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Teamwork (90%)</div>
+                        <div class="skill-tag">Problem-solving (85%)</div>
+                        <div class="skill-tag">Communication (80%)</div>
+                        <div class="skill-tag">Time Management (75%)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate progress bars on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressBars = document.querySelectorAll('.skill-progress');
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBar = entry.target;
+                        const width = progressBar.getAttribute('data-width');
+                        setTimeout(() => {
+                            progressBar.style.width = width + '%';
+                        }, 300);
+                    }
+                });
+            }, observerOptions);
+
+            progressBars.forEach(bar => {
+                bar.style.width = '0%';
+                observer.observe(bar);
+            });
+        });
+    </script>
+
+</body>
+
+
+</html>
+
+
+<!-- https://cv.gsm-center.com.ua/ -->
