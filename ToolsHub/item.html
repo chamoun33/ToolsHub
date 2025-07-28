@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools-Hub</title>
+  <link rel="icon" href="images/title-icon.png" type="image/png">
+  
+  <script>
+    function createAccount(){
+      window.location.href = 'create_account.html';
+    }
+
+    function seeMoreBrand(){
+      window.location.href = 'shopByBrand.html';
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="main-design.css">
+  <link rel="stylesheet" href="drop-menu.css">
+  <link rel="stylesheet" href="sideDropdown.css">
+  <link rel="stylesheet" href="item.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <header>
+  <div class="top-fixed-div" id="topFixedHeader">
+
+    <div class = "left"><span class="time">M-F 8:00 A.M. - 6:00 P.M.</span> <span class="city">| Haret-Sakher |</span><a href ="" class="customer-service">Customer Service</a></div>
+    <div class = "right"> 
+        <div class="logo-header">
+            <a href="https://www.instagram.com/" target="_blank" id="instagram"><i class="fa-brands fa-instagram fa-1.5x" ></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-1.5x"></i></a>
+            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter fa-1.5x"></i></a>
+            <a href="tel:+96176132529" target="_blank" class="phone"><i class="fa-solid fa-phone fa-1.5x"></i></a>
+        </div>
+
+
+        <span class="tel">Tel: +961 81 222 444</span>
+      </div>
+        <!--        <b style="padding-right: 20px ; font-weight: 580;"><i class="fa-solid fa-phone"></i> &nbsp: +961 81 222 444</b></div> -->
+  </div>
+  </header>
+
+  <div class="main-top-container">
+    <div class="main-header" id="mainHeader">
+        <div class="side-dropdown-menu">
+          <button class="bar-button" onclick="openSideNav()"><i class="fa-solid fa-bars fa-2x"></i></button>
+        </div>
+
+        <div class="logo-container">
+          <a href="index.html"> <img src="images/GMK-Logo.png" class="enterprise-logo" alt="GMK_logo" id="logo"> </a>
+        </div>
+        <form action="/search" method="get" class="main-search-container">
+          <label for="search" class="search-bar"></label>
+          <input type="text" id="search" name="search" class="search-input" placeholder="Search entire store here...">
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+        </form>
+      <div class="myProfile-myCart-container">
+        <button class="create-account" onclick="createAccount()" id="createAccountButton">My Profile  &nbsp &nbsp<i class="fa-solid fa-user"></i></button>
+
+        
+      
+        <button class="my-cart" onclick="openNav()" id="myCartButtonTop"> My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i></button>
+        <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+        <div id="main">
+        </div>
+        
+          
+      </div>
+    </div>
+  </div>
+
+
+  <div id="mySidenav" class="sidenav">
+    <header class="top-my-cart">
+      <p>My Cart</p>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </header>
+    
+    <div class="main-items-container" id="cart-items">
+      <div class="empty-cart-container" id="emptyCart">
+        <span>Cart is empty</span>
+      </div>
+    </div>
+  </div>
+
+
+    <form action="/search" method="get" class="mediaQuery-searchBar">
+      <label for="search" class="search-bar"></label>
+      <input type="text" id="search" name="search" class="search-input-MQ" placeholder="Search entire store here...">
+      <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+    </form>
+
+
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
+  
+  <!--sidenav-->
+
+
+
+
+    <div id="myBarMenu" class="sideNav"> 
+      <div class="main-container" id="mainContainer">
+        <header class="top-side-drop-down">
+          <p>Navigate Through Our Sections</p>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
+        </header>
+
+      <div class="option-container">
+        <div class="option-name-container">
+          <div class="name-chevron-container" id="SBBoption">
+
+            <div class="name-container">
+              <span><a href="shopByBrand.html">Shop By Brand</a></span>
+            </div>
+
+            <div class="chevron-container">
+              <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBBlist', 'SBBchevron', 'SBBoption')">
+                <i class="fa-solid fa-chevron-down fa-0.5" id="SBBchevron"></i>
+              </div>    
+            </div>
+
+          </div>
+
+          <div class="option-content-container" id="SBBlist">
+            <li><a>Bosh</a></li> 
+            <li><a>Festool</a></li> 
+            <li><a>Ingco</a></li>
+            <li><a>Jet</a></li>
+            <li><a>Metabo</a></li>
+            <li><a>Mirka</a></li>
+            <li><a>Makita</a></li>
+            <li><a>Powermatic</a></li>
+            <li><a>Total</a></li>
+          </div>
+        </div>
+
+          <div class="option-name-container">
+            <div class="name-chevron-container">
+
+              <div class="name-container">
+                <span><a href="#">Sales & Specials</a></span>
+              </div>
+
+              <div class="chevron-container" style="display: none;">
+                <div class="chevron-down-filter">
+                  <i class="fa-solid fa-chevron-down fa-0.5"></i>
+                </div>    
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="option-name-container">
+            <div class="name-chevron-container" id="SBTToption">
+
+              <div class="name-container">
+                <span><a href="shopByTools.html">Shop By Tools Type</a></span>
+              </div>
+
+              <div class="chevron-container">
+                <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBTTlist', 'SBTTchevron', 'SBTToption')">
+                  <i class="fa-solid fa-chevron-down fa-0.5" id="SBTTchevron"></i>
+                </div>    
+              </div>
+
+            </div>
+            <div class="option-content-container" id="SBTTlist">
+              <li><a>Air Tools</a></li> 
+              <li><a>Breaker Hammer</a></li> 
+              <li><a>Drills and Drivers</a></li>
+              <li><a>Fasteners</a></li>
+              <li><a>Grinders</a></li> 
+              <li><a>Hammers</a></li>
+              <li><a>Hand Tools</a></li>
+              <li><a>Jigs</a></li>
+              <li><a>Material Handling</a></li>
+              <li><a>Measuring</a></li>
+              <li><a>Nailers and Staplers</a></li>
+              <li><a>Safety Equipment</a></li> 
+              <li><a>Saws</a></li>
+              <li><a>Tool Storage</a></li>
+              <li><a>Workholding</a></li>
+              <li><a>Work Table and Supports</a></li>
+            </div>
+          </div>
+
+          
+          <div class="option-name-container">
+            <div class="name-chevron-container">
+
+              <div class="name-container">
+                <span><a href="#">Shop By Application</a></span>
+              </div>
+
+              <div class="chevron-container" style="display: none;">
+                <div class="chevron-down-filter">
+                  <i class="fa-solid fa-chevron-down fa-0.5"></i>
+                </div>    
+              </div>
+            </div>
+         </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--sidenav-->
+
+
+
+
+  <div class="nav-bar">
+    <div class="div-nav">
+        <ul class="menu">
+           
+            <li id="SBBsubmenu"><p><a href="shopByBrand.html">Shop By Brand &nbsp;<i class="fa-solid fa-angle-down angle-down"></i></a></p>
+                <ul class="submenu ul">
+                    <div class="shopByBrand-submenu-1">
+                      <li><a>Bosh</a></li> 
+                      <li><a>Festool</a></li> 
+                      <li><a>Ingco</a></li>
+                      <li><a>Jet</a></li>
+                      <li><a>Metabo</a></li>
+                      <li><a>Mirka</a></li>
+                      <li><a>Makita</a></li>
+                      <li><a>Powermatic</a></li>
+                      <li><a>Total</a></li>
+                    </div>
+                    <div class="shopByBrand-submenu-2">
+
+                    </div>
+                </ul>
+            </li>
+           
+            <li><p><a href="#">Sales & Specials <!--&nbsp;<i class="fa-solid fa-angle-down angle-down"></i>--></a></p>
+                <!-- <ul class="submenu ul">
+                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div>
+                </ul> -->
+            </li>
+        
+            <li id="SBTTsubmenu"><p><a href="shopByTools.html">Shop By Tools Type &nbsp;<i class="fa-solid fa-angle-down angle-down"></i></a></p>
+                <ul class="submenu ul">
+                    <div class="shopByToolType-submenu-1">
+                        <li><a>Air Tools</a></li> 
+                        <li><a>Breaker Hammer</a></li> 
+                        <li><a>Drills and Drivers</a></li>
+                        <li><a>Fasteners</a></li>
+                        <li><a>Grinders</a></li> 
+                        <li><a>Hammers</a></li>
+                        <li><a>Hand Tools</a></li>
+                        <li><a>Jigs</a></li>
+                        <li><a>Material Handling</a></li>
+                        <li><a>Measuring</a></li>
+                        <li><a>Nailers and Staplers</a></li>
+                        <li><a>Safety Equipment</a></li> 
+                        <li><a>Saws</a></li>
+                        <li><a>Tool Storage</a></li>
+                        <li><a>Workholding</a></li>
+                        <li><a>Work Table and Supports</a></li>
+                    </div>
+                    <div class="shopByToolType-submenu-2">
+
+                    </div>
+                </ul>
+            </li>
+
+            <li><p><a href="#">Shop By Application <!--&nbsp;<i class="fa-solid fa-angle-down angle-down"></i>--></a></p>
+                <!-- <ul class="submenu ul">
+                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                    <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div>
+                </ul> -->
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="list-main-div">
+  <div class="list-div-pages">
+    <p><a href="index.html">Home</a> &nbsp;/&nbsp; <p id="topItemName">&nbsp; Festool Limited-Edition DOMINO DF 500, Accessories, and Tenon Kit 578509</p></p>
+  </div>
+</div>
+
+
+<main class="item-page-main-container" id="main-page-product">
+  <div class="columns">
+    <div class="main-item-container" id="itemPage">
+
+      <div class="images-container" id="itemPageImages">
+        <div class="img-item-container">
+          <img src="images/ShopByToolsType/product-list/festool motor.jpeg" id="img-item-page">
+        </div>
+
+          <div class="image-slider" id="all-img-product">
+            <img src="images/ShopByToolsType/product-list/OIP.jpeg" id="img-item-1" onclick="changeIMG('img-item-1')">
+            <img src="images/ShopByToolsType/product-list/festool.jpeg" id="img-item-2" onclick="changeIMG('img-item-2')">
+            <img src="images/ShopByToolsType/product-list/festool motor.jpeg" id="img-item-3" onclick="changeIMG('img-item-3')">
+            <img src="images/ShopByToolsType/product-list/mirka.jpeg" id="img-item-4" onclick="changeIMG('img-item-4')">
+            <img src="images/ShopByToolsType/product-list/total.PNG" id="img-item-5" onclick="changeIMG('img-item-5')">
+            <img src="images/ShopByToolsType/product-list/powermatic machine.jpeg" id="img-item-6" onclick="changeIMG('img-item-6')">
+            <img src="images/ShopByToolsType/product-list/xcort.jpeg" id="img-item-7" onclick="changeIMG('img-item-7')">
+            <img src="images/ShopByToolsType/product-list/metabo.jpeg" id="img-item-8" onclick="changeIMG('img-item-8')">
+          </div>
+      </div>
+
+      <div class="item-info-container" id="itemPageDescription">
+        <div class="item-name-container">
+          <span id="itemName">Festool Limited-Edition DOMINO DF 500, Accessories, and Tenon Kit 578509</span>
+        </div>
+
+        <div class="price-container">
+          <span id="itemPrice">$1,899.00</span>
+        </div>
+
+        <div class="SKU-container">
+          <span id="inStock">In Stock</span>
+          <span id="itemSKU">SKU: 575F75</span>
+        </div>
+
+        <div class="description-container">
+          <span>
+            Often, even just a millisecond is crucial: The kickback is the most common cause of serious injuries when using a track saw. 
+            Our unique kickback stop therefore stops the saw blade of our cordless track saw in the blink of an eye, 
+            and so not only protects your workpiece but also helps to minimize the risk of injury to your hands.
+          </span>
+        </div>
+
+        <div class="customizable-option-container">
+          <div class="customizable-option-title">
+            <span>Customizable option: </span>
+          </div>
+
+          <div class="optional-container">
+            <div class="optional-title">
+              <span>Would you like extra batteries or a charger?</span>
+            </div>
+
+            <div class="optional-list">
+              <select name="optional-list" id="add-product" class="select-list-optional">
+                <option value="new-product">-- Please Select --</option>
+                <option value="new-product">Rapid Charger TCL 6 + $79.00</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-quantity-picker">
+          <div class="quantity-picker">
+            <button class="decrease" onclick="changeQuantity(-1)">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L18 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <input type="text" id="quantity" value="1" class="input-qty">
+
+            <button class="increase" onclick="changeQuantity(1)">
+              <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="updt-item-container">
+          <button class="update-button">UPDATE ITEM</button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="item-description-container">
+      <div class="description-title-container">
+        <div class="description-title">
+          <span>DETAILS</span>
+        </div>
+
+        <div class="description-title">
+          <span>SPECIFICATIONS</span>
+        </div>
+      </div>
+
+      <div class="main-descriptions-info-container">
+        <p class="title">DETAILS</p>
+        
+        <div class="main-details-info-container">
+          <div class="details-info-container">
+            <h3>Festool Limited-Edition DOMINO DF 500, Accessories, and Tenon Kit 578509</h3>
+            <div class="details">
+              <p style="line-height: 28px;">
+                Often, even just a millisecond is crucial: The kickback is the most common cause of serious injuries when using a track saw. 
+                Our unique kickback stop therefore stops the saw blade of our cordless track saw in the blink of an eye, 
+                and so not only protects your workpiece but also helps to minimize the risk of injury to your hands. 
+                In addition, this now allows users to make powerful, precise cuts at up to twice the speed with an extended battery range. 
+                When combined, our new generation of saw blades allows for maximum cutting performance and perfect cutting quality. 
+                The sawing system is rounded off with clever system accessories, such as guide rails, an angle stop, splinter guard and saw table.
+              </p>
+              <p>&nbsp;</p>
+              <p><strong>Features:</strong></p>
+              <ul>
+                <li>The kickback stop helps to reduce the risk of injury from kickback when sawing or plunging the tool into the workpiece</li>
+                <li>Concentrated torque and up to twice as fast work progress with an increased saw blade service life</li>
+                <li>Brushless EC-TEC motor combined with lithium-ion batteries for maximum cutting power</li>
+                <li>Low-dust mobile working thanks to dust collection bag or an extractor with Bluetooth® automatic switch-on</li>
+                <li>The kickback stop can be deactivated for individual cuts</li>
+                <li>Top-class sawing system thanks to a variety of accessories</li>
+              </ul>
+              <p>&nbsp;</p>
+              <p><strong>Main application:</strong></p>
+              <ul>
+                <li>Precise circular in materials up to 2-1/8" (55 mm) thick</li>
+                <li>Cutting interior doors to length using guide rail and circular saw</li>
+                <li>Cutting recesses in doors and kitchen worktops</li>
+                <li>Manufacturing expansion joints in parquet flooring and false joints</li>
+                <li>Cutting chipboard to size</li>
+              </ul>
+              <p>&nbsp;</p>
+              <p><strong>Specifications:</strong></p>
+              <ul>
+                <li>Battery voltage: 2 x 18 V</li>
+                <li>Idle engine speed: 2650 - 3800/5200 RPM</li>
+                <li>Battery capacity: 5.00 Ah</li>
+                <li>Drive type: Battery</li>
+                <li>Technology: Bluetooth®</li>
+                <li>Cutting depth at 45°: 1-11/16” (43 mm)</li>
+                <li>Saw blade diameter: 6-1/4" (160 mm)</li>
+                <li>Weight: 7.94 lbs (3.6 kg)</li>
+                <li>Dust extraction connection dia.: 1-1/16"/1-7/16" (27/36 mm)</li>
+                <li>Cutting depth: 0" - 2-1/8” (0 - 55 mm)</li>
+                <li>Angular range: -1 - 47 °</li>
+              </ul>
+            </div>
+
+            
+        </div>
+
+        
+      </div>
+
+    </div>
+    <div class="main-descriptions-info-container">
+      <p class="title">SPECIFICATIONS</p>
+      <div class="main-spec-info-container">
+        <div class="spec-info-container">
+          <!-- <table class="specs-table">
+            <tr>
+              <td class="item-name-specs-table">Festool Limited-Edition DOMINO DF 500, Accessories, and Tenon Kit 578509</td>
+            </tr>
+          </table>
+          <table class="specs-table">
+            <tr>
+              <td class="specs-td1">APPLICATION</td>
+              <td class="specs-td2">Wood Working</td>
+            </tr>
+            <tr>
+              <td class="specs-td2">Brand</td>
+              <td class="specs-td1">Festool</td>
+            </tr>
+            <tr>
+              <td class="specs-td1">MAKE</td>
+              <td class="specs-td2">DOMINO</td>
+            </tr>
+            <tr>
+              <td class="specs-td2">POWER SOURCE</td>
+              <td class="specs-td1">Electric - Corded</td>
+            </tr>
+            <tr>
+              <td class="specs-td1">PRODUCT TYPE</td>
+              <td class="specs-td2">Tools/Machinery</td>
+            </tr>
+            <tr>
+              <td class="specs-td2">TOOL SUB-TYPE	</td>
+              <td class="specs-td1">Joiners - Domino Joiners</td>
+            </tr>
+            <tr>
+              <td class="specs-td1">TOOL TYPE</td>
+              <td class="specs-td2">Joiners</td>
+            </tr>
+            <tr>
+              <td class="specs-td2">WATTAGE</td>
+              <td class="specs-td1">501-1000</td>
+            </tr>
+
+          </table> -->
+
+          <table border="0" cellspacing="0" align="center" style="margin-top: 50px; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+            <tbody>
+              <tr>
+                <th colspan="2" align="center" style="background-color: rgb(186, 47, 47); color: white; font-weight: bold; font-size: 18px; padding: 15px;">Festool Limited-Edition DOMINO DF 500, Accessories, and Tenon Kit 578509</th>
+              </tr>
+              <tr>
+                <td class="mini-header">APPLICATION</td>
+                <td>Wood Working</td>
+              </tr>
+              <tr>
+                <td class="mini-header">BRAND</td>
+                <td>Festool</td>
+              </tr>
+              <tr>
+                <td class="mini-header">MAKE</td>
+                <td>DOMINO</td>
+              </tr>
+              <tr>
+                <td class="mini-header">POWER SOURCE</td>
+                <td>Electric - Corded</td>
+              </tr>
+              <tr>
+                <td class="mini-header">PRODUCT TYPE</td>
+                <td>Tools/Machinery</td>
+              </tr>
+              <tr>
+                <td class="mini-header">TOOL SUB-TYPE</td>
+                <td>Joiners - Domino Joiners</td>
+              </tr>
+              <tr>
+                <td class="mini-header">TOOL TYPE</td>
+                <td>Joiners</td>
+              </tr>
+              <tr>
+                <td class="mini-header">WATTAGE</td>
+                <td>501-1000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="subscribe-for-news-div">
+    <div class="subscribe-adj-width">
+      <div class="subscribe-title">
+        <p>Be the first to know</p>
+      </div>
+      <div class="subscribe-title-info">
+        <p>Subscribe for our best offers.</p>
+      </div>
+      <div class="subscribe-input-button-div">
+        <form class="subscribe-form">
+          <label for="textbox"></label>
+          <input type="email" id="textbox" name="textbox" placeholder="Enter your email address" class="subscribe-email-input">
+          <button class="subscribe-button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <footer class="footer-main-container">
+    <div class="footer-container">
+      <div class="item-container">
+        <div class="item-title-container" onclick="toggleButtonDropDown_Footer('aboutUs', 'aboutUsChevron')">
+          <span>ABOUT US</span>
+          <i class="fa-solid fa-chevron-down downChevronFooter" id="aboutUsChevron"></i>
+        </div>
+        <div class="item-content-container" id="aboutUs">
+          <li><a href="">About Us</a></li>
+          <li><a href="">Financing</a></li>
+          <li><a href="">Shipping</a></li>
+          <li><a href="">Returns/Exanges & Warranties</a></li>
+          <li><a href="">Terms & Conditions</a></li>
+        </div>
+      </div>
+
+
+      <div class="item-container">
+        <div class="item-title-container" onclick="toggleButtonDropDown_Footer('customCenter', 'custoemCenterChevron')">
+          <span>CUSTOM CENTER</span>
+          <i class="fa-solid fa-chevron-down downChevronFooter" id="custoemCenterChevron"></i>
+        </div>
+        <div class="item-content-container" id="customCenter">
+          <li><a href="">My Account</a></li>
+          <li><a href="">Affiliate Program FAQ</a></li>
+          <li><a href="">Pricing</a></li>
+          <li><a href="">Reward Program</a></li>
+          <li><a href="">Layaway</a></li>
+        </div>
+      </div>
+
+
+      <div class="item-container">
+        <div class="item-title-container" onclick="toggleButtonDropDown_Footer('info', 'infoChevron')">
+          <span>INFO</span>
+          <i class="fa-solid fa-chevron-down downChevronFooter" id="infoChevron"></i>
+        </div>
+        <div class="item-content-container" id="info">
+          <li><a href="">Blog</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Frequently Asked Questions</a></li>
+          <li><a href="">Catalog</a></li>
+          <li><a href="">Tax Exemption</a></li>
+        </div>
+      </div>
+
+
+      <div class="item-container">
+        <div class="item-title-container" onclick="toggleButtonDropDown_Footer('contact', 'contactChevron')">
+          <span>CONTACT</span>
+          <i class="fa-solid fa-chevron-down downChevronFooter" id="contactChevron"></i>
+        </div>
+        <div class="item-content-container" id="contact">
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Customer Service</a></li>
+          <li><a href="">Estimate Request</a></li>
+          <li><a href="">Driving Direction</a></li>
+          <li><a href="">Technical Support</a></li>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <footer class="footer-div">
+    <div class="footer-adj-width" id="no-underline">
+      <div class="footer-item-div" id="footerItem">
+        <div class="footer-title">
+          <p>ABOUT US</p>
+        </div>
+          <p><a href="">About Us</a></p>
+          <p><a href="">Financing</a></p>
+          <p><a href="">Shipping</a></p>
+          <p><a href="">Returns/Exanges & Warranties</a></p>
+          <p><a href="">Terms & Conditions</a></p>
+      </div>
+      <div class="footer-item-div" id="footerItem2">
+        <div class="footer-title">
+          <p>CUSTOMER CENTER</p>
+        </div>
+          <p><a href="">My Account</a></p>
+          <p><a href="">Affiliate Program FAQ</a></p>
+          <p><a href="">Pricing</a></p>
+          <p><a href="">Reward Program</a></p>
+          <p><a href="">Layaway</a></p>
+        </div>
+      <div class="footer-item-div">
+        <div class="footer-title">
+          <p>INFO</p>
+        </div>
+          <p><a href="">Blog</a></p>
+          <p><a href="">Privacy Policy</a></p>
+          <p><a href="">Frequently Asked Questions</a></p>
+          <p><a href="">Catalog</a></p>
+          <p><a href="">Tax Exemption</a></p>
+      </div>
+      <div class="footer-item-div">
+        <div class="footer-title">
+          <p>CONTACT</p>
+        </div>
+          <p><a href="">Contact Us</a></p>
+          <p><a href="">Customer Service</a></p>
+          <p><a href="">Estimate Request</a></p>
+          <p><a href="">Driving Direction</a></p>
+          <p><a href="">Technical Support</a></p>
+      </div>
+      
+      <!-- <div class="footer-item-div-2">
+        <div class="social-media-main">
+          <div class="mail-main-div">
+            <a href="mailto:GMK.TOOLS.HUB@gmail.com" class="mail-div">GMK.TOOLS.HUB@gmail.com</a>
+            <i class="envelope fa-solid fa-envelope fa-2x"></i>
+          </div>
+          <div class="mail-main-div">
+
+          </div>
+        </div>
+        
+      </div> -->
+    </div>
+  </footer>
+
+  <style>
+    /* Reset default margin and padding */
+    html, body {
+        /*font-family: "Berlin Sans FB", sans-serif;*/
+        width:100%;
+        font-family: "Outfit", sans-serif;
+        background-color: whitesmoke;
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+
+  </style>
+  
+  <script src="script.js"></script>
+  <script>
+    function scrollLeft() {
+      const wrapper = document.querySelector('.new-arrivals-items-wrapper');
+      console.log(wrapper); // Check if this logs the correct element
+      wrapper.scrollBy({
+      left: -wrapper.clientWidth / 2,
+      behavior: 'smooth'
+  });
+}
+  </script>
+</body>
+</html>

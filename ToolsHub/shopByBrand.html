@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop By Brand</title>
+  <link rel="icon" href="images/title-icon.png" type="image/png">
+
+  <script>
+    function createAccount(){
+      window.location.href = 'create_account.html';
+    }
+  </script>
+  <link rel="stylesheet" href="main-design.css">
+  <link rel="stylesheet" href="shopByBrand.css">
+  <link rel="stylesheet" href="drop-menu.css">
+  <link rel="stylesheet" href="sideDropdown.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+</head>
+<body>
+    <header>
+      <div class="top-fixed-div" id="topFixedHeader">
+
+        <div class = "left"><span class="time">M-F 8:00 A.M. - 6:00 P.M.</span> <span class="city">| Haret-Sakher |</span><a href ="" class="customer-service">Customer Service</a></div>
+        <div class = "right"> 
+            <div class="logo-header">
+                <a href="https://www.instagram.com/" target="_blank" id="instagram"><i class="fa-brands fa-instagram fa-1.5x" ></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-1.5x"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter fa-1.5x"></i></a>
+                <a href="tel:+96176132529" target="_blank" class="phone"><i class="fa-solid fa-phone fa-1.5x"></i></a>
+            </div>
+    
+    
+            <span class="tel">Tel: +961 81 222 444</span>
+          </div>
+            <!--        <b style="padding-right: 20px ; font-weight: 580;"><i class="fa-solid fa-phone"></i> &nbsp: +961 81 222 444</b></div> -->
+      </div>
+      </header>
+    
+      <div class="main-top-container">
+        <div class="main-header" id="mainHeader">
+            <div class="side-dropdown-menu">
+              <button class="bar-button" onclick="openSideNav()"><i class="fa-solid fa-bars fa-2x"></i></button>
+            </div>
+    
+            <div class="logo-container">
+              <a href="index.html"> <img src="images/GMK-Logo.png" class="enterprise-logo" alt="GMK_logo" id="logo"> </a>
+            </div>
+            <form action="/search" method="get" class="main-search-container">
+              <label for="search" class="search-bar"></label>
+              <input type="text" id="search" name="search" class="search-input" placeholder="Search entire store here...">
+              <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+            </form>
+          <div class="myProfile-myCart-container">
+            <button class="create-account" onclick="createAccount()" id="createAccountButton">My Profile  &nbsp &nbsp<i class="fa-solid fa-user"></i></button>
+    
+            
+            <div id="mySidenav" class="sidenav">
+              <header class="top-my-cart">
+                <p>My Cart</p>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              </header>
+              
+              <div class="main-items-container" id="cart-items">
+                <div class="empty-cart-container" id="emptyCart">
+                  <span>Cart is empty</span>
+                </div>
+              </div>
+            </div>
+
+          
+            <button class="my-cart" onclick="openNav()" id="myCartButtonTop"> My Cart &nbsp &nbsp <i class="fa-solid fa-cart-shopping"></i></button>
+            <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+            <div id="main">
+            </div>
+            
+              
+          </div>
+        </div>
+      </div>
+    
+    
+      <form action="/search" method="get" class="mediaQuery-searchBar">
+        <label for="search" class="search-bar"></label>
+        <input type="text" id="search" name="search" class="search-input-MQ" placeholder="Search entire store here...">
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+      </form>
+
+
+
+      <div id="overlay" class="overlay" onclick="closeNav()"></div>
+      
+      <!--sidenav-->
+    
+    
+    
+    
+        <div id="myBarMenu" class="sideNav"> 
+          <div class="main-container" id="mainContainer">
+            <header class="top-my-cart">
+              <p>Navigate Through Our Sections</p>
+              <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
+            </header>
+    
+          <div class="option-container">
+            <div class="option-name-container">
+              <div class="name-chevron-container" id="SBBoption">
+    
+                <div class="name-container">
+                  <span><a href="shopByBrand.html">Shop By Brand</a></span>
+                </div>
+    
+                <div class="chevron-container">
+                  <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBBlist', 'SBBchevron', 'SBBoption')">
+                    <i class="fa-solid fa-chevron-down fa-0.5" id="SBBchevron"></i>
+                  </div>    
+                </div>
+    
+              </div>
+    
+              <div class="option-content-container" id="SBBlist">
+                <li><a>Bosh</a></li> 
+                <li><a>Festool</a></li> 
+                <li><a>Ingco</a></li>
+                <li><a>Jet</a></li>
+                <li><a>Metabo</a></li>
+                <li><a>Mirka</a></li>
+                <li><a>Makita</a></li>
+                <li><a>Powermatic</a></li>
+                <li><a>Total</a></li>
+              </div>
+            </div>
+    
+              <div class="option-name-container">
+                <div class="name-chevron-container">
+    
+                  <div class="name-container">
+                    <span><a href="#">Sales & Specials</a></span>
+                  </div>
+    
+                  <div class="chevron-container" style="display: none;">
+                    <div class="chevron-down-filter">
+                      <i class="fa-solid fa-chevron-down fa-0.5"></i>
+                    </div>    
+                  </div>
+    
+                </div>
+              </div>
+    
+    
+              <div class="option-name-container">
+                <div class="name-chevron-container" id="SBTToption">
+    
+                  <div class="name-container">
+                    <span><a href="shopByTools.html">Shop By Tools Type</a></span>
+                  </div>
+    
+                  <div class="chevron-container">
+                    <div class="chevron-down-filter" onclick="toggleButtonDropDownBar('SBTTlist', 'SBTTchevron', 'SBTToption')">
+                      <i class="fa-solid fa-chevron-down fa-0.5" id="SBTTchevron"></i>
+                    </div>    
+                  </div>
+    
+                </div>
+                <div class="option-content-container" id="SBTTlist">
+                  <li><a>Air Tools</a></li> 
+                  <li><a>Breaker Hammer</a></li> 
+                  <li><a>Drills and Drivers</a></li>
+                  <li><a>Fasteners</a></li>
+                  <li><a>Grinders</a></li> 
+                  <li><a>Hammers</a></li>
+                  <li><a>Hand Tools</a></li>
+                  <li><a>Jigs</a></li>
+                  <li><a>Material Handling</a></li>
+                  <li><a>Measuring</a></li>
+                  <li><a>Nailers and Staplers</a></li>
+                  <li><a>Safety Equipment</a></li> 
+                  <li><a>Saws</a></li>
+                  <li><a>Tool Storage</a></li>
+                  <li><a>Workholding</a></li>
+                  <li><a>Work Table and Supports</a></li>
+                </div>
+              </div>
+    
+              
+              <div class="option-name-container">
+                <div class="name-chevron-container">
+    
+                  <div class="name-container">
+                    <span><a href="#">Shop By Application</a></span>
+                  </div>
+    
+                  <div class="chevron-container" style="display: none;">
+                    <div class="chevron-down-filter">
+                      <i class="fa-solid fa-chevron-down fa-0.5"></i>
+                    </div>    
+                  </div>
+                </div>
+             </div>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+      <!--sidenav-->
+    
+    
+    
+    
+      <div class="nav-bar">
+        <div class="div-nav">
+            <ul class="menu">
+               
+                <li id="SBBsubmenu"><p><a href="shopByBrand.html">Shop By Brand &nbsp;<i class="fa-solid fa-angle-down angle-down"></i></a></p>
+                    <ul class="submenu ul">
+                        <div class="shopByBrand-submenu-1">
+                          <li><a>Bosh</a></li> 
+                          <li><a>Festool</a></li> 
+                          <li><a>Ingco</a></li>
+                          <li><a>Jet</a></li>
+                          <li><a>Metabo</a></li>
+                          <li><a>Mirka</a></li>
+                          <li><a>Makita</a></li>
+                          <li><a>Powermatic</a></li>
+                          <li><a>Total</a></li>
+                        </div>
+                        <div class="shopByBrand-submenu-2">
+    
+                        </div>
+                    </ul>
+                </li>
+               
+                <li><p><a href="#">Sales & Specials <!--&nbsp;<i class="fa-solid fa-angle-down angle-down"></i>--></a></p>
+                    <!-- <ul class="submenu ul">
+                        <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                        <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                        <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div>
+                    </ul> -->
+                </li>
+            
+                <li id="SBTTsubmenu"><p><a href="shopByTools.html">Shop By Tools Type &nbsp;<i class="fa-solid fa-angle-down angle-down"></i></a></p>
+                    <ul class="submenu ul">
+                        <div class="shopByToolType-submenu-1">
+                            <li><a>Air Tools</a></li> 
+                            <li><a>Breaker Hammer</a></li> 
+                            <li><a>Drills and Drivers</a></li>
+                            <li><a>Fasteners</a></li>
+                            <li><a>Grinders</a></li> 
+                            <li><a>Hammers</a></li>
+                            <li><a>Hand Tools</a></li>
+                            <li><a>Jigs</a></li>
+                            <li><a>Material Handling</a></li>
+                            <li><a>Measuring</a></li>
+                            <li><a>Nailers and Staplers</a></li>
+                            <li><a>Safety Equipment</a></li> 
+                            <li><a>Saws</a></li>
+                            <li><a>Tool Storage</a></li>
+                            <li><a>Workholding</a></li>
+                            <li><a>Work Table and Supports</a></li>
+                        </div>
+                        <div class="shopByToolType-submenu-2">
+    
+                        </div>
+                    </ul>
+                </li>
+    
+                <li><p><a href="#">Shop By Application <!--&nbsp;<i class="fa-solid fa-angle-down angle-down"></i>--></a></p>
+                    <!-- <ul class="submenu ul">
+                        <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                        <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div> 
+                        <div class="(sbb/sbtt)-items">  <li><a>...</a></li></div>
+                    </ul> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="list-main-div">
+      <div class="list-div-pages">
+        <p><a href="index.html">Home</a> &nbsp;/&nbsp; Shop By Brand</p>
+      </div>
+    </div>
+
+    <div style="width: 100%; height: auto;">
+      <div class="shop-by-brand-div">
+        <div class="sbb-adj-width">
+          <div class="sbb-second-parallelogram">
+            <div class="sbb-second-parallelogram-txt">
+              <p>SHOP BY BRAND</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-by-brand-txt">
+        <p>
+          For over three decades, Beaver Industrial Supply has proudly served as your go-to vendor for high-quality power tools — both online and in our St. Louis showroom. 
+          We carry 30,000+ power tools and machines, all sourced from renowned industry leaders such as Fein, Festool, Metabo, JET, Kreg, Shaper, and more!
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="shop-by-brand-main-div">
+      <div class="sub-main-div-sbb">
+        <Search class="search">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="search-icon" fill="grey"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+          <input class="search-input-sbb" type="search" id="search-input"placeholder="Search brand here" >
+
+        </Search>
+
+        <div class="alphabetic-brand-div">
+          <button class="all-brands-button">All Brands</button>
+          <button class="alphabetic-button-disabled" disabled>A</button>
+          <button class="alphabetic-button" onclick="scrollButton('B-section')">B</button>
+          <button class="alphabetic-button-disabled" disabled>C</button>
+          <button class="alphabetic-button-disabled" disabled>D</button>
+          <button class="alphabetic-button-disabled" disabled>E</button>
+          <button class="alphabetic-button" onclick="scrollButton('F-section')">F</button>
+          <button class="alphabetic-button-disabled" disabled>G</button>
+          <button class="alphabetic-button-disabled" disabled>H</button>
+          <button class="alphabetic-button" onclick="scrollButton('I-section')">I</button>
+          <button class="alphabetic-button" onclick="scrollButton('J-section')">J</button>
+          <button class="alphabetic-button-disabled" disabled>K</button>
+          <button class="alphabetic-button-disabled" disabled>L</button>
+          <button class="alphabetic-button" onclick="scrollButton('M-section')">M</button>
+          <button class="alphabetic-button-disabled" disabled>N</button>
+          <button class="alphabetic-button-disabled" disabled>O</button>
+          <button class="alphabetic-button" onclick="scrollButton('P-section')">P</button>
+          <button class="alphabetic-button-disabled" disabled>Q</button>
+          <button class="alphabetic-button-disabled" disabled>R</button>
+          <button class="alphabetic-button-disabled" disabled>S</button>
+          <button class="alphabetic-button" onclick="scrollButton('T-section')">T</button>
+          <button class="alphabetic-button-disabled" disabled>U</button>
+          <button class="alphabetic-button-disabled" disabled>V</button>
+          <button class="alphabetic-button-disabled" disabled>W</button>
+          <button class="alphabetic-button-disabled" disabled>X</button>
+          <button class="alphabetic-button-disabled" disabled>Y</button>
+          <button class="alphabetic-button-disabled" disabled>Z</button>
+
+        </div>
+
+        <div class="brand-list-items-div" id="B-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              B
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div class="brand-list-image">
+                  <img src="images/ShopByBrand/Bosch brand.png" style="height: 100%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Bosch</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-list-items-div" id="F-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              F
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div class="brand-list-image">
+                  <img src="images/ShopByBrand/Festool brand.png" style="height: 70%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Festool</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-list-items-div" id="I-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              I
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div style="width: 100%; height: 36px;">
+                  <img src="images/ShopByBrand/ingco.jpeg" style="height: 100%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Ingco</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-list-items-div" id="J-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              J
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div style="width: 100%; height: 36px;">
+                  <img src="images/ShopByBrand/Jet brand.png" style="height: 100%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Jet</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-list-items-div" id="M-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              M
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div class="brand-list-image">
+                  <img src="images/ShopByBrand/metabo brand.png" style="height: 100%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Metabo</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div class="brand-list-image">
+                  <img src="images/ShopByBrand/Mirka brand.jpg" style="height: 100%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Mirka</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div class="brand-list-image">
+                  <img src="images/ShopByBrand/makita brand.jpeg" style="height: 100%; width: 88px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name">
+                  <span>Makita</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-list-items-div" id="P-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              P
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div style="width: 100%; height: 45px;">
+                  <img src="images/ShopByBrand/Powermatic brand.png" style="height: 100%; width: 100px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name" style="margin: 6px 30px 0px 30px;">
+                  <span>Powermatic</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-list-items-div" id="T-section">
+          <div class="brand-items-div">
+            <div class="alphabetic-brand-first-letter">
+              T
+            </div>
+            <div class="all-brand-list">
+              <a class="brand-list" href="#" style="color: black; text-decoration: none;">
+                <div style="width: 100%; height: 45px; display: flex; justify-content: center; align-items: center;">
+                  <img src="images/ShopByBrand/total.png" style="height: auto; width: 100px; margin: 0px 61px;">
+                </div>
+                <div class="brand-list-name" style="margin: 6px 30px 0px 30px;">
+                  <span>Total</span>
+                  <span style="color: #6b7280; ">&nbsp; (9999)</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="subscribe-for-news-div">
+      <div class="subscribe-adj-width">
+        <div class="subscribe-title">
+          <p>Be the first to know</p>
+        </div>
+        <div class="subscribe-title-info">
+          <p>Subscribe for our best offers.</p>
+        </div>
+        <div class="subscribe-input-button-div">
+          <form class="subscribe-form">
+            <label for="textbox"></label>
+            <input type="email" id="textbox" name="textbox" placeholder="Enter your email address" class="subscribe-email-input">
+            <button class="subscribe-button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <footer class="footer-main-container">
+      <div class="footer-container">
+        <div class="item-container">
+          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('aboutUs', 'aboutUsChevron')">
+            <span>ABOUT US</span>
+            <i class="fa-solid fa-chevron-down downChevronFooter" id="aboutUsChevron"></i>
+          </div>
+          <div class="item-content-container" id="aboutUs">
+            <li><a href="">About Us</a></li>
+            <li><a href="">Financing</a></li>
+            <li><a href="">Shipping</a></li>
+            <li><a href="">Returns/Exanges & Warranties</a></li>
+            <li><a href="">Terms & Conditions</a></li>
+          </div>
+        </div>
+
+
+        <div class="item-container">
+          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('customCenter', 'custoemCenterChevron')">
+            <span>CUSTOM CENTER</span>
+            <i class="fa-solid fa-chevron-down downChevronFooter" id="custoemCenterChevron"></i>
+          </div>
+          <div class="item-content-container" id="customCenter">
+            <li><a href="">My Account</a></li>
+            <li><a href="">Affiliate Program FAQ</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Reward Program</a></li>
+            <li><a href="">Layaway</a></li>
+          </div>
+        </div>
+
+
+        <div class="item-container">
+          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('info', 'infoChevron')">
+            <span>INFO</span>
+            <i class="fa-solid fa-chevron-down downChevronFooter" id="infoChevron"></i>
+          </div>
+          <div class="item-content-container" id="info">
+            <li><a href="">Blog</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Frequently Asked Questions</a></li>
+            <li><a href="">Catalog</a></li>
+            <li><a href="">Tax Exemption</a></li>
+          </div>
+        </div>
+
+
+        <div class="item-container">
+          <div class="item-title-container" onclick="toggleButtonDropDown_Footer('contact', 'contactChevron')">
+            <span>CONTACT</span>
+            <i class="fa-solid fa-chevron-down downChevronFooter" id="contactChevron"></i>
+          </div>
+          <div class="item-content-container" id="contact">
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Customer Service</a></li>
+            <li><a href="">Estimate Request</a></li>
+            <li><a href="">Driving Direction</a></li>
+            <li><a href="">Technical Support</a></li>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+    <footer class="footer-div">
+      <div class="footer-adj-width" id="no-underline">
+        <div class="footer-item-div">
+          <div class="footer-title">
+            <p>ABOUT US</p>
+          </div>
+            <p><a href="">About Us</a></p>
+            <p><a href="">Financing</a></p>
+            <p><a href="">Shipping</a></p>
+            <p><a href="">Returns/Exanges & Warranties</a></p>
+            <p><a href="">Terms & Conditions</a></p>
+        </div>
+        <div class="footer-item-div">
+          <div class="footer-title">
+            <p>CUSTOMER CENTER</p>
+          </div>
+            <p><a href="">My Account</a></p>
+            <p><a href="">Affiliate Program FAQ</a></p>
+            <p><a href="">Pricing</a></p>
+            <p><a href="">Reward Program</a></p>
+            <p><a href="">Layaway</a></p>
+          </div>
+        <div class="footer-item-div">
+          <div class="footer-title">
+            <p>INFO</p>
+          </div>
+            <p><a href="">Blog</a></p>
+            <p><a href="">Privacy Policy</a></p>
+            <p><a href="">Frequently Asked Questions</a></p>
+            <p><a href="">Catalog</a></p>
+            <p><a href="">Tax Exemption</a></p>
+        </div>
+        <div class="footer-item-div">
+          <div class="footer-title">
+            <p>CONTACT</p>
+          </div>
+            <p><a href="">Contact Us</a></p>
+            <p><a href="">Customer Service</a></p>
+            <p><a href="">Estimate Request</a></p>
+            <p><a href="">Driving Direction</a></p>
+            <p><a href="">Technical Support</a></p>
+        </div>
+        
+        <!-- <div class="footer-item-div-2">
+          <div class="social-media-main">
+            <div class="mail-main-div">
+              <a href="mailto:GMK.TOOLS.HUB@gmail.com" class="mail-div">GMK.TOOLS.HUB@gmail.com</a>
+              <i class="envelope fa-solid fa-envelope fa-2x"></i>
+            </div>
+            <div class="mail-main-div">
+
+            </div>
+          </div>
+          
+        </div> -->
+      </div>
+    </footer>
+
+    <style>
+      /* Reset default margin and padding */
+      html, body {
+          /*font-family: "Berlin Sans FB", sans-serif;*/
+          font-family: "Outfit", sans-serif;
+          background-color: white;
+          margin: 0;
+          width: 100%;
+          overflow-x: hidden;
+      }
+  
+  
+    </style>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+      <script src="script.js"></script>
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              var input = document.querySelector("#phone");
+              window.intlTelInput(input, {
+                  initialCountry: "auto",
+                  geoIpLookup: function(success, failure) {
+                      fetch('https://ipinfo.io/json', { headers: { 'Accept': 'application/json' }})
+                          .then(function(response) { return response.json(); })
+                          .then(function(json) { success(json.country); })
+                          .catch(function() { success('us'); });
+                  }
+              });
+          });
+      </script>
+      
+  </body>
+  </html>
